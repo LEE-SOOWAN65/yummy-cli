@@ -5,43 +5,43 @@ import Head from "next/head";
 import styled, { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
-@import url('https://cdn.rawgit.com/innks/NanumSquareRound/master/nanumsquareround.min.css');
-
-@media (max-width: 252px) {
+@import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
+@media (max-width: 262px) {
   html {
     font-size: 7px;
   }
 }
-@media (min-width: 253px) and (max-width: 288px) {
+@media (min-width: 263px) and (max-width: 300px) {
   html {
     font-size: 8px;
   }
 }
-@media (min-width: 289px) and (max-width: 324px) {
+@media (min-width: 301px) and (max-width: 337px) {
   html {
     font-size: 9px;
   }
 }
-@media (min-width: 325px) and (max-width: 360px) {
+@media (min-width: 338px) and (max-width: 375px) {
   html {
     font-size: 10px;
   }
 }
-@media (min-width: 361px) and (max-width: 396px) {
+@media (min-width: 376px) and (max-width: 412px) {
   html {
     font-size: 11px;
   }
 }
-@media (min-width: 397px) and (max-width: 432px) {
+@media (min-width: 413px) and (max-width: 450px) {
   html {
     font-size: 12px;
   }
 }
-@media (min-width: 433px){
+@media (min-width: 451px){
   html {
     font-size: 13px;
   }
 }
+
 
 body {
   margin: 0;
@@ -71,7 +71,7 @@ class PickkApp extends App {
       <>
         <GlobalStyle />
         <Head>
-          <title>YamYam</title>
+          <title>YammyYammy</title>
         </Head>
         <BestWrapper>
           <Grey />
@@ -90,7 +90,7 @@ const Wrapper = styled.div`
   max-width: 36rem;
   min-height: 100%;
   background-color: white;
-  position: relative;
+  position: relatvie;
 `;
 
 const Grey = styled.div`

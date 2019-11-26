@@ -1,8 +1,11 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import MainTopDialog from "../components/templates/MainTopDialog";
+import MainTopDialog from "../components/Templates/MainTopDialog";
+import TopButton from "../components/Templates/TopButton";
+import BuildingDialog from "../components/Templates/BuildingDialog";
 
-import HomeBottomNav from "../components/templates/HomeBottomNav";
+// import FacebookLogin from "react-facebook-login";
+// import HomeBottomNav from "../components/templates/HomeBottomNav";
 
 function App() {
   return (
@@ -15,16 +18,25 @@ function App() {
         height: "100%"
       }}
     >
+      {/* <FacebookLogin
+        appId="1425008167650893"
+        autoLoad={true}
+        fields="name,email,picture"
+        callback={response => {
+          console.log(response);
+        }}
+      /> */}
       <Wrapper>
+        <TopButton />
         <MainTopDialog />
-        <HomeBottomNav style={{ position: "absolute", bottom: "0" }} />
+        <BuildingDialog />
       </Wrapper>
     </div>
   );
 }
-const Background = styled.header`
-  text-align: center;
-`;
+// const Background = styled.header`
+//   text-align: center;
+// `;
 
 const Wrapper = styled.div`
   width: 100%;

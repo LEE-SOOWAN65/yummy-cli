@@ -5,7 +5,7 @@ const SvgComponent = props => (
     id="prefix__Night"
     width={19.092}
     height={21.268}
-    fill="#707070"
+    fill="#b9b9b9"
     {...props}
   >
     <path
