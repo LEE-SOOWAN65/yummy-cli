@@ -16,6 +16,7 @@ import DrawerButton from "../atoms/Icon/Botton/DrawerButton";
 import DrawerLogo from "../atoms/Icon/DrawerLogo";
 import styled from "styled-components";
 import FacebookLogin from "../atoms/Icon/Botton/facebooklogin";
+import Link from "next/link";
 
 const useStyles = makeStyles({
   list: {
@@ -68,7 +69,9 @@ export default function TemporaryDrawer() {
                 <ListItemIcon>
                   {index % 4 === 0 && <SpeakerIcon />}
                   {index % 4 === 1 && <Setting />}
-                  {index % 4 === 2 && <QuestionIcon />}
+                  <Link href="https://open.kakao.com/o/ss85X3Mb">
+                    <a>{index % 4 === 2 && <QuestionIcon />}</a>
+                  </Link>
                   {index % 4 === 3 && <HomeIcon />}
                 </ListItemIcon>
                 <ListItemText primary={text} />

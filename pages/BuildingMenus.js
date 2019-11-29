@@ -1,6 +1,10 @@
 import React from "react";
 import styled from "styled-components";
-import TopButton from "../components/Templates/TopButton";
+import { useRouter } from "next/router";
+
+import { useFetch } from "../lib";
+
+import TopButton from "../components/Organisms/TopButton";
 import BuildingNameTop from "../components/Organisms/BuildingNameTop";
 import MenuDialog from "../components/Templates/MenuDialog";
 // import ReviewList from "../components/templates/ReviewList";
@@ -8,14 +12,25 @@ import MenuDialog from "../components/Templates/MenuDialog";
 //건물별 조식, 중식, 저녁 메뉴 리스트
 
 function App() {
+  const router = useRouter();
+  const buildingId = Number(router.query.id);
+  const data = useFetch(
+    "https://d3krydb462nqm.cloudfront.net/cafeteria/1/2019/11/24/LUNCH/"
+  );
+
   return (
     <Wrapper>
       <TopButton />
-      <BuildingNameTop />
-      <MenuDialog />
+      {data && (
+        <>
+          <BuildingNameTop name={data.name} />
+          <MenuDialog sikdans={data.sikdans} />
+        </>
+      )}
     </Wrapper>
   );
 }
+
 const Wrapper = styled.div`
   width: 100%;
   display: flex;
@@ -24,3 +39,7 @@ const Wrapper = styled.div`
 `;
 
 export default App;
+
+App.getInitialProps = () => {
+  return {};
+};

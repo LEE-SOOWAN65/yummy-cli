@@ -5,9 +5,9 @@ import MenuBox from "../Organisms/MenuBox";
 export default function MenuDialog(props) {
   return (
     <Wrapper>
-      <MenuBox MenuType="조식" />
-      <MenuBox MenuType="중식" />
-      <MenuBox MenuType="저녁" />
+      {props.sikdans.map((value, index) => (
+        <MenuBox key={index} dishes={value.dishes} number={index + 1} />
+      ))}
     </Wrapper>
   );
 }

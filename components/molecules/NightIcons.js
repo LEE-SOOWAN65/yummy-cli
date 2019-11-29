@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import SunSetLight from "../atoms/Icon/SunSetLight";
-import SunLight from "../atoms/Icon/SunLight";
-import Night from "../atoms/Icon/Night";
 function App() {
   return (
     <Wrapper>
-      <SunSetLight style={{ padding: "1.3rem" }} />
-      <SunLight style={{ padding: "1.3rem" }} />
-      <Night style={{ padding: "1.3rem" }} />
+      <Text>아침</Text>
+
+      <Text>점심</Text>
+      <TextWrapper>
+        <Textnow>저녁</Textnow>
+      </TextWrapper>
     </Wrapper>
   );
 }
@@ -20,6 +20,28 @@ const Wrapper = styled.div`
   flex-wrap: nowrap;
   overflow: auto;
   position: "fixed";
+`;
+const Text = styled.text`
+  font-size: 1.4rem;
+  text-align: left;
+  color: #b9b9b9;
+  padding: 1.3rem;
+  border: none;
+  backgroundcolor: transparent;
+`;
+
+const Textnow = styled.text`
+  font-size: 1.4rem;
+  text-align: left;
+  color: #ffffff;
+  padding: 1.3rem;
+  border: none;
+  backgroundcolor: transparent;
+`;
+const TextWrapper = styled.text`
+  border-radius: 1.7rem;
+  box-shadow: 0 0.5rem 1rem 0 rgba(229, 75, 75, 0.3);
+  background-color: #e54b4b;
 `;
 
 export default App;

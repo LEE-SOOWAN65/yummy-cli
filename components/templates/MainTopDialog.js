@@ -1,27 +1,13 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
-import SunsetIcons from "../molecules/SunsetIcons";
-import SunIcons from "../molecules/SunIcons";
-import NightIcons from "../molecules/NightIcons";
+import SunsetIcons from "../Molecules/SunsetIcons";
+import SunIcons from "../Molecules/SunIcons";
+import NightIcons from "../Molecules/NightIcons";
 import LeftIcon from "../atoms/Icon/Botton/left";
 import RightIcon from "../atoms/Icon/Botton/right";
+import TodayText from "../Molecules/Message";
 
 const TIME_PERIOD = [930, 1430, 2000];
-const TodayText = [
-  "오늘 뭐 먹지?",
-  "한국인은 밥심!",
-  "밥은 먹고 다니니?",
-  "밥밥디라라!",
-  "오늘 밥 뭐 나오냐?",
-  "아까부터 밥먹을 생각뿐..",
-  "학식 먹었다면 리뷰 좀 써주세요~❤",
-  "끼니는 제때 제때!",
-  "오늘은 외식이다..",
-  "밥이나 먹자",
-  "메뉴 뭐냐?",
-  "학식으로 뿌링클 나왔으면...",
-  "오늘 메뉴 괜찮네^0^"
-];
 
 export default function TopDialog(props) {
   const [month, setMonth] = useState(0);
@@ -90,7 +76,7 @@ export default function TopDialog(props) {
           paddingLeft: "1rem"
         }}
       >
-        <Text>{TodayText[textIndex]}</Text>
+        <Text style={{ marginTop: "0.1rem" }}>{TodayText[textIndex]}</Text>
       </div>
     </Wrapper>
   );
@@ -105,7 +91,7 @@ const Wrapper = styled.div`
   width: 100%;
 `;
 
-const Text = styled.text`
+const Text = styled.div`
   font-size: 13px;
   color: #ffffff;
   padding-left: 4rem;

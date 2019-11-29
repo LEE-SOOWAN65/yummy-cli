@@ -4,41 +4,37 @@ import StarIcon from "../atoms/Icon/Star";
 import Link from "next/link";
 // import Router from "next/router";
 
+const data = {
+  id: 1,
+  name: "한우리집",
+  sikdans: [
+    { name: "차돌된장찌개", avg_rating: 0.0 },
+    { name: "참치마요덮밥", avg_rating: 0.0 }
+  ]
+};
+
 export default function FacilButton(props) {
   // const Url = "/ReviewListPage"
-
   return (
     <Wrapper>
-      <Link href="/BuildingMenus">
+      <Link href={`/BuildingMenus?id=${props.id}`}>
         <a style={{ textDecoration: "none" }}>
           <BuildingWrapper>
-            <BuildingName>한우리집</BuildingName>
+            <BuildingName>{props.name}</BuildingName>
+            {props.sikdans
+              .slice(0, Math.min(props.sikdans.length, 3))
+              .map((value, index) => (
+                <MenuList key={index}>
+                  <StarIcon style={{ paddingRight: "0.6rem" }} />
+                  <Text>
+                    <Average>{value.avg_rating}</Average>
+                    {/* <button onCick={() => Router.push("/ReviewListPage?id")}> */}
 
-            <MenuList>
-              <StarIcon style={{ paddingRight: "0.6rem" }} />
-              <Text>
-                <Average>4.3</Average>
-                {/* <button onCick={() => Router.push("/ReviewListPage?id")}> */}
-
-                <MenuName>쌀국수</MenuName>
-              </Text>
-              {/*</button>*/}
-            </MenuList>
-
-            <MenuList>
-              <StarIcon style={{ paddingRight: "0.6rem" }} />
-              <Text>
-                <Average>4.1</Average>
-                <MenuName>베트남볶음밥</MenuName>
-              </Text>
-            </MenuList>
-            <MenuList>
-              <StarIcon style={{ paddingRight: "0.6rem" }} />
-              <Text>
-                <Average>3.2</Average>
-                <MenuName>소떡소떡</MenuName>
-              </Text>
-            </MenuList>
+                    <MenuName>{value.name}</MenuName>
+                  </Text>
+                  {/*</button>*/}
+                </MenuList>
+              ))}
           </BuildingWrapper>
         </a>
       </Link>
@@ -59,6 +55,7 @@ const BuildingWrapper = styled.button`
   box-shadow: 0 0.5rem 1rem 0 rgba(229, 75, 75, 0.3);
   background-color: #ffffff;
   align-items: center;
+  border: none;
 `;
 const BuildingName = styled.div`
   height: 2.4rem;
@@ -83,11 +80,11 @@ const MenuList = styled.div`
   padding-left: 2.06rem;
   padding-bottom: 1rem;
 `;
-const Text = styled.text`
+const Text = styled.div`
   display: flex;
   flex-direction: row;
 `;
-const MenuName = styled.text`
+const MenuName = styled.div`
   height: 1.7rem;
   object-fit: contain;
   font-size: 1.4rem;
@@ -99,7 +96,7 @@ const MenuName = styled.text`
   text-align: left;
   color: #000000;
 `;
-const Average = styled.text`
+const Average = styled.div`
   width: 4rem;
   height: 1.7rem;
   object-fit: contain;

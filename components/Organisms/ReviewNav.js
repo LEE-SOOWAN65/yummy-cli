@@ -31,7 +31,7 @@ const Box = styled.button`
   border-radius: 2rem;
 `;
 
-const Text = styled.text`
+const Text = styled.div`
   font-size: 1.5rem;
   letter-spacing: normal;
   display: flex;

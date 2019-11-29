@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import MainTopDialog from "../components/Templates/MainTopDialog";
-import TopButton from "../components/Templates/TopButton";
+import TopButton from "../components/Organisms/TopButton";
 import BuildingDialog from "../components/Templates/BuildingDialog";
 
 // import FacebookLogin from "react-facebook-login";

@@ -4,7 +4,7 @@ import Arrow from "../atoms/Icon/Botton/LeftArrow";
 import ForkIcon from "../atoms/Icon/Fork";
 import Link from "next/link";
 
-function BuildingNameTop(props) {
+function BuildingNameTop() {
   return (
     <Wrapper>
       <Link href="/index">
@@ -14,7 +14,7 @@ function BuildingNameTop(props) {
       </Link>
       <IconWrapper>
         <ForkIcon />
-        <BuildingName>{props.name}</BuildingName>
+        <BuildingName>생활관 카레돈카스</BuildingName>
       </IconWrapper>
     </Wrapper>
   );
