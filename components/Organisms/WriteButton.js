@@ -1,10 +1,25 @@
 import React, { useState } from "react";
+import { useRouter } from "next/router";
 import styled from "styled-components";
 import Link from "next/link";
+
+import { useMutation } from "../../lib";
 
 //메뉴별 리뷰 페이지(아래 리뷰작성버튼)
 
 export default function Topbutton(props) {
+  const router = useRouter();
+  const handleSubmit = () => {
+    const result = useMutation(process.env.API_HOST + "/review/create/", {
+      rating: props.rating,
+      id: 10,
+      comment: props.comment,
+      written_by: 2,
+      dish: Number(router.query.id)
+    });
+    console.log("success" + props.rating + "/" + props.comment);
+  };
+
   return (
     <Wrapper>
       <Link href="/ReviewList">
@@ -13,11 +28,9 @@ export default function Topbutton(props) {
         </a>
       </Link>
       <div style={{ flex: 2 }} />
-      <Link href="/">
-        <a style={{ textDecoration: "none", flex: 0.7 }}>
-          <Text>등록</Text>
-        </a>
-      </Link>
+      <a onClick={handleSubmit} style={{ textDecoration: "none", flex: 0.7 }}>
+        <Text>등록</Text>
+      </a>
     </Wrapper>
   );
 }

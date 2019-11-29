@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import Smile1 from "../atoms/Icon/Bigsmile1";
 import Smile2 from "../atoms/Icon/Bigsmile2";
 import Smile3 from "../atoms/Icon/Bigsmile3";
@@ -8,7 +8,31 @@ import Smile5 from "../atoms/Icon/Bigsmile5";
 
 //메뉴별 리뷰 페이지(아래 리뷰작성버튼)
 
+const BUTTON_DATA = [
+  {
+    icon: Smile1,
+    text: "존맛"
+  },
+  {
+    icon: Smile2,
+    text: "굿굿"
+  },
+  {
+    icon: Smile3,
+    text: "쏘쏘"
+  },
+  {
+    icon: Smile4,
+    text: "별로"
+  },
+  {
+    icon: Smile5,
+    text: "우웩"
+  }
+];
+
 export default function Topbutton(props) {
+  const { rating, setRating } = props;
   return (
     <>
       <TextWrapper>
@@ -17,53 +41,58 @@ export default function Topbutton(props) {
           <BuildingName>생활관식당</BuildingName>
         </Text>
         <SmileIcons>
-          <Smile>
-            <Smile1 />
-            <Smilename>존맛</Smilename>
-          </Smile>
-          <Smile>
-            <Smile2 />
-            <Smilename>굿굿</Smilename>
-          </Smile>
-          <Smile>
-            <Smile3 />
-            <Smilename>쏘쏘</Smilename>
-          </Smile>
-          <Smile>
-            <Smile4 />
-            <Smilename>별로</Smilename>
-          </Smile>
-          <Smile>
-            <Smile5 />
-            <Smilename>우엑</Smilename>
-          </Smile>
+          {BUTTON_DATA.map((value, index) => (
+            <Smile
+              key={index}
+              onClick={() => {
+                setRating(5 - index);
+              }}
+            >
+              <IconWrapper selected={rating === 5 - index}>
+                <value.icon selected={rating === 5 - index} />
+              </IconWrapper>
+              <Smilename>{value.text}</Smilename>
+            </Smile>
+          ))}
         </SmileIcons>
       </TextWrapper>
     </>
   );
 }
+
+const IconWrapper = styled.div`
+  width: fit-content;
+  height: fit-content;
+  border-radius: 0.3rem;
+  ${props => css`
+    ${props.selected &&
+      `
+  background-image: linear-gradient(to top, #eb8242 99%, #da2f2e 22%, #da2d2d 0%)
+  `}
+  `}
+`;
+
 const Text = styled.div`
   display: flex;
   flex-direction: column;
-  padding-bottom: 2.74rem;
-  padding-left: 2.1rem;
-  padding-top: 3.7rem;
+  margin-bottom: 2.7rem;
 `;
 const SmileIcons = styled.div`
   display: flex;
   flex-direction: row;
-  padding-bottom: 3.15rem;
   align-items: center;
   text-align: center;
-  padding-left: 2.15rem;
+  justify-content: space-between;
 `;
 const TextWrapper = styled.div`
-  width: 33.8rem;
+  width: 100%;
   height: 18.8rem;
   object-fit: contain;
   opacity: 0.6;
   border-radius: 2.2rem;
   background-color: #f5f5f5;
+  padding: 4.4rem 2.9rem 2.5rem;
+  box-sizing: border-box;
 `;
 
 const MenuName = styled.div`
@@ -83,7 +112,6 @@ const Smile = styled.button`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-right: 2.94rem;
   background-color: #f5f5f5;
   border: none;
 `;

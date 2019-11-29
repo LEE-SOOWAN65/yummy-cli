@@ -5,11 +5,16 @@ import ReviewBox from "../Molecules/ReviewBox";
 //메뉴별 리뷰 페이지(아래 리뷰작성버튼)
 
 export default function Topbutton(props) {
+  const { rating, setRating, comment, setComment } = props;
   return (
     <>
       <Wrapper>
-        <ReviewBox />
+        <ReviewBox rating={rating} setRating={setRating} />
         <textarea
+          value={comment}
+          onChange={e => {
+            setComment(e.target.value);
+          }}
           placeholder="리뷰를 작성해주세요."
           style={{ width: "29.7rem", border: "none" }}
         ></textarea>

@@ -9,16 +9,17 @@ import BuildingDialog from "../components/Templates/BuildingDialog";
 
 function App() {
   return (
-    <div
-      className="App"
-      style={{
-        display: "flex",
-        overflowY: "hidden",
-        width: "100%",
-        height: "100%"
-      }}
-    >
-      {/* <FacebookLogin
+    <>
+      <div
+        className="App"
+        style={{
+          display: "flex",
+          overflowY: "hidden",
+          width: "100%",
+          height: "100%"
+        }}
+      >
+        {/* <FacebookLogin
         appId="1425008167650893"
         autoLoad={true}
         fields="name,email,picture"
@@ -26,12 +27,13 @@ function App() {
           console.log(response);
         }}
       /> */}
-      <Wrapper>
-        <TopButton />
-        <MainTopDialog />
-        <BuildingDialog />
-      </Wrapper>
-    </div>
+        <Wrapper>
+          <TopButton />
+          <MainTopDialog />
+          <BuildingDialog />
+        </Wrapper>
+      </div>
+    </>
   );
 }
 // const Background = styled.header`

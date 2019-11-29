@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { useRouter } from "next/router";
 
-import { useFetch } from "../lib";
+import { useQuery } from "../lib";
 
 import TopButton from "../components/Organisms/TopButton";
 import BuildingNameTop from "../components/Organisms/BuildingNameTop";
@@ -14,8 +14,8 @@ import MenuDialog from "../components/Templates/MenuDialog";
 function App() {
   const router = useRouter();
   const buildingId = Number(router.query.id);
-  const data = useFetch(
-    "https://d3krydb462nqm.cloudfront.net/cafeteria/1/2019/11/24/LUNCH/"
+  const data = useQuery(
+    process.env.API_HOST + "/cafeteria/1/2019/11/24/LUNCH/"
   );
 
   return (

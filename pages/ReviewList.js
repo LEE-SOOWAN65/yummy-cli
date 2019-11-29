@@ -27,7 +27,7 @@ function App() {
         <ReviewNameTop />
         <ReviewGraph />
         {/* <ReviewList /> */}
-        <Link href="/ReviewWrite">
+        <Link href={`/ReviewWrite?id=${router.query.id}`}>
           <a style={{ textDecoration: "none" }}>
             <Nav position={{ position: "absolute", bottom: 0 }} />
           </a>

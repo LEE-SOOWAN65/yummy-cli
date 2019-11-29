@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
 import DialogButton from "../Organisms/DialogButton";
 import styled from "styled-components";
-import { useFetch } from "../../lib/";
+import { useQuery } from "../../lib/";
 
 export default function BuildingDialog(props) {
-  const data = useFetch(
-    "http://ec2-13-209-193-135.ap-northeast-2.compute.amazonaws.com/organization/1/2019/11/24/LUNCH/"
+  const data = useQuery(
+    process.env.API_HOST + "/organization/1/2019/11/24/LUNCH/"
   );
 
   if (data) {

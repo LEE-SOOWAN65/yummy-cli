@@ -4,15 +4,6 @@ import StarIcon from "../atoms/Icon/Star";
 import Link from "next/link";
 // import Router from "next/router";
 
-const data = {
-  id: 1,
-  name: "한우리집",
-  sikdans: [
-    { name: "차돌된장찌개", avg_rating: 0.0 },
-    { name: "참치마요덮밥", avg_rating: 0.0 }
-  ]
-};
-
 export default function FacilButton(props) {
   // const Url = "/ReviewListPage"
   return (
@@ -27,7 +18,7 @@ export default function FacilButton(props) {
                 <MenuList key={index}>
                   <StarIcon style={{ paddingRight: "0.6rem" }} />
                   <Text>
-                    <Average>{value.avg_rating}</Average>
+                    <Average>{value.avg_rating.toFixed(1)}</Average>
                     {/* <button onCick={() => Router.push("/ReviewListPage?id")}> */}
 
                     <MenuName>{value.name}</MenuName>
