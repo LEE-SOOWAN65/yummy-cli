@@ -10,16 +10,13 @@ import { useMutation } from "../../lib";
 export default function Topbutton(props) {
   const router = useRouter();
   const handleSubmit = () => {
-    var tmp = {
+    const result = useMutation(process.env.API_HOST + "/review/create/", {
       rating: props.rating,
       comment: props.comment,
       written_by: 2,
       dish: Number(router.query.id)
-    };
-    const result = useMutation(
-      process.env.API_HOST + "/review/create/",
-      JSON.stringify(tmp)
-    );
+    });
+
     console.log("success" + props.rating + "/" + props.comment);
   };
 
