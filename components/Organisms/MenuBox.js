@@ -3,42 +3,6 @@ import styled from "styled-components";
 import StarIcon from "../atoms/Icon/Star";
 import Link from "next/link";
 
-const SUMIN = {
-  time: "BREAKFAST",
-  dishes: [
-    {
-      id: 4,
-      name: "시금치나물",
-      avg_rating: 4.3
-    },
-    {
-      id: 2,
-      name: "미트고추장조림",
-      avg_rating: 4.1
-    },
-    {
-      id: 5,
-      name: "즉석계란후라이",
-      avg_rating: 4.1
-    },
-    {
-      id: 1,
-      name: "북어채국",
-      avg_rating: 3.91666666666667
-    },
-    {
-      id: 3,
-      name: "샐러드",
-      avg_rating: 3.2
-    },
-    {
-      id: 6,
-      name: "쌀밥",
-      avg_rating: 3.2
-    }
-  ]
-};
-
 export default function BuildingDialog(props) {
   return (
     <div style={{ paddingBottom: "3.7rem" }}>

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import DialogButton from "../Organisms/DialogButton";
 import styled from "styled-components";
 import { useQuery } from "../../lib/";
+import LoadingPage from "../../pages/LoadingPage";
 
 export default function BuildingDialog(props) {
   const data = useQuery(
@@ -24,7 +25,7 @@ export default function BuildingDialog(props) {
       </Wrapper>
     );
   }
-  return <div>loading...</div>;
+  return <LoadingPage />;
 }
 const Wrapper = styled.div`
   display: flex;
