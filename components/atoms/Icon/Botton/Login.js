@@ -4,7 +4,7 @@ const SvgComponent = props => (
   <svg
     width={30.973}
     height={21.743}
-    fill="#404040"
+    fill="#ffffff"
     data-name="\uADF8\uB8F9 526"
     {...props}
   >

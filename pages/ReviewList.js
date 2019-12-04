@@ -1,10 +1,9 @@
 import React, { useState } from "react";
 import { useRouter } from "next/router";
 import styled from "styled-components";
-import TopButton from "../components/Organisms/TopButton";
 import Nav from "../components/Organisms/ReviewNav";
-import ReviewNameTop from "../components/Organisms/ReviewNameTop";
 import ReviewGraph from "../components/Organisms/ReviewGraph";
+import RedBox from "../components/Organisms/RedBox";
 // import ReviewList from "../components/templates/ReviewList";
 import Link from "next/link";
 
@@ -23,8 +22,7 @@ function App() {
       }}
     >
       <Wrapper>
-        <TopButton />
-        <ReviewNameTop />
+        <RedBox />
         <ReviewGraph />
         {/* <ReviewList /> */}
         <Link href={`/ReviewWrite?id=${router.query.id}`}>

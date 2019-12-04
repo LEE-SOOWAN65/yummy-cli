@@ -3,13 +3,19 @@ import styled from "styled-components";
 import Periods from "../Molecules/Periods";
 import LeftIcon from "../atoms/Icon/Botton/left";
 import RightIcon from "../atoms/Icon/Botton/right";
-import TodayText from "../Molecules/Message";
+import Link from "next/link";
+import Arrow from "../atoms/Icon/Botton/LeftArrow";
 
 export default function TopDialog(props) {
-  const { timePeriod, month, day, textIndex } = props;
+  const { timePeriod, month, day } = props;
 
   return (
     <Wrapper>
+      <Link href="/index">
+        <a style={{ textDecoration: "none" }}>
+          <Arrow style={{ paddingLeft: "1.8rem" }} />
+        </a>
+      </Link>
       <Icon>
         <Periods
           timePeriod={timePeriod}
@@ -41,21 +47,6 @@ export default function TopDialog(props) {
             }}
           />
         </ButtonWrapper>
-      </div>
-
-      <div
-        style={{
-          width: "83%",
-          height: "4.98rem",
-          position: "relative",
-          backgroundImage: "url(/bubble.png)",
-          backgroundSize: "100%",
-          display: "flex",
-          flexDirection: "row",
-          paddingLeft: "1rem"
-        }}
-      >
-        <Text style={{ marginTop: "0.1rem" }}>{TodayText[textIndex]}</Text>
       </div>
     </Wrapper>
   );

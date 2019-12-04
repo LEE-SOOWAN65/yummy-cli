@@ -1,14 +1,27 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback } from "react";
 import DialogButton from "../Organisms/DialogButton";
 import styled from "styled-components";
 import { useQuery } from "../../lib/";
 import LoadingPage from "../../pages/LoadingPage";
 
 export default function BuildingDialog(props) {
-  const data = useQuery(
-    process.env.API_HOST + "/organization/1/2019/11/24/LUNCH/"
-  );
+  const { month, day, timePeriod } = props;
 
+  const mealHandler = useCallback(() => {
+    let meal;
+    if (timePeriod === 0) {
+      meal = "BREAKFAST";
+    } else if (timePeriod === 1) {
+      meal = "LUNCH";
+    } else if (timePeriod === 2) {
+      meal = "DINNER";
+    }
+    // console.log(timePeriod, meal);
+    return `/organization/1/2019/${month}/${day}/${meal}/`;
+  }, [month, day, timePeriod]);
+
+  const data = useQuery(process.env.API_HOST + mealHandler());
+  // console.log(data, mealHandler());
   if (data) {
     return (
       <Wrapper>
@@ -16,6 +29,9 @@ export default function BuildingDialog(props) {
           return (
             <DialogButton
               id={value.id}
+              month={month}
+              day={day}
+              meal={month}
               name={value.name}
               sikdans={value.sikdans}
               key={index}

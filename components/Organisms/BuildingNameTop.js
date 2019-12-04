@@ -1,40 +1,29 @@
 import React from "react";
 import styled from "styled-components";
-import Arrow from "../atoms/Icon/Botton/LeftArrow";
-import ForkIcon from "../atoms/Icon/Fork";
-import Link from "next/link";
+
+import ForkIcon from "../atoms/Icon/ForkRed";
 
 function BuildingNameTop(props) {
   return (
     <Wrapper>
-      <Link href="/index">
-        <a style={{ textDecoration: "none" }}>
-          <Arrow style={{ paddingLeft: "1.8rem" }} />
-        </a>
-      </Link>
-      <IconWrapper>
-        <ForkIcon />
-        <BuildingName>{props.name}</BuildingName>
-      </IconWrapper>
+      <ForkIcon />
+      <BuildingName>{props.name}</BuildingName>
     </Wrapper>
   );
 }
-const IconWrapper = styled.div`
+const Icon = styled.div`
   display: flex;
-  flex-direction: column;
+  flex-direction: Row;
   align-items: center;
   overflow: auto;
   position: "fixed";
-  width: 80%;
 `;
 
 const Wrapper = styled.div`
   display: flex
   flex-direction: row;
   overflow: auto;
-  position: "fixed";
   width: 100%;
-  padding-top:2.88rem;
 `;
 
 const BuildingName = styled.div`

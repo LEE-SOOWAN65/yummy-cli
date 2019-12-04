@@ -21,7 +21,7 @@ const Wrapper = styled.div`
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 100%;
+  height: 81.2rem;
   background-color: #e54b4b;
 `;
 const Text = styled.p`
@@ -36,20 +36,24 @@ const LogoWrapper = styled.div`
   justify-content: center;
   align-items: center;
   margin-top: 1.46rem 0 17.3rem;
-  backgroundcolor: transparent;
+  /
 `;
 
 const LoadingBox = styled.div`
   width: 19.6rem;
   height: 5.7rem;
+  object-fit: contain;
+  opacity: 0.15;
   border-radius: 5.9rem;
-  box-shadow: 0 10px 10px 0 rgba(88, 29, 29, 0.75);
+  box-shadow: 0 1rem 1rem 0 rgba(88, 29, 29, 0.75);
   background-color: #ffffff;
 `;
 const TextLoad = styled.p`
   font-size: 2rem;
+  font-style: normal;
+  line-height: 1.2;
+  letter-spacing: normal;
   text-align: center;
   color: #ffffff;
-  border: none;
-  backgroundcolor: transparent;
+  text-align: left;
 `;

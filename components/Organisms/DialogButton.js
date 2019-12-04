@@ -19,11 +19,9 @@ export default function FacilButton(props) {
                   <StarIcon style={{ paddingRight: "0.6rem" }} />
                   <Text>
                     <Average>{value.avg_rating.toFixed(1)}</Average>
-                    {/* <button onCick={() => Router.push("/ReviewListPage?id")}> */}
 
                     <MenuName>{value.name}</MenuName>
                   </Text>
-                  {/*</button>*/}
                 </MenuList>
               ))}
           </BuildingWrapper>
