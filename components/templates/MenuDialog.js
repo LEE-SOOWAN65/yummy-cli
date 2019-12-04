@@ -6,7 +6,12 @@ export default function MenuDialog(props) {
   return (
     <Wrapper>
       {props.sikdans.map((value, index) => (
-        <MenuBox key={index} dishes={value.dishes} number={index + 1} />
+        <MenuBox
+          name={props.name}
+          key={index}
+          dishes={value.dishes}
+          number={index + 1}
+        />
       ))}
     </Wrapper>
   );

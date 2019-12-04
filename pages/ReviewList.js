@@ -1,16 +1,15 @@
 import React, { useState } from "react";
 import { useRouter } from "next/router";
 import styled from "styled-components";
-import TopButton from "../components/Organisms/TopButton";
 import Nav from "../components/Organisms/ReviewNav";
-import ReviewNameTop from "../components/Organisms/ReviewNameTop";
 import ReviewGraph from "../components/Organisms/ReviewGraph";
-// import ReviewList from "../components/templates/ReviewList";
+import RedBox from "../components/Organisms/RedBox";
+import Reviews from "../components/Templates/Reviews";
 import Link from "next/link";
 
 //메뉴별 리뷰 페이지(아래 리뷰작성버튼)
 
-function App() {
+function App(p) {
   const router = useRouter();
   return (
     <div
@@ -23,10 +22,9 @@ function App() {
       }}
     >
       <Wrapper>
-        <TopButton />
-        <ReviewNameTop />
+        <RedBox />
         <ReviewGraph />
-        {/* <ReviewList /> */}
+        <Reviews />
         <Link href={`/ReviewWrite?id=${router.query.id}`}>
           <a style={{ textDecoration: "none" }}>
             <Nav position={{ position: "absolute", bottom: 0 }} />

@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import UserDrawer from "./UserDrawer";
-import KinnyLogo from "../atoms/Icon/Botton/kinnykinny";
+import UserDrawer from "./UserDrawerwhite";
+import KinnyLogo from "../atoms/Icon/Botton/kinnykinnyWhite";
 import Link from "next/link";
 
 export default function Topbutton(props) {
@@ -25,4 +25,5 @@ const Wrapper = styled.div`
   padding-top: 2.55rem;
   padding-left: 2.41rem;
   padding-right: 2.19;
+  align-items: center;
 `;

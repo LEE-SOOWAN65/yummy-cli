@@ -1,50 +1,20 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
-import SunsetIcons from "../Molecules/SunsetIcons";
-import SunIcons from "../Molecules/SunIcons";
-import NightIcons from "../Molecules/NightIcons";
+import Periods from "../Molecules/Periods";
 import LeftIcon from "../atoms/Icon/Botton/left";
 import RightIcon from "../atoms/Icon/Botton/right";
 import TodayText from "../Molecules/Message";
 
-const TIME_PERIOD = [930, 1430, 2000];
-
 export default function TopDialog(props) {
-  const [month, setMonth] = useState(0);
-  const [day, setDay] = useState(0);
-  const [textIndex, setTextIndex] = useState(0);
-  const getCurrentTimePeriod = () => {
-    const nowTime = new Date();
-    const hour = nowTime.getHours();
-    const minute = nowTime.getMinutes();
+  const { timePeriod, month, day, textIndex } = props;
 
-    for (let i = 0; i < 3; ++i) {
-      if (hour * 100 + minute < TIME_PERIOD[i]) {
-        return i;
-      }
-    }
-    return 0;
-  };
-
-  const getMonthDay = () => {
-    const nowTime = new Date();
-    setMonth(nowTime.getMonth() + 1);
-    setDay(nowTime.getDate());
-  };
-  const [timePeriod] = useState(getCurrentTimePeriod());
-
-  useEffect(() => {
-    getMonthDay();
-  }, []);
-  useEffect(() => {
-    setTextIndex(day % 13);
-  }, [day]);
   return (
     <Wrapper>
       <Icon>
-        {timePeriod === 0 && <SunsetIcons />}
-        {timePeriod === 1 && <SunIcons />}
-        {timePeriod === 2 && <NightIcons />}
+        <Periods
+          timePeriod={timePeriod}
+          setTimePeriod={tp => props.setTimePeriod(tp)}
+        />
       </Icon>
 
       <div
@@ -55,12 +25,21 @@ export default function TopDialog(props) {
         }}
       >
         <ButtonWrapper>
-          <LeftIcon />
+          <LeftIcon
+            onClick={() => {
+              props.setDay(day - 1);
+            }}
+          />
 
           <div style={{ fontSize: "13px", color: "#707070", padding: "10px" }}>
             {month}월{day}일
           </div>
-          <RightIcon />
+
+          <RightIcon
+            onClick={() => {
+              props.setDay(day + 1);
+            }}
+          />
         </ButtonWrapper>
       </div>
 

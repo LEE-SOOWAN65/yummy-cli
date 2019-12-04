@@ -54,9 +54,4 @@ const Average = styled.div`
   padding-right: 5.5rem;
 `;
 
-const SmileBoxWrapper = styled.div`
-  border: none;
-  background-color: #ffffff;
-`;
-
 export default App;

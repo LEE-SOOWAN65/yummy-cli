@@ -8,7 +8,9 @@ export default function FacilButton(props) {
   // const Url = "/ReviewListPage"
   return (
     <Wrapper>
-      <Link href={`/BuildingMenus?id=${props.id}`}>
+      <Link
+        href={`/BuildingMenus?id=${props.id}&month=${props.month}&day=${props.day}&timePeriod=${props.timePeriod}`}
+      >
         <a style={{ textDecoration: "none" }}>
           <BuildingWrapper>
             <BuildingName>{props.name}</BuildingName>
@@ -19,11 +21,9 @@ export default function FacilButton(props) {
                   <StarIcon style={{ paddingRight: "0.6rem" }} />
                   <Text>
                     <Average>{value.avg_rating.toFixed(1)}</Average>
-                    {/* <button onCick={() => Router.push("/ReviewListPage?id")}> */}
 
                     <MenuName>{value.name}</MenuName>
                   </Text>
-                  {/*</button>*/}
                 </MenuList>
               ))}
           </BuildingWrapper>
