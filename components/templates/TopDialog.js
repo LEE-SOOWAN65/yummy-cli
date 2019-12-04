@@ -11,8 +11,16 @@ export default function TopDialog(props) {
 
   return (
     <Wrapper>
-      <div style={{ display: "flex", flexDirection: "row" }}>
-        {" "}
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "row",
+          justifyContent: "space-between",
+          width: "100%",
+          padding: "0 18px",
+          boxSizing: "border-box"
+        }}
+      >
         <Link href="/index">
           <a style={{ textDecoration: "none" }}>
             <Arrow style={{ paddingleft: "3.8rem" }} />
@@ -24,33 +32,26 @@ export default function TopDialog(props) {
             setTimePeriod={tp => props.setTimePeriod(tp)}
           />
         </Icon>
+        <div style={{ width: 20, height: 20 }} />
       </div>
 
-      <div
-        style={{
-          flexDirection: "row",
-          display: "flex",
-          alignItems: "center"
-        }}
-      >
-        <ButtonWrapper>
-          <LeftIcon
-            onClick={() => {
-              props.setDay(day - 1);
-            }}
-          />
+      <ButtonWrapper>
+        <LeftIcon
+          onClick={() => {
+            props.setDay(day - 1);
+          }}
+        />
 
-          <div style={{ fontSize: "13px", color: "#707070", padding: "10px" }}>
-            {month}월{day}일
-          </div>
+        <div style={{ fontSize: "13px", color: "#707070", padding: "10px" }}>
+          {month}월{day}일
+        </div>
 
-          <RightIcon
-            onClick={() => {
-              props.setDay(day + 1);
-            }}
-          />
-        </ButtonWrapper>
-      </div>
+        <RightIcon
+          onClick={() => {
+            props.setDay(day + 1);
+          }}
+        />
+      </ButtonWrapper>
     </Wrapper>
   );
 }
@@ -75,7 +76,8 @@ const Icon = styled.div`
 
 const ButtonWrapper = styled.div`
   display: flex;
-  flex-direction: column;
   align-items: center;
   flex-direction: row;
+  margin: 0 auto;
+  width: fit-content;
 `;

@@ -79,7 +79,7 @@ export default function TemporaryDrawer() {
                   </Link>
                   {index % 4 === 3 && <HomeIcon />}
                 </ListItemIcon>
-                <ListItemText primary={text} />
+                <DrawerItemText primary={text} />
               </ListItem>
             </>
           ))}
@@ -91,7 +91,7 @@ export default function TemporaryDrawer() {
               <ListItemIcon>
                 <LoginIcon />
               </ListItemIcon>
-              <ListItemText primary={text} />
+              <DrawerItemText primary={text} />
             </ListItem>
           ))}
         </List>
@@ -111,7 +111,7 @@ export default function TemporaryDrawer() {
   return (
     <div>
       <Button onClick={toggleDrawer("right", true)}>
-        <DrawerButton />
+        <DrawerButton paddingTop="2.7rem" />
       </Button>
 
       <Drawer
@@ -140,4 +140,15 @@ const ListWrapper = styled.div`
   height: 81.2rem;
   object-fit: contain;
   background-color: #ff6565;
+`;
+
+const DrawerItemText = styled(ListItemText)`
+  font-size: 1.3rem;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.46;
+  letter-spacing: normal;
+  text-align: left;
+  color: #ffffff;
 `;

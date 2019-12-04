@@ -2,23 +2,23 @@ import React from "react";
 import styled from "styled-components";
 import Arrow from "../atoms/Icon/Botton/LeftArrowwhite";
 import ForkIcon from "../atoms/Icon/Fork";
-import Link from "next/link";
+import { useRouter } from "next/router";
 
 function BuildingNameTop() {
+  const router = useRouter();
+
   return (
     <Wrapper>
-      <Link href="/BuildingMenus">
-        <a style={{ textDecoration: "none" }}>
-          <Arrow style={{ paddingLeft: "1.8rem" }} />
-        </a>
-      </Link>
+      <a onClick={() => router.back()} style={{ textDecoration: "none" }}>
+        <Arrow style={{ paddingLeft: "1.8rem" }} />
+      </a>
       <IconWrapper>
         <NameWrapper>
-          <MenuName>카레돈카스</MenuName>
+          <MenuName>{router.query.name}</MenuName>
         </NameWrapper>
         <BuildingWrapper>
           <ForkIcon style={{ paddingLeft: "" }} />
-          <Text>생활관</Text>
+          <Text>{router.query.buildingName}</Text>
         </BuildingWrapper>
       </IconWrapper>
     </Wrapper>

@@ -9,7 +9,7 @@ export default function FacilButton(props) {
   return (
     <Wrapper>
       <Link
-        href={`/BuildingMenus?id=${props.id}?month=${props.month}?day=${props.day}?timePeriod=${props.timePeriod}`}
+        href={`/BuildingMenus?id=${props.id}&month=${props.month}&day=${props.day}&timePeriod=${props.timePeriod}`}
       >
         <a style={{ textDecoration: "none" }}>
           <BuildingWrapper>

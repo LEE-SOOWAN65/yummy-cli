@@ -4,33 +4,22 @@ import styled from "styled-components";
 import DayTime from "./DayTime";
 
 function App(props) {
-  const [selected, setSelected] = useState(props.timePeriod);
+  const TIME_TEXT_KOR = ["아침", "점심", "저녁"];
+
   return (
     <Wrapper>
-      <TimeWrapper
-        onClick={() => {
-          setSelected(0);
-          props.setTimePeriod(0);
-        }}
-      >
-        <DayTime name="아침" selected={selected === 0 ? true : false} />
-      </TimeWrapper>
-      <TimeWrapper
-        onClick={() => {
-          setSelected(1);
-          props.setTimePeriod(1);
-        }}
-      >
-        <DayTime name="점심" selected={selected === 1 ? true : false} />
-      </TimeWrapper>
-      <TimeWrapper
-        onClick={() => {
-          setSelected(2);
-          props.setTimePeriod(2);
-        }}
-      >
-        <DayTime name="저녁" selected={selected === 2 ? true : false} />
-      </TimeWrapper>
+      {Array.apply(null, Array(3)).map((_v, i) => {
+        return (
+          <TimeWrapper
+            key={i}
+            onClick={() => {
+              props.setTimePeriod(i);
+            }}
+          >
+            <DayTime name={TIME_TEXT_KOR[i]} selected={props.timePeriod == i} />
+          </TimeWrapper>
+        );
+      })}
     </Wrapper>
   );
 }

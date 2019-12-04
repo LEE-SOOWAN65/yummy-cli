@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 function App(props) {
   const { selected, name } = props;
@@ -14,7 +14,10 @@ function App(props) {
 const Textnow = styled.p`
   font-size: 1.4rem;
   text-align: left;
-  color: ${props => (props.selected ? "#ffffff" : "#b9b9b9")};
+  color: ${props =>
+    css`
+      ${props.selected ? "#ffffff" : "#b9b9b9"}
+    `};
   padding: 1.3rem;
   border: none;
   backgroundcolor: transparent;

@@ -20,7 +20,9 @@ export default function BuildingDialog(props) {
                 </Average>
                 <Link
                   href={
-                    value.avg_rating < 0 ? "" : `/ReviewList?id=${value.id}`
+                    value.avg_rating < 0
+                      ? ""
+                      : `/ReviewList?id=${value.id}&name=${value.name}&avg_rating=${value.avg_rating}&buildingName=${props.name}`
                   }
                 >
                   <a style={{ textDecoration: "none" }}>

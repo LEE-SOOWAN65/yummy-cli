@@ -4,12 +4,12 @@ import styled from "styled-components";
 import Nav from "../components/Organisms/ReviewNav";
 import ReviewGraph from "../components/Organisms/ReviewGraph";
 import RedBox from "../components/Organisms/RedBox";
-// import ReviewList from "../components/templates/ReviewList";
+import Reviews from "../components/Templates/Reviews";
 import Link from "next/link";
 
 //메뉴별 리뷰 페이지(아래 리뷰작성버튼)
 
-function App() {
+function App(p) {
   const router = useRouter();
   return (
     <div
@@ -24,7 +24,7 @@ function App() {
       <Wrapper>
         <RedBox />
         <ReviewGraph />
-        {/* <ReviewList /> */}
+        <Reviews />
         <Link href={`/ReviewWrite?id=${router.query.id}`}>
           <a style={{ textDecoration: "none" }}>
             <Nav position={{ position: "absolute", bottom: 0 }} />

@@ -22,8 +22,7 @@ const Icon = styled.div`
 const Wrapper = styled.div`
   display: flex
   flex-direction: row;
-  overflow: auto;
-  width: 100%;
+  margin:0 auto;
 `;
 
 const BuildingName = styled.div`

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { useRouter } from "next/router";
 
@@ -10,32 +10,28 @@ import MenuDialog from "../components/Templates/MenuDialog";
 
 //건물별 조식, 중식, 저녁 메뉴 리스트
 
+const TIME_TEXT = ["BREAKFAST", "LUNCH", "DINNER"];
+
 function App(props) {
   const router = useRouter();
-  const month = Number(router.query.month);
-  const day = Number(router.query.day);
-  const timePeriod = Number(router.query.timePeriod);
-  const buildingId = Number(router.query.id);
+  const { month, day, id } = router.query;
+  const [timePeriod, setTimePeriod] = useState(router.query.timePeriod);
 
-  let meal;
-  if (timePeriod === 0) {
-    meal = "BREAKFAST";
-  } else if (timePeriod === 1) {
-    meal = "LUNCH";
-  } else if (timePeriod === 2) {
-    meal = "DINNER";
-  }
-  // console.log(timePeriod, meal);
-
-  const data = useQuery(
+  const apiUrl =
     process.env.API_HOST +
-      `/cafeteria/${buildingId}/2019/${month}/${day}/${meal}/`
-  );
+    `/cafeteria/${id}/2019/${month}/${day}/${TIME_TEXT[timePeriod]}/`;
+
+  const data = useQuery(apiUrl);
 
   return (
     <Wrapper>
       <TopButton />
-      <TopDialog month={month} day={day} timePeriod={timePeriod} />
+      <TopDialog
+        month={month}
+        day={day}
+        timePeriod={timePeriod}
+        setTimePeriod={setTimePeriod}
+      />
       {data && (
         <>
           <BuildingNameTop name={data.name} />
