@@ -3,30 +3,43 @@ import styled from "styled-components";
 import { useRouter } from "next/router";
 
 import { useQuery } from "../lib";
-// import TopDialog from "../components/Templates/TopDialog";
 import TopButton from "../components/Organisms/TopButton";
 import TopDialog from "../components/Templates/TopDialog";
 import BuildingNameTop from "../components/Organisms/BuildingNameTop";
 import MenuDialog from "../components/Templates/MenuDialog";
-// import ReviewList from "../components/templates/ReviewList";
 
 //건물별 조식, 중식, 저녁 메뉴 리스트
 
 function App(props) {
   const router = useRouter();
+  const month = Number(router.query.month);
+  const day = Number(router.query.day);
+  const timePeriod = Number(router.query.timePeriod);
   const buildingId = Number(router.query.id);
+
+  let meal;
+  if (timePeriod === 0) {
+    meal = "BREAKFAST";
+  } else if (timePeriod === 1) {
+    meal = "LUNCH";
+  } else if (timePeriod === 2) {
+    meal = "DINNER";
+  }
+  // console.log(timePeriod, meal);
+
   const data = useQuery(
-    process.env.API_HOST + `/cafeteria/${buildingId}/2019/12/3/DINNER/`
+    process.env.API_HOST +
+      `/cafeteria/${buildingId}/2019/${month}/${day}/${meal}/`
   );
 
   return (
     <Wrapper>
       <TopButton />
-      <TopDialog />
+      <TopDialog month={month} day={day} timePeriod={timePeriod} />
       {data && (
         <>
           <BuildingNameTop name={data.name} />
-          <MenuDialog sikdans={data.sikdans} />
+          <MenuDialog name={data.name} sikdans={data.sikdans} />
         </>
       )}
     </Wrapper>

@@ -31,7 +31,7 @@ export default function BuildingDialog(props) {
               id={value.id}
               month={month}
               day={day}
-              meal={month}
+              timePeriod={timePeriod}
               name={value.name}
               sikdans={value.sikdans}
               key={index}

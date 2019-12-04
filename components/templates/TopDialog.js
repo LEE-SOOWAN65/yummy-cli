@@ -11,17 +11,20 @@ export default function TopDialog(props) {
 
   return (
     <Wrapper>
-      <Link href="/index">
-        <a style={{ textDecoration: "none" }}>
-          <Arrow style={{ paddingLeft: "1.8rem" }} />
-        </a>
-      </Link>
-      <Icon>
-        <Periods
-          timePeriod={timePeriod}
-          setTimePeriod={tp => props.setTimePeriod(tp)}
-        />
-      </Icon>
+      <div style={{ display: "flex", flexDirection: "row" }}>
+        {" "}
+        <Link href="/index">
+          <a style={{ textDecoration: "none" }}>
+            <Arrow style={{ paddingleft: "3.8rem" }} />
+          </a>
+        </Link>
+        <Icon>
+          <Periods
+            timePeriod={timePeriod}
+            setTimePeriod={tp => props.setTimePeriod(tp)}
+          />
+        </Icon>
+      </div>
 
       <div
         style={{
@@ -59,13 +62,6 @@ const Wrapper = styled.div`
   overflow: auto;
   position: "fixed";
   width: 100%;
-`;
-
-const Text = styled.div`
-  font-size: 13px;
-  color: #ffffff;
-  padding-left: 4rem;
-  padding-top: 1.7rem;
 `;
 
 const Icon = styled.div`

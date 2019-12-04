@@ -1,13 +1,13 @@
 import React from "react";
 import styled from "styled-components";
-import Arrow from "../atoms/Icon/Botton/LeftArrow";
+import Arrow from "../atoms/Icon/Botton/LeftArrowwhite";
 import ForkIcon from "../atoms/Icon/Fork";
 import Link from "next/link";
 
 function BuildingNameTop() {
   return (
     <Wrapper>
-      <Link href="/index">
+      <Link href="/BuildingMenus">
         <a style={{ textDecoration: "none" }}>
           <Arrow style={{ paddingLeft: "1.8rem" }} />
         </a>
@@ -28,6 +28,7 @@ const IconWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-align: center;
   overflow: auto;
   width: 80%;
 `;
@@ -55,6 +56,7 @@ const MenuName = styled.p`
 
 const NameWrapper = styled.div`
   width: 12.6rem;
+
   display: flex;
   height: 3.6rem;
   border-radius: 1.5rem;

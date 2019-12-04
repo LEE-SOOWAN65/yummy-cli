@@ -8,7 +8,9 @@ export default function FacilButton(props) {
   // const Url = "/ReviewListPage"
   return (
     <Wrapper>
-      <Link href={`/BuildingMenus?id=${props.id}`}>
+      <Link
+        href={`/BuildingMenus?id=${props.id}?month=${props.month}?day=${props.day}?timePeriod=${props.timePeriod}`}
+      >
         <a style={{ textDecoration: "none" }}>
           <BuildingWrapper>
             <BuildingName>{props.name}</BuildingName>
