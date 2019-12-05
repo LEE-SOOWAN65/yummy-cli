@@ -23,13 +23,21 @@ export default function TopDialog(props) {
         }}
       >
         <ButtonWrapper>
-          <LeftIcon />
+          <LeftIcon
+            onClick={() => {
+              props.setDay(day - 1);
+            }}
+          />
 
           <div style={{ fontSize: "13px", color: "#707070", padding: "10px" }}>
             {month}월{day}일
           </div>
 
-          <RightIcon />
+          <RightIcon
+            onClick={() => {
+              props.setDay(day + 1);
+            }}
+          />
         </ButtonWrapper>
       </div>
     </Wrapper>

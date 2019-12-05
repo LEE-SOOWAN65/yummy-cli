@@ -3,17 +3,23 @@ import { useRouter } from "next/router";
 import styled from "styled-components";
 import StarIcon from "../atoms/Icon/BigStar";
 import Graph from "../Molecules/Graph";
-function App() {
+function App(props) {
   const router = useRouter();
   return (
     <Wrapper>
       <BoxWrapper>
         <Average>
           <StarIcon style={{ paddingRight: "0.98rem" }} />
-          <AverageText>4.3</AverageText>
+          <AverageText>{router.query.avg_rating}</AverageText>
         </Average>
 
-        <Graph />
+        <Graph
+          pt5_cont={props.pt5_cnt}
+          pt4_cont={prps.pt4_cnt}
+          pt3_cont={props.pt3_cnt}
+          pt2_cont={props.pt2_cnt}
+          pt1_cont={props.pt1_cnt}
+        />
       </BoxWrapper>
     </Wrapper>
   );

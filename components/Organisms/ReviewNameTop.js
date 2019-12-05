@@ -17,7 +17,7 @@ function BuildingNameTop() {
           <MenuName>{router.query.name}</MenuName>
         </NameWrapper>
         <BuildingWrapper>
-          <ForkIcon style={{ paddingLeft: "" }} />
+          <ForkIcon style={{ paddingRight: "1.2rem" }} />
           <Text>{router.query.buildingName}</Text>
         </BuildingWrapper>
       </IconWrapper>
@@ -42,7 +42,6 @@ const Wrapper = styled.div`
 `;
 
 const MenuName = styled.p`
-  width: 8.6rem;
   height: 2.1rem;
   font-size: 1.8rem;
   text-align: center;
@@ -52,11 +51,10 @@ const MenuName = styled.p`
   font-style: normal;
   line-height: 1.22;
   letter-spacing: normal;
+  padding: 0 2rem;
 `;
 
 const NameWrapper = styled.div`
-  width: 12.6rem;
-
   display: flex;
   height: 3.6rem;
   border-radius: 1.5rem;
@@ -71,11 +69,9 @@ const BuildingWrapper = styled.div`
   flex-direction: row;
   align-items: center;
   overflow: auto;
-  width: 12.6rem;
 `;
 
 const Text = styled.p`
-  width: 5.2rem;
   height: 2.1rem;
   font-size: 1.8rem;
   font-weight: 800;

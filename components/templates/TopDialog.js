@@ -3,12 +3,11 @@ import styled from "styled-components";
 import Periods from "../Molecules/Periods";
 import LeftIcon from "../atoms/Icon/Botton/left";
 import RightIcon from "../atoms/Icon/Botton/right";
-import Link from "next/link";
 import Arrow from "../atoms/Icon/Botton/LeftArrow";
-
+import { useRouter } from "next/router";
 export default function TopDialog(props) {
   const { timePeriod, month, day } = props;
-
+  const router = useRouter();
   return (
     <Wrapper>
       <div
@@ -21,11 +20,9 @@ export default function TopDialog(props) {
           boxSizing: "border-box"
         }}
       >
-        <Link href="/index">
-          <a style={{ textDecoration: "none" }}>
-            <Arrow style={{ paddingleft: "3.8rem" }} />
-          </a>
-        </Link>
+        <a onClick={() => router.back()} style={{ textDecoration: "none" }}>
+          <Arrow />
+        </a>
         <Icon>
           <Periods
             timePeriod={timePeriod}
@@ -43,7 +40,7 @@ export default function TopDialog(props) {
         />
 
         <div style={{ fontSize: "13px", color: "#707070", padding: "10px" }}>
-          {month}월{day}일
+          {router.query.month}월{router.query.day}일
         </div>
 
         <RightIcon

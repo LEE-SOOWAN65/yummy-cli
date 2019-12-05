@@ -10,26 +10,31 @@ export default function TopDialog(props) {
   return (
     <Wrapper>
       <Smile>
+        <Number>{props.pt5_cnt}</Number>
         <Bar />
         <Smile1 />
         <Text>존맛</Text>
       </Smile>
       <Smile>
+        <Number>{props.pt4_cnt}</Number>
         <Bar />
         <Smile2 />
         <Text>굿굿</Text>
       </Smile>
       <Smile>
+        <Number>{props.pt3_cnt}</Number>
         <Bar />
         <Smile3 />
         <Text>쏘쏘</Text>
       </Smile>
       <Smile>
+        <Number>{props.pt2_cnt}</Number>
         <Bar />
         <Smile4 />
         <Text>별로</Text>
       </Smile>
       <Smile>
+        <Number>{props.pt1_cnt}</Number>
         <Bar />
         <Smile5 />
         <Text>우엑</Text>
@@ -65,5 +70,15 @@ const Smile = styled.div`
 const Text = styled.div`
   font-size: 0.8rem;
   text-align: left;
+  color: #000000;
+`;
+const Number = styled.p`
+  font-size: 8px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.13;
+  letter-spacing: normal;
+  text-align: center;
   color: #000000;
 `;
