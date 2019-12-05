@@ -6,23 +6,19 @@ import ForkIcon from "../atoms/Icon/ForkRed";
 function BuildingNameTop(props) {
   return (
     <Wrapper>
-      <ForkIcon />
+      <ForkIcon style={{ paddingRight: "1.2rem" }} />
       <BuildingName>{props.name}</BuildingName>
     </Wrapper>
   );
 }
-const Icon = styled.div`
-  display: flex;
-  flex-direction: Row;
-  align-items: center;
-  overflow: auto;
-  position: "fixed";
-`;
 
 const Wrapper = styled.div`
   display: flex
   flex-direction: row;
   margin:0 auto;
+  align-items: center;
+  overflow: auto;
+  position: "fixed";
 `;
 
 const BuildingName = styled.div`

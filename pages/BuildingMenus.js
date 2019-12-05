@@ -14,8 +14,9 @@ const TIME_TEXT = ["BREAKFAST", "LUNCH", "DINNER"];
 
 function App(props) {
   const router = useRouter();
-  const { month, day, id } = router.query;
+  const { month, id } = router.query;
   const [timePeriod, setTimePeriod] = useState(router.query.timePeriod);
+  const [day, setDay] = useState(new Date().getDate());
 
   const apiUrl =
     process.env.API_HOST +
@@ -31,6 +32,7 @@ function App(props) {
         day={day}
         timePeriod={timePeriod}
         setTimePeriod={setTimePeriod}
+        setDay={setDay}
       />
       {data && (
         <>
