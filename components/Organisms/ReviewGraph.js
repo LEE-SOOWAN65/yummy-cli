@@ -14,11 +14,11 @@ function App(props) {
         </Average>
 
         <Graph
-          pt5_cont={props.pt5_cnt}
-          pt4_cont={prps.pt4_cnt}
-          pt3_cont={props.pt3_cnt}
-          pt2_cont={props.pt2_cnt}
-          pt1_cont={props.pt1_cnt}
+          pt5_cnt={props.pt5_cnt}
+          pt4_cnt={props.pt4_cnt}
+          pt3_cnt={props.pt3_cnt}
+          pt2_cnt={props.pt2_cnt}
+          pt1_cnt={props.pt1_cnt}
         />
       </BoxWrapper>
     </Wrapper>

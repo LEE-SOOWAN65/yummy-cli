@@ -10,7 +10,7 @@ import { useQuery } from "../lib";
 
 //메뉴별 리뷰 페이지(아래 리뷰작성버튼)
 
-function App(p) {
+function App(props) {
   const router = useRouter();
 
   const apiUrl = process.env.API_HOST + `/dish/${router.query.id}/`;
@@ -33,11 +33,11 @@ function App(p) {
       <Wrapper>
         <RedBox />
         <ReviewGraph
-          pt5_cont={data.pt5_cnt}
-          pt4_cont={data.pt4_cnt}
-          pt3_cont={data.pt3_cnt}
-          pt2_cont={data.pt2_cnt}
-          pt1_cont={data.pt1_cnt}
+          pt5_cnt={data.pt5_cnt}
+          pt4_cnt={data.pt4_cnt}
+          pt3_cnt={data.pt3_cnt}
+          pt2_cnt={data.pt2_cnt}
+          pt1_cnt={data.pt1_cnt}
         />
         <Reviews />
         <Link href={`/ReviewWrite?id=${router.query.id}`}>

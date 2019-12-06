@@ -26,6 +26,7 @@ export default function FacilButton(props) {
                   </Text>
                 </MenuList>
               ))}
+            <MoreText>더보기 ></MoreText>
           </BuildingWrapper>
         </a>
       </Link>
@@ -99,4 +100,14 @@ const Average = styled.div`
   letter-spacing: normal;
   text-align: left;
   color: #000000;
+`;
+const MoreText = styled.p`
+  font-size: 0.9rem;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.11;
+  letter-spacing: normal;
+  color: #707070;
+  margin: 0 0.5rem 0.9rem 27rem;
 `;
