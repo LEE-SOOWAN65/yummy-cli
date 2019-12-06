@@ -32,13 +32,17 @@ function App(props) {
     >
       <Wrapper>
         <RedBox />
-        <ReviewGraph
-          pt5_cnt={data.pt5_cnt}
-          pt4_cnt={data.pt4_cnt}
-          pt3_cnt={data.pt3_cnt}
-          pt2_cnt={data.pt2_cnt}
-          pt1_cnt={data.pt1_cnt}
-        />
+        {data && (
+          <>
+            <ReviewGraph
+              pt5_cnt={data.pt5_cnt}
+              pt4_cnt={data.pt4_cnt}
+              pt3_cnt={data.pt3_cnt}
+              pt2_cnt={data.pt2_cnt}
+              pt1_cnt={data.pt1_cnt}
+            />
+          </>
+        )}
         <Reviews />
         <Link href={`/ReviewWrite?id=${router.query.id}`}>
           <a style={{ textDecoration: "none" }}>
