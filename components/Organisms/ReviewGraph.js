@@ -15,7 +15,7 @@ function App(props) {
 
         <Graph
           pt5_cont={props.pt5_cnt}
-          pt4_cont={prps.pt4_cnt}
+          pt4_cont={props.pt4_cnt}
           pt3_cont={props.pt3_cnt}
           pt2_cont={props.pt2_cnt}
           pt1_cont={props.pt1_cnt}
