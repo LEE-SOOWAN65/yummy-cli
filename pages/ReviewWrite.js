@@ -8,6 +8,7 @@ import ReviewText from "../components/Organisms/ReviewText";
 export default function Topbutton(props) {
   const [rating, setRating] = useState(null);
   const [comment, setComment] = useState("");
+  const [nickname, setnickname] = useState("");
 
   return (
     <>
@@ -18,6 +19,8 @@ export default function Topbutton(props) {
         setRating={setRating}
         comment={comment}
         setComment={setComment}
+        nickname={nickname}
+        setnickname={setnickname}
       />
     </>
   );

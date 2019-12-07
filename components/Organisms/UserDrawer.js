@@ -109,7 +109,7 @@ export default function TemporaryDrawer() {
   return (
     <div>
       <Button onClick={toggleDrawer("right", true)}>
-        <DrawerButton paddingTop="2.7rem" />
+        <DrawerButton />
       </Button>
 
       <Drawer
@@ -117,7 +117,7 @@ export default function TemporaryDrawer() {
         open={state.right}
         onClose={toggleDrawer("right", false)}
       >
-        ` `{sideList("right")}
+        {sideList("right")}
       </Drawer>
     </div>
   );
@@ -137,7 +137,7 @@ const LogoWrapper = styled.div`
 `;
 const ListWrapper = styled.div`
   width: 100%;
-  height: 81.2rem;
+  height:100%
   object-fit: contain;
   background-color: #ff6565;
 `;

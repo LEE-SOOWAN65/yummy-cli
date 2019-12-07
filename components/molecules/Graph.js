@@ -7,6 +7,10 @@ import Smile4 from "../atoms/Icon/smile4";
 import Smile5 from "../atoms/Icon/smile5";
 
 export default function TopDialog(props) {
+  {
+    /*const pt5_ratio={props.pt5_cnt}/{{props.pt5_cnt}+{props.pt4_cnt}+{props.pt3_cnt}+{props.pt2_cnt}+{props.pt1_cnt}}*/
+  }
+
   return (
     <Wrapper>
       <Smile>

@@ -1,23 +1,95 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import ReviewBox from "../Molecules/ReviewBox";
+import { useRouter } from "next/router";
 
+import ReviewBox from "../Molecules/ReviewBox";
+import UserIcon from "../atoms/Icon/NickName";
 //메뉴별 리뷰 페이지(아래 리뷰작성버튼)
 
 export default function Topbutton(props) {
-  const { rating, setRating, comment, setComment } = props;
+  const router = useRouter();
+  const {
+    rating,
+    setRating,
+    comment,
+    setComment,
+    nickname,
+    setnickname
+  } = props;
   return (
     <>
       <Wrapper>
         <ReviewBox rating={rating} setRating={setRating} />
-        <textarea
-          value={comment}
-          onChange={e => {
-            setComment(e.target.value);
-          }}
-          placeholder="리뷰를 작성해주세요."
-          style={{ width: "29.7rem", border: "none" }}
-        ></textarea>
+        <TextWrapper>
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "row"
+            }}
+          >
+            <UserIcon style={{ marginRight: "1.58rem" }} />
+            <textarea
+              value={nickname}
+              onChange={e => {
+                setnickname(e.target.value);
+              }}
+              placeholder="닉네임"
+              style={{
+                border: "none",
+                margin: "0.3rem 0 0.67rem",
+                height: "1.5rem",
+                objectFit: "contain",
+                fontFamily: "S-CoreDream-4",
+                fontSize: "1.3rem",
+                fontWeight: "normal",
+                fontStretch: "normal",
+                fontStyle: "normal",
+                lineHeight: "1.23",
+                letterSpacing: "normal",
+                textAlign: "left",
+                color: "#707070"
+              }}
+            ></textarea>
+          </div>
+          <div>
+            <hr style={{ width: "11rem", margin: "0" }} />
+          </div>
+
+          <textarea
+            value={comment}
+            onChange={e => {
+              setComment(e.target.value);
+            }}
+            placeholder="리뷰를 작성해주세요."
+            style={{
+              border: "none",
+              marginTop: "2.9rem",
+              width: "80%",
+              height: "100%",
+              objectFit: "contain",
+              fontFamily: "S-CoreDream-4",
+              fontSize: "1.3rem",
+              fontWeight: "normal",
+              fontStretch: "normal",
+              fontStyle: "normal",
+              lineHeight: "1.23",
+              letterSpacing: "normal",
+              textAlign: "left",
+              color: "#707070"
+            }}
+          ></textarea>
+
+          <div
+            style={{ position: "absolute", bottom: "5.9rem", width: "100%" }}
+          >
+            <div>
+              <hr style={{ width: "27rem", margin: "0" }} />
+            </div>
+            <DetailWrapper>
+              #{router.query.name} #{router.query.buildingName}
+            </DetailWrapper>
+          </div>
+        </TextWrapper>
       </Wrapper>
     </>
   );
@@ -32,4 +104,24 @@ const Wrapper = styled.div`
   width: 33.8rem;
   height: 63.2rem;
   border-radius: 2.1rem;
+`;
+
+const TextWrapper = styled.div`
+  text-algin: left;
+  width: 80%;
+  margin-top: 1.8rem;
+`;
+
+const DetailWrapper = styled.p`
+  height: 1.3rem;
+  object-fit: contain;
+  font-family: S-CoreDream-4;
+  font-size: 1.1rem;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.18;
+  letter-spacing: normal;
+  text-align: left;
+  color: #707070;
 `;

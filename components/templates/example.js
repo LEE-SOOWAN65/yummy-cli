@@ -1,20 +1,19 @@
 import React from "react";
 import styled from "styled-components";
+import StarIcon from "../atoms/Icon/Star";
+import Link from "next/link";
 
-export default function Reviews(props) {
+export default function BuildingDialog(props) {
   return (
-    <>
-      {props.reviews.map((value, index) => (
-        <ReviewBox key={index}>
-          <NameLine>
-            <Time>{value.written_at}</Time>
-            <UserName>{value.nikname}</UserName>
-          </NameLine>
+    <ReviewBox>
+      <NameLine>
+        {" "}
+        <Time>시간</Time>
+        <UserName>아이디</UserName>
+      </NameLine>
 
-          <Comment>{value.comment}</Comment>
-        </ReviewBox>
-      ))}
-    </>
+      <Comment>내용</Comment>
+    </ReviewBox>
   );
 }
 const ReviewBox = styled.div`
@@ -43,6 +42,7 @@ const UserName = styled.p`
 `;
 
 const Time = styled.p`
+  width: 3.1rem;
   height: 1rem;
   object-fit: contain;
   font-family: S-CoreDream-4;
