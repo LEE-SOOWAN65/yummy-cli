@@ -18,7 +18,7 @@ function App(props) {
   const data = useQuery(apiUrl);
 
   useEffect(() => {
-    console.log(data);
+    console.log(res.data);
   }, [data]);
   return (
     <div

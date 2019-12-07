@@ -1,89 +1,167 @@
-import React, { useState, useEffect } from "react";
-import MainTopDialog from "../components/Templates/MainTopDialog";
-import TopButton from "../components/Organisms/TopButton";
-import BuildingDialog from "../components/Templates/BuildingDialog";
+import React from "react";
 import styled from "styled-components";
+import TopButton from "../components/Organisms/TopButton";
 
-// import FacebookLogin from "react-facebook-login";
-// import HomeBottomNav from "../components/templates/HomeBottomNav";
-
-const TIME_PERIOD = [930, 1430, 2000];
-
-function App() {
-  const [month, setMonth] = useState(new Date().getMonth() + 1);
-  const [day, setDay] = useState(new Date().getDate());
-  const [textIndex, setTextIndex] = useState(0);
-  const getCurrentTimePeriod = () => {
-    const nowTime = new Date();
-    const hour = nowTime.getHours();
-    const minute = nowTime.getMinutes();
-
-    for (let i = 0; i < 3; ++i) {
-      if (hour * 100 + minute < TIME_PERIOD[i]) {
-        return i;
-      }
-    }
-    return 0;
-  };
-
-  const getMonthDay = () => {
-    const nowTime = new Date();
-    setMonth(nowTime.getMonth() + 1);
-    setDay(nowTime.getDate());
-  };
-  const [timePeriod, setTimePeriod] = useState(getCurrentTimePeriod());
-
-  // useEffect(() => {
-  //   getMonthDay();
-  // }, []);
-  useEffect(() => {
-    setTextIndex(day % 13);
-  }, [day]);
-  useEffect(() => {
-    console.log(month, day);
-  }, [month, day]);
+import Logo from "../components/atoms/Icon/BigLogo";
+import Speaker from "../components/atoms/Icon/TitleSpeaker";
+import Beta from "../components/atoms/Icon/Beta";
+import Link from "next/link";
+function FirstPage() {
   return (
-    <>
+    <Wrapper>
+      <TopButton />
       <div
-        className="App"
         style={{
-          display: "flex",
-          overflowY: "hidden",
+          backgroundImage: "url(/BackgroundImage.png)",
           width: "100%",
-          height: "100%"
+          height: "100%",
+          backgroundSize: "100%",
+          display: "flex",
+          flexDirection: "column"
         }}
       >
-        {/* <FacebookLogin
-        appId="1425008167650893"
-        autoLoad={true}
-        fields="name,email,picture"
-        callback={response => {
-          console.log(response);
-        }}
-      /> */}
-        <Wrapper>
-          <TopButton />
-          <MainTopDialog
-            month={month}
-            day={day}
-            timePeriod={timePeriod}
-            textIndex={textIndex}
-            setTimePeriod={tp => setTimePeriod(tp)}
-            setDay={day => setDay(day)}
-          />
-          <BuildingDialog month={month} day={day} timePeriod={timePeriod} />
-        </Wrapper>
+        <Arrary>
+          <Logo style={{ marginTop: "9.9rem", marginLeft: " 22rem" }} />
+          <Beta style={{ paddingLeft: "31rem" }} />
+          <Name>끼니끼니</Name>
+          <Intro>
+            매일매일 학식 메뉴부터 <br />
+            리뷰까지 한번에!
+          </Intro>
+        </Arrary>
+
+        <BoxWrapper>
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "row",
+              alignItems: "center"
+            }}
+          >
+            <Speaker style={{ paddingRight: "1.46rem" }} />
+            <Title>베타서비스 오픈</Title>
+          </div>
+          <Context>
+            베타서비스 중에는 가입/로그인 없이
+            <br />
+            서비스이용이 가능합니다.
+          </Context>
+        </BoxWrapper>
+
+        <Link href="/BuildingList">
+          <a style={{ textDecoration: "none" }}>
+            <Button>
+              <Text>학교 선택하고 학식 바로 확인!</Text>
+            </Button>
+          </a>
+        </Link>
       </div>
-    </>
+    </Wrapper>
   );
 }
-// const Background = styled.header`
-//   text-align: center;
-// `;
 
 const Wrapper = styled.div`
+  display: flex
+  flex-direction: column;
   width: 100%;
-  background-color: #ffffff;
+  hight:100%
+  
 `;
 
-export default App;
+const Arrary = styled.div`
+  display: flex
+  flex-direction: column;
+  text-align:right;
+  maring-right:3.6rem 
+`;
+const Name = styled.p`
+  font-size: 4.8rem;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.21;
+  letter-spacing: normal;
+  text-align: right;
+  color: #ffffff;
+  margin: 0;
+  padding-right: 3.6rem;
+  margin-bottom: 1.2rem;
+`;
+const Intro = styled.p`
+  height: 5.1rem;
+  object-fit: contain;
+  font-size: 1.8rem;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.67;
+  letter-spacing: normal;
+  text-align: right;
+  color: #ffffff;
+  padding-right: 3.6rem;
+  margin-top: 0;
+  margin-bottom: 15.2rem;
+`;
+const BoxWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 12.7rem;
+  opacity: 0.8;
+  box-shadow: 0 0.3rem 0.6rem 0 rgba(255, 101, 101, 0.44);
+  border: solid 0.1rem #707070;
+  background-color: #f5f5f5;
+  margin-bottom: 2.5rem;
+`;
+const Title = styled.p`
+  object-fit: contain;
+  font-size: 1.7rem;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.18;
+  letter-spacing: normal;
+  text-align: center;
+  color: #ff6565;
+`;
+const Context = styled.p`
+  object-fit: contain;
+  font-size: 1.4rem;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.71;
+  letter-spacing: normal;
+  text-align: center;
+  color: #707070;
+  margin-top: 1rem;
+`;
+
+const Button = styled.div`
+  display: flex;
+  align-items: center;
+  width: 27.5rem;
+  object-fit: contain;
+  opacity: 1;
+  border-radius: 5.9rem;
+  box-shadow: 0 1rem 1rem 0 rgba(88, 29, 29, 0.8);
+  background-color: #e54b4b;
+  margin: 0 auto 3rem;
+`;
+
+const Text = styled.p`
+display:flex;
+  width: 19.5rem;
+  height: 1.8rem;
+  font-size: 1.5rem;
+  font-weight: 800;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.27;
+  letter-spacing: normal
+  text-align: center;
+  color: #ffffff;
+  margin:1.4rem auto;
+`;
+
+export default FirstPage;

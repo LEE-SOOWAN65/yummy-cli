@@ -15,6 +15,7 @@ import LoginIcon from "../atoms/Icon/Botton/Login";
 import DrawerButton from "../atoms/Icon/Botton/DrawerButton";
 import DrawerLogo from "../atoms/Icon/DrawerLogo";
 import styled from "styled-components";
+import FaceBook from "../atoms/Icon/Botton/facebooklogin";
 import Link from "next/link";
 
 const useStyles = makeStyles({
@@ -54,12 +55,11 @@ export default function TemporaryDrawer() {
       onKeyDown={toggleDrawer(side, false)}
     >
       <ListWrapper>
-        <DrawerBox position={{ position: "absolute", top: "0" }}>
-          <LogoWrapper>
-            <DrawerLogo
-              style={{ paddingLeft: "2.47rem", paddingTop: "8.96rem" }}
-            />
-          </LogoWrapper>
+        <DrawerBox>
+          <DrawerLogo
+            style={{ paddingLeft: "2.47rem", paddingTop: "8.96rem" }}
+          />
+          <FaceBook />
         </DrawerBox>
         <Divider />
         <List>
@@ -74,9 +74,7 @@ export default function TemporaryDrawer() {
                 <ListItemIcon>
                   {index % 4 === 0 && <SpeakerIcon />}
                   {index % 4 === 1 && <Setting />}
-                  <Link href="https://open.kakao.com/o/ss85X3Mb">
-                    <a>{index % 4 === 2 && <QuestionIcon />}</a>
-                  </Link>
+                  {index % 4 === 2 && <QuestionIcon />}
                   {index % 4 === 3 && <HomeIcon />}
                 </ListItemIcon>
                 <DrawerItemText primary={text} />
@@ -130,6 +128,8 @@ const DrawerBox = styled.div`
   height: 30.2rem;
   object-fit: contain;
   background-color: #efefef;
+  display: flex;
+  flex-direction: row;
 `;
 const LogoWrapper = styled.div`
   display: flex;
@@ -143,12 +143,13 @@ const ListWrapper = styled.div`
 `;
 
 const DrawerItemText = styled(ListItemText)`
+  object-fit: contain;
+  font-family: S-CoreDream-6;
   font-size: 1.3rem;
   font-weight: bold;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.46;
   letter-spacing: normal;
-  text-align: left;
-  color: #ffffff;
+  color: #f5f5f5;
 `;
