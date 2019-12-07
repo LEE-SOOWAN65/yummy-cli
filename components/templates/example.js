@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import StarIcon from "../atoms/Icon/Star";
 import Link from "next/link";
 
 export default function BuildingDialog(props) {
