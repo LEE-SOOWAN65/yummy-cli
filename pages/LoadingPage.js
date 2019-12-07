@@ -6,54 +6,65 @@ export default function BuildingDialog(props) {
   return (
     <Wrapper>
       <LogoWrapper>
-        <Logo />
+        <Logo style={{ margin: "0 auto" }} />
         <Text>끼니끼니</Text>
       </LogoWrapper>
       <LoadingBox>
-        <TextLoad>Loading...</TextLoad>
+        <TextLoad>열심히 로딩중입니다~~</TextLoad>
       </LoadingBox>
     </Wrapper>
   );
 }
 const Wrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 81.2rem;
+  height: 61.1rem;
+  object-fit: contain;
+  border-radius: 2.2rem;
+  box-shadow: 0 0.5rem 1rem 0 rgba(229, 75, 75, 0.3);
   background-color: #e54b4b;
+  display:flex;
+  align-items:center
+  text-align:center
+  flex-direction:column;
 `;
 const Text = styled.p`
-  font-size: 3.4rem;
+  object-fit: contain;
+  font-family: HSSummer;
+  font-size: 3.5rem;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.2;
+  letter-spacing: normal;
   text-align: left;
   color: #ffffff;
+  margin-bottom: 0;
 `;
 
 const LogoWrapper = styled.div`
+  margin: auto auto;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin-top: 1.46rem 0 17.3rem;
-  /
 `;
 
 const LoadingBox = styled.div`
-  width: 19.6rem;
-  height: 5.7rem;
+  width: 23.7rem;
+  height: 5rem;
   object-fit: contain;
   opacity: 0.15;
   border-radius: 5.9rem;
   box-shadow: 0 1rem 1rem 0 rgba(88, 29, 29, 0.75);
   background-color: #ffffff;
+  margin-bottom: 9.6rem;
 `;
 const TextLoad = styled.p`
-  font-size: 2rem;
+  object-fit: contain;
+  font-family: S-CoreDream-6;
+  font-size: 1.7rem;
+  font-weight: bold;
+  font-stretch: normal;
   font-style: normal;
-  line-height: 1.2;
+  line-height: 1.18;
   letter-spacing: normal;
   text-align: center;
-  color: #ffffff;
-  text-align: left;
+  color: #000000;
 `;

@@ -77,6 +77,7 @@ const Arrary = styled.div`
 const Name = styled.p`
   font-size: 4.8rem;
   font-weight: normal;
+  font-family: HSSummer;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.21;
@@ -100,7 +101,7 @@ const Intro = styled.p`
   color: #ffffff;
   padding-right: 3.6rem;
   margin-top: 0;
-  margin-bottom: 15.2rem;
+  margin-bottom: 14.7rem;
 `;
 const BoxWrapper = styled.div`
   display: flex;
@@ -146,7 +147,7 @@ const Button = styled.div`
   border-radius: 5.9rem;
   box-shadow: 0 1rem 1rem 0 rgba(88, 29, 29, 0.8);
   background-color: #e54b4b;
-  margin: 0 auto 3rem;
+  margin: 0 auto 3.5rem;
 `;
 
 const Text = styled.p`

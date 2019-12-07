@@ -17,9 +17,6 @@ function App(props) {
 
   const data = useQuery(apiUrl);
 
-  useEffect(() => {
-    console.log(res.data);
-  }, [data]);
   return (
     <div
       className="App"
@@ -43,8 +40,10 @@ function App(props) {
             />
           </>
         )}
-        <Reviews />
-        <Link href={`/ReviewWrite?id=${router.query.id}`}>
+        <Reviews reviews={data.reviews} />
+        <Link
+          href={`/ReviewWrite?id=${router.query.id}&name=${router.query.name}&buildingName=${router.query.buildingName}`}
+        >
           <a style={{ textDecoration: "none" }}>
             <Nav position={{ position: "absolute", bottom: 0 }} />
           </a>

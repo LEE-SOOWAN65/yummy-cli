@@ -5,6 +5,7 @@ import Smile2 from "../atoms/Icon/Bigsmile2";
 import Smile3 from "../atoms/Icon/Bigsmile3";
 import Smile4 from "../atoms/Icon/Bigsmile4";
 import Smile5 from "../atoms/Icon/Bigsmile5";
+import { useRouter } from "next/router";
 
 //메뉴별 리뷰 페이지(아래 리뷰작성버튼)
 
@@ -33,22 +34,25 @@ const BUTTON_DATA = [
 
 export default function Topbutton(props) {
   const { rating, setRating } = props;
+  const [selected, setSelected] = useState(false);
+  const router = useRouter();
   return (
     <>
       <TextWrapper>
         <Text>
-          <MenuName>카레돈까스</MenuName>
-          <BuildingName>생활관식당</BuildingName>
+          <MenuName>{router.query.name}</MenuName>
+          <BuildingName>{router.query.buildingName}</BuildingName>
         </Text>
         <SmileIcons>
           {BUTTON_DATA.map((value, index) => (
             <Smile
               key={index}
               onClick={() => {
+                setSelected(prev => !prev);
                 setRating(5 - index);
               }}
             >
-              <IconWrapper selected={rating === 5 - index}>
+              <IconWrapper selected={rating === 5 - index} id={index}>
                 <value.icon selected={rating === 5 - index} />
               </IconWrapper>
               <Smilename>{value.text}</Smilename>
@@ -60,22 +64,38 @@ export default function Topbutton(props) {
   );
 }
 
+const colorHandler = id => {
+  switch (id) {
+    case 0:
+      return `linear-gradient(to top, #eb8242 99%, #da2f2e 22%, #da2d2d 0%)`;
+    case 1:
+      return `linear-gradient(to top, #ffca67 100%, #ffca67 100%, #ffca67 100%)`;
+    case 2:
+      return `linear-gradient(to top, #ffca67 100%, #ffb655 80%, #ff3e31 0%)`;
+    case 3:
+      return `linear-gradient(to top, #ff9c55 100%, #ff3e31 20%, #9a021f 0%)`;
+    case 4:
+      return `linear-gradient(to top, #ff9c55, #ff3e31 70%, #c6021f 0%)`;
+    default:
+  }
+};
+
 const IconWrapper = styled.div`
   width: fit-content;
-  height: fit-content;
+  height: 3.1121rem;
+
   border-radius: 0.3rem;
   ${props => css`
     ${props.selected &&
       `
-  background-image: linear-gradient(to top, #eb8242 99%, #da2f2e 22%, #da2d2d 0%)
-  `}
+  background-image: ${colorHandler(props.id)}
+    `}
   `}
 `;
 
 const Text = styled.div`
   display: flex;
   flex-direction: column;
-  margin-bottom: 2.7rem;
 `;
 const SmileIcons = styled.div`
   display: flex;
@@ -95,16 +115,30 @@ const TextWrapper = styled.div`
   box-sizing: border-box;
 `;
 
-const MenuName = styled.div`
-  font-size: 1.6rem;
+const MenuName = styled.p`
+  padding-bottom: 1rem;
+  height: 2.2rem;
+  object-fit: contain;
+  font-size: 1.9rem;
   font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.21;
+  letter-spacing: normal;
   text-align: left;
   color: #000000;
-  padding-bottom: 1rem;
+  margin: 0;
 `;
 
-const BuildingName = styled.div`
+const BuildingName = styled.p`
+  height: 1.7rem;
+  object-fit: contain;
   font-size: 1.4rem;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.29;
+  letter-spacing: normal;
   text-align: left;
   color: #000000;
 `;
