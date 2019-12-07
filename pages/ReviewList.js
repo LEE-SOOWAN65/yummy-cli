@@ -17,14 +17,6 @@ function App(props) {
 
   const data = useQuery(apiUrl);
 
-  let review_set;
-
-  try {
-    review_set = <Reviews reviews={data.reviews} />;
-  }
-  catch (e){
-    review_set = <p>리뷰가 아직 없어요ㅠㅠ</p>;
-  }
   return (
     <div
       className="App"
@@ -48,7 +40,7 @@ function App(props) {
             />
           </>
         )}
-        {review_set}
+        {data && data.reviews ? ( <Reviews reviews={data.reviews} /> ) : ( <p>아직 리뷰가 없어요 ㅠㅠ</p> )}
         <Link
           href={`/ReviewWrite?id=${router.query.id}&name=${router.query.name}&buildingName=${router.query.buildingName}`}
         >
