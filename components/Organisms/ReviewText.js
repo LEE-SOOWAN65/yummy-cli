@@ -77,7 +77,7 @@ export default function Topbutton(props) {
               textAlign: "left",
               color: "#707070"
             }}
-          ></textarea>
+          />
 
           <div
             style={{ position: "absolute", bottom: "5.9rem", width: "100%" }}

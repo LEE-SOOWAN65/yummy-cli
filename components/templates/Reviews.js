@@ -22,6 +22,7 @@ const ReviewBox = styled.div`
   object-fit: contain;
   border-radius: 1.2px;
   background-color: #f5f5f5;
+  overflow: hidden;
 `;
 const NameLine = styled.div`
   display: flex;

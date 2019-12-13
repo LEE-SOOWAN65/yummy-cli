@@ -40,7 +40,7 @@ export default function TopDialog(props) {
         />
 
         <div style={{ fontSize: "13px", color: "#707070", padding: "10px" }}>
-          {router.query.month}월{router.query.day}일
+          {month}월{day}일
         </div>
 
         <RightIcon
@@ -58,7 +58,6 @@ const Wrapper = styled.div`
   flex-direction: column;
   align-items: center;
   overflow: auto;
-  position: "fixed";
   width: 100%;
 `;
 
@@ -68,7 +67,6 @@ const Icon = styled.div`
   align-items: center;
   flex-wrap: nowrap;
   overflow: auto;
-  position: "fixed";
 `;
 
 const ButtonWrapper = styled.div`

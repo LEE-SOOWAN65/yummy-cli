@@ -88,7 +88,7 @@ const IconWrapper = styled.div`
   ${props => css`
     ${props.selected &&
       `
-  background-image: ${colorHandler(props.id)}
+  background: ${colorHandler(props.id)}
     `}
   `}
 `;

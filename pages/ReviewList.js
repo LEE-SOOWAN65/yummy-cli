@@ -19,45 +19,44 @@ function App(props) {
 
   let review_set;
 
-  try {
+  if (data && data.reviews) {
+    console.log(data.reviews.length);
     review_set = <Reviews reviews={data.reviews} />;
+  } else {
+    review_set = <p>아직 리뷰가 없어요 ㅠㅠ</p>;
   }
-  catch (e){
-    review_set = <p>리뷰가 아직 없어요ㅠㅠ</p>;
-  }
+
   return (
-    <div
-      className="App"
-      style={{
-        display: "flex",
-        overflowY: "hidden",
-        width: "100%",
-        height: "100%"
-      }}
-    >
-      <Wrapper>
-        <RedBox />
-        {data && (
-          <>
-            <ReviewGraph
-              pt5_cnt={data.pt5_cnt}
-              pt4_cnt={data.pt4_cnt}
-              pt3_cnt={data.pt3_cnt}
-              pt2_cnt={data.pt2_cnt}
-              pt1_cnt={data.pt1_cnt}
-            />
-          </>
-        )}
-        {review_set}
-        <Link
-          href={`/ReviewWrite?id=${router.query.id}&name=${router.query.name}&buildingName=${router.query.buildingName}`}
-        >
-          <a style={{ textDecoration: "none" }}>
-            <Nav position={{ position: "absolute", bottom: 0 }} />
-          </a>
-        </Link>
-      </Wrapper>
-    </div>
+    <Wrapper>
+      <div
+        style={{
+          height: "43rem"
+        }}
+      >
+        <TopWrapper>
+          <RedBox />
+          {data && (
+            <>
+              <ReviewGraph
+                pt5_cnt={data.pt5_cnt}
+                pt4_cnt={data.pt4_cnt}
+                pt3_cnt={data.pt3_cnt}
+                pt2_cnt={data.pt2_cnt}
+                pt1_cnt={data.pt1_cnt}
+              />
+            </>
+          )}
+        </TopWrapper>
+      </div>
+      <div style={{ marginBottom: "5rem" }}>{review_set}</div>
+      <Link
+        href={`/ReviewWrite?id=${router.query.id}&name=${router.query.name}&buildingName=${router.query.buildingName}`}
+      >
+        <a style={{ textDecoration: "none" }}>
+          <Nav style={{ position: "fixed", bottom: 0 }} />
+        </a>
+      </Link>
+    </Wrapper>
   );
 }
 
@@ -66,6 +65,12 @@ const Wrapper = styled.div`
   background-color: #ffffff;
   display: flex;
   flex-direction: column;
+`;
+const TopWrapper = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
 `;
 
 export default App;

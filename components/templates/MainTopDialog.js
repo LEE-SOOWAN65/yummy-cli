@@ -66,7 +66,7 @@ const Wrapper = styled.div`
   flex-direction: column;
   align-items: center;
   overflow: auto;
-  position: "fixed";
+
   width: 100%;
 `;
 
@@ -83,7 +83,6 @@ const Icon = styled.div`
   align-items: center;
   flex-wrap: nowrap;
   overflow: auto;
-  position: "fixed";
 `;
 
 const ButtonWrapper = styled.div`

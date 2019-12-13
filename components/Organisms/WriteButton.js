@@ -43,23 +43,23 @@ export default function Topbutton(props) {
       <div style={{ flex: 2 }} />
       <a onClick={handleSubmit} style={{ textDecoration: "none", flex: 0.7 }}>
         <Text onClick={handleOpen}>등록</Text>
-        <Modal
-          aria-labelledby="simple-modal-title"
-          aria-describedby="simple-modal-description"
-          open={open}
-          onClose={handleClose}
-        >
-          <PopWrapper>
-            <h2 id="simple-modal-title">Text in a modal</h2>
-            <p id="simple-modal-description">
-              Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
-            </p>
-            <div type="button" onClick={handleClose}>
-              close Modal
-            </div>
-          </PopWrapper>
-        </Modal>
       </a>
+      <Modal
+        aria-labelledby="simple-modal-title"
+        aria-describedby="simple-modal-description"
+        open={open}
+        onClose={handleClose}
+      >
+        <PopWrapper>
+          <h2 id="simple-modal-title">Text in a modal</h2>
+          <p id="simple-modal-description">
+            Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
+          </p>
+          <div type="button" onClick={handleClose}>
+            close Modal
+          </div>
+        </PopWrapper>
+      </Modal>
     </Wrapper>
   );
 }

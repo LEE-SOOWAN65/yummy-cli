@@ -15,7 +15,7 @@ import LoginIcon from "../atoms/Icon/Botton/Login";
 import DrawerButton from "../atoms/Icon/Botton/DrawerButton";
 import DrawerLogo from "../atoms/Icon/DrawerLogo";
 import styled from "styled-components";
-import FaceBook from "../atoms/Icon/Botton/facebooklogin";
+import FaceBook from "../atoms/Icon/Botton/FacebookloginIcon";
 import Link from "next/link";
 
 const useStyles = makeStyles({
@@ -56,10 +56,22 @@ export default function TemporaryDrawer() {
     >
       <ListWrapper>
         <DrawerBox>
-          <DrawerLogo
-            style={{ paddingLeft: "2.47rem", paddingTop: "8.96rem" }}
-          />
-          <FaceBook />
+          <Logo>
+            <DrawerLogo
+              style={{
+                padding: "8.96rem 1.13rem 0 2.47rem"
+              }}
+            />
+
+            <FaceBook style={{ width: "15.31rem", margin: "0rem" }} />
+            <FaceBook
+              style={{
+                width: "15.31rem",
+                margin: "1.12rem 1.59rem 4.28rem 7rem"
+              }}
+            />
+            <hr style={{ width: "23rem", borderTop: "0.1rem solid #707070" }} />
+          </Logo>
         </DrawerBox>
         <Divider />
         <List>
@@ -140,6 +152,12 @@ const ListWrapper = styled.div`
   height:100%
   object-fit: contain;
   background-color: #ff6565;
+`;
+
+const Logo = styled.div`
+  position: flex;
+  flex-direction: row;
+  width: 100%;
 `;
 
 const DrawerItemText = styled(ListItemText)`
