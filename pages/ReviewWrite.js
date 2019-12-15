@@ -1,5 +1,7 @@
 import React, { useState } from "react";
-import TopButton from "../components/Organisms/TopButton";
+import styled from "styled-components";
+
+import TopButton from "../components/Organisms/TopButtonwhite";
 import WriteButton from "../components/Organisms/WriteButton";
 import ReviewText from "../components/Organisms/ReviewText";
 
@@ -11,9 +13,11 @@ export default function Topbutton(props) {
   const [nickname, setnickname] = useState("");
 
   return (
-    <>
-      <TopButton />
-      <WriteButton rating={rating} comment={comment} nickname={nickname} />
+    <Wrapper>
+      <TopWrapper>
+        <TopButton />
+        <WriteButton rating={rating} comment={comment} nickname={nickname} />
+      </TopWrapper>
       <ReviewText
         rating={rating}
         setRating={setRating}
@@ -26,6 +30,22 @@ export default function Topbutton(props) {
           setnickname(nick);
         }}
       />
-    </>
+    </Wrapper>
   );
 }
+
+const Wrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+`;
+
+const TopWrapper = styled.div`
+  height: 24rem;
+  background-color: #e54b4b;
+  display: flex;
+  position: fixed;
+  width: 100%;
+  max-width: 36rem;
+`;

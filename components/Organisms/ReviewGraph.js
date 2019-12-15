@@ -38,7 +38,7 @@ const Wrapper = styled.div`
 `;
 
 const BoxWrapper = styled.div`
-  width: 33.8rem;
+  width: 32rem;
   height: 15rem;
   object-fit: contain;
   border-radius: 1.6rem;
@@ -46,10 +46,12 @@ const BoxWrapper = styled.div`
   background-color: #ffffff;
   display: flex;
   flex-direction: row;
+  align-items: center;
+  text-align: center;
 `;
 
 const AverageText = styled.div`
-  font-size: 1.8rem;
+  font-size: 2.2rem;
   text-align: left;
   color: #000000;
 `;
@@ -58,10 +60,9 @@ const Average = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
-  padding-left: 1.91rem;
-  padding-top: 2.37rem;
-  height: 2.21rem;
-  padding-right: 5.5rem;
+  padding-left: 2rem;
+  height: 5rem;
+  padding-right: 5rem;
 `;
 
 export default App;

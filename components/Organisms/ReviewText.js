@@ -51,9 +51,7 @@ export default function Topbutton(props) {
               }}
             ></textarea>
           </div>
-          <div>
-            <hr style={{ width: "11rem", margin: "0" }} />
-          </div>
+          <hr style={{ width: "11rem", margin: "0" }} />
 
           <textarea
             value={comment}
@@ -64,16 +62,12 @@ export default function Topbutton(props) {
             style={{
               border: "none",
               marginTop: "2.9rem",
-              width: "80%",
-              height: "100%",
+              width: "95%",
+              height: "25rem",
               objectFit: "contain",
               fontFamily: "S-CoreDream-4",
               fontSize: "1.3rem",
-              fontWeight: "normal",
-              fontStretch: "normal",
-              fontStyle: "normal",
               lineHeight: "1.23",
-              letterSpacing: "normal",
               textAlign: "left",
               color: "#707070"
             }}
@@ -97,19 +91,20 @@ export default function Topbutton(props) {
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: center;
   box-shadow: 0 0.5rem 2rem 0 rgba(229, 75, 75, 0.3);
   background-color: #ffffff;
-  margin: 0 auto;
   width: 33.8rem;
   height: 63.2rem;
   border-radius: 2.1rem;
+  position: fixed;
+  top: 15.5rem;
 `;
 
 const TextWrapper = styled.div`
   text-algin: left;
   width: 80%;
   margin-top: 1.8rem;
+  padding: 0 2.9rem 0;
 `;
 
 const DetailWrapper = styled.p`
@@ -117,11 +112,7 @@ const DetailWrapper = styled.p`
   object-fit: contain;
   font-family: S-CoreDream-4;
   font-size: 1.1rem;
-  font-weight: normal;
-  font-stretch: normal;
-  font-style: normal;
   line-height: 1.18;
-  letter-spacing: normal;
   text-align: left;
   color: #707070;
 `;

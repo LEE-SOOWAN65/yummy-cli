@@ -78,8 +78,10 @@ const Wrapper = styled.div`
   padding-left: 2.41rem;
   padding-right: 2.19;
   align-items: center;
-  width:100%
-  padding-bottom: 1.8rem;
+  width: 100%;
+  max-width: 36rem;
+  position: fixed;
+  top: 9rem;
 `;
 
 const Text = styled.div`
@@ -87,7 +89,7 @@ const Text = styled.div`
   font-style: normal;
   letter-spacing: normal;
   text-align: left;
-  color: #707070;
+  color: #ffffff;
 `;
 
 const PopWrapper = styled.div`

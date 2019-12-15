@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { stringifyPassedTime } from "../Molecules/TimePass";
 
 export default function Reviews(props) {
   return (
@@ -8,30 +9,32 @@ export default function Reviews(props) {
       {props.reviews.map((value, index) => (
         <ReviewBox key={index}>
           <NameLine>
-            <Time>{value.written_at}</Time>
             <UserName>{value.nickname}</UserName>
+            <Time>{stringifyPassedTime(value.timestamp)}</Time>
           </NameLine>
-
           <Comment>{value.comment}</Comment>
         </ReviewBox>
       ))}
-      <div style={{ height: "10rem" }} />
+      <div style={{ height: "5rem" }} />
     </>
   );
 }
 const ReviewBox = styled.div`
   width: 32.77rem;
   object-fit: contain;
-  border-radius: 1.2px;
+  border-radius: 1.2rem;
   background-color: #f5f5f5;
   overflow: hidden;
   display: flex;
-  height: 10rem;
+  margin-bottom: 1.6rem;
+  flex-direction: column;
 `;
+
 const NameLine = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
+  margin: 0 0 0 3rem;
 `;
 
 const UserName = styled.p`
@@ -39,26 +42,19 @@ const UserName = styled.p`
   font-family: S-CoreDream-6;
   font-size: 1.1rem;
   font-weight: bold;
-  font-stretch: normal;
-  font-style: normal;
   line-height: 1;
-  letter-spacing: normal;
   text-align: left;
   color: #000000;
 `;
 
 const Time = styled.p`
-  height: 1rem;
   object-fit: contain;
   font-family: S-CoreDream-4;
   font-size: 0.9rem;
-  font-weight: normal;
-  font-stretch: normal;
-  font-style: normal;
   line-height: 2.11;
-  letter-spacing: normal;
-  text-align: left;
+  text-align: right;
   color: #000000;
+  margin: 0;
 `;
 
 const Comment = styled.p`
@@ -66,11 +62,8 @@ const Comment = styled.p`
   object-fit: contain;
   font-family: S-CoreDream-4;
   font-size: 1.1rem;
-  font-weight: normal;
-  font-stretch: normal;
-  font-style: normal;
   line-height: 1.55;
-  letter-spacing: normal;
   text-align: left;
   color: #000000;
+  margin: 0 0 1rem 3rem;
 `;
