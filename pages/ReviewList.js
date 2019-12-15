@@ -76,6 +76,8 @@ const Wrapper = styled.div`
   background-color: #ffffff;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  text-align: center;
 `;
 
 const NoReviewText = styled.p`
