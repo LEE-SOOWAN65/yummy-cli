@@ -17,46 +17,43 @@ function App(props) {
 
   const data = useQuery(apiUrl);
 
-  let review_set;
-
-  if (data && data.reviews) {
-    console.log(data.reviews.length);
-    review_set = <Reviews reviews={data.reviews} />;
-  } else {
-    review_set = <p>아직 리뷰가 없어요 ㅠㅠ</p>;
-  }
-
   return (
-    <Wrapper>
-      <div
-        style={{
-          height: "43rem"
-        }}
-      >
-        <TopWrapper>
-          <RedBox />
-          {data && (
-            <>
-              <ReviewGraph
-                pt5_cnt={data.pt5_cnt}
-                pt4_cnt={data.pt4_cnt}
-                pt3_cnt={data.pt3_cnt}
-                pt2_cnt={data.pt2_cnt}
-                pt1_cnt={data.pt1_cnt}
-              />
-            </>
-          )}
-        </TopWrapper>
-      </div>
-      <div style={{ marginBottom: "5rem" }}>{review_set}</div>
-      <Link
-        href={`/ReviewWrite?id=${router.query.id}&name=${router.query.name}&buildingName=${router.query.buildingName}`}
-      >
-        <a style={{ textDecoration: "none" }}>
-          <Nav style={{ position: "fixed", bottom: 0 }} />
-        </a>
-      </Link>
-    </Wrapper>
+    <div
+      className="App"
+      style={{
+        display: "flex",
+        overflowY: "hidden",
+        width: "100%",
+        height: "100%"
+      }}
+    >
+      <Wrapper>
+        <RedBox />
+        {data && (
+          <>
+            <ReviewGraph
+              pt5_cnt={data.pt5_cnt}
+              pt4_cnt={data.pt4_cnt}
+              pt3_cnt={data.pt3_cnt}
+              pt2_cnt={data.pt2_cnt}
+              pt1_cnt={data.pt1_cnt}
+            />
+          </>
+        )}
+        {data && data.reviews ? (
+          <Reviews reviews={data.reviews} />
+        ) : (
+          <p>아직 리뷰가 없어요 ㅠㅠ</p>
+        )}
+        <Link
+          href={`/ReviewWrite?id=${router.query.id}&name=${router.query.name}&buildingName=${router.query.buildingName}`}
+        >
+          <a style={{ textDecoration: "none" }}>
+            <Nav position={{ position: "absolute", bottom: 0 }} />
+          </a>
+        </Link>
+      </Wrapper>
+    </div>
   );
 }
 
