@@ -9,9 +9,7 @@ export default function BuildingDialog(props) {
         <Logo style={{ margin: "0 auto" }} />
         <Text>끼니끼니</Text>
       </LogoWrapper>
-      <LoadingBox>
-        <TextLoad>열심히 로딩중입니다~~</TextLoad>
-      </LoadingBox>
+      <TextLoad>열심히 로딩중입니다~~</TextLoad>
     </Wrapper>
   );
 }
@@ -46,7 +44,7 @@ const LogoWrapper = styled.div`
   flex-direction: column;
 `;
 
-const LoadingBox = styled.div`
+const TextLoad = styled.p`
   width: 23.7rem;
   height: 5rem;
   object-fit: contain;
@@ -54,17 +52,10 @@ const LoadingBox = styled.div`
   border-radius: 5.9rem;
   box-shadow: 0 1rem 1rem 0 rgba(88, 29, 29, 0.75);
   background-color: #ffffff;
-  margin-bottom: 9.6rem;
-`;
-const TextLoad = styled.p`
   object-fit: contain;
   font-family: S-CoreDream-6;
-  font-size: 1.7rem;
+  font-size: 17px;
   font-weight: bold;
-  font-stretch: normal;
-  font-style: normal;
   line-height: 1.18;
-  letter-spacing: normal;
-  text-align: center;
   color: #000000;
 `;

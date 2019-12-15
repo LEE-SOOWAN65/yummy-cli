@@ -10,8 +10,7 @@ export default function bottom(props) {
       style={{
         display: "flex",
         justifyContent: "center",
-        position: "absolute",
-        bottom: 0
+        ...props.style
       }}
     >
       <PenIcon style={{ paddingRight: "1.25rem" }} />

@@ -40,7 +40,11 @@ function App(props) {
             />
           </>
         )}
-        {data && data.reviews ? ( <Reviews reviews={data.reviews} /> ) : ( <p>아직 리뷰가 없어요 ㅠㅠ</p> )}
+        {data && data.reviews ? (
+          <Reviews reviews={data.reviews} />
+        ) : (
+          <p>아직 리뷰가 없어요 ㅠㅠ</p>
+        )}
         <Link
           href={`/ReviewWrite?id=${router.query.id}&name=${router.query.name}&buildingName=${router.query.buildingName}`}
         >
@@ -58,6 +62,12 @@ const Wrapper = styled.div`
   background-color: #ffffff;
   display: flex;
   flex-direction: column;
+`;
+const TopWrapper = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
 `;
 
 export default App;

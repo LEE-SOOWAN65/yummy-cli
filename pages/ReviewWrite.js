@@ -18,9 +18,13 @@ export default function Topbutton(props) {
         rating={rating}
         setRating={setRating}
         comment={comment}
-        setComment={setComment}
+        setComment={com => {
+          setComment(com);
+        }}
         nickname={nickname}
-        setnickname={setnickname}
+        setnickname={nick => {
+          setnickname(nick);
+        }}
       />
     </>
   );

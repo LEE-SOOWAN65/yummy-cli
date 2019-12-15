@@ -123,6 +123,7 @@ const Title = styled.p`
   line-height: 1.18;
   letter-spacing: normal;
   text-align: center;
+  font-family: S-CoreDream-6;
   color: #ff6565;
 `;
 const Context = styled.p`
@@ -136,6 +137,7 @@ const Context = styled.p`
   text-align: center;
   color: #707070;
   margin-top: 1rem;
+  font-family: S-CoreDream-6;
 `;
 
 const Button = styled.div`
@@ -151,18 +153,17 @@ const Button = styled.div`
 `;
 
 const Text = styled.p`
-display:flex;
-  width: 19.5rem;
+  display: flex;
+  font-family: S-CoreDream-6;
+  width: 100%;
   height: 1.8rem;
   font-size: 1.5rem;
   font-weight: 800;
-  font-stretch: normal;
   font-style: normal;
-  line-height: 1.27;
-  letter-spacing: normal
   text-align: center;
+  align-items: center;
   color: #ffffff;
-  margin:1.4rem auto;
+  margin: 1.4rem 1rem;
 `;
 
 export default FirstPage;

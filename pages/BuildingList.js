@@ -45,7 +45,6 @@ function App() {
   return (
     <>
       <div
-        className="App"
         style={{
           display: "flex",
           overflowY: "hidden",
@@ -62,16 +61,18 @@ function App() {
         }}
       /> */}
         <Wrapper>
-          <TopButton />
-          <MainTopDialog
-            month={month}
-            day={day}
-            timePeriod={timePeriod}
-            textIndex={textIndex}
-            setTimePeriod={tp => setTimePeriod(tp)}
-            setDay={day => setDay(day)}
-          />
-          <BuildingDialog month={month} day={day} timePeriod={timePeriod} />
+          <TopWrapper>
+            <TopButton />
+            <MainTopDialog
+              month={month}
+              day={day}
+              timePeriod={timePeriod}
+              textIndex={textIndex}
+              setTimePeriod={tp => setTimePeriod(tp)}
+              setDay={day => setDay(day)}
+            />
+            <BuildingDialog month={month} day={day} timePeriod={timePeriod} />
+          </TopWrapper>
         </Wrapper>
       </div>
     </>
@@ -80,7 +81,12 @@ function App() {
 // const Background = styled.header`
 //   text-align: center;
 // `;
-
+const TopWrapper = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+`;
 const Wrapper = styled.div`
   width: 100%;
   background-color: #ffffff;
