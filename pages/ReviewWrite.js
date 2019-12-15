@@ -13,7 +13,7 @@ export default function Topbutton(props) {
   return (
     <>
       <TopButton />
-      <WriteButton rating={rating} comment={comment} />
+      <WriteButton rating={rating} comment={comment} nickname={nickname} />
       <ReviewText
         rating={rating}
         setRating={setRating}

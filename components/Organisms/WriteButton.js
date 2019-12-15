@@ -11,6 +11,7 @@ export default function Topbutton(props) {
   const router = useRouter();
   const handleSubmit = () => {
     var tmp = {
+      nickname: props.nickname,
       rating: props.rating,
       comment: props.comment,
       written_by: 2,
