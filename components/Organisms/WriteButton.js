@@ -40,10 +40,16 @@ export default function Topbutton(props) {
       >
         <Text>취소</Text>
       </a>
-      <div style={{ flex: 2 }} />
-      <a onClick={handleSubmit} style={{ textDecoration: "none", flex: 0.7 }}>
-        <Text onClick={handleOpen}>등록</Text>
-      </a>
+      <div style={{ flex: 2 }}></div>
+      <Text
+        onClick={() => {
+          handleSubmit();
+          handleOpen();
+        }}
+        style={{ flex: 1 }}
+      >
+        등록
+      </Text>
       <Modal
         aria-labelledby="simple-modal-title"
         aria-describedby="simple-modal-description"
@@ -55,9 +61,9 @@ export default function Topbutton(props) {
           <p id="simple-modal-description">
             Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
           </p>
-          <div type="button" onClick={handleClose}>
+          <a onClick={() => router.back()} type="button" onClick={handleClose}>
             close Modal
-          </div>
+          </a>
         </PopWrapper>
       </Modal>
     </Wrapper>
@@ -71,6 +77,7 @@ const Wrapper = styled.div`
   padding-left: 2.41rem;
   padding-right: 2.19;
   align-items: center;
+  width:100%
   padding-bottom: 1.8rem;
 `;
 

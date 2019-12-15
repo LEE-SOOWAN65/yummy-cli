@@ -4,16 +4,18 @@ import styled from "styled-components";
 export default function Reviews(props) {
   return (
     <>
+      <div style={{ height: "37.4rem" }} />
       {props.reviews.map((value, index) => (
         <ReviewBox key={index}>
           <NameLine>
             <Time>{value.written_at}</Time>
-            <UserName>{value.nikname}</UserName>
+            <UserName>{value.nickname}</UserName>
           </NameLine>
 
           <Comment>{value.comment}</Comment>
         </ReviewBox>
       ))}
+      <div style={{ height: "10rem" }} />
     </>
   );
 }
@@ -23,6 +25,8 @@ const ReviewBox = styled.div`
   border-radius: 1.2px;
   background-color: #f5f5f5;
   overflow: hidden;
+  display: flex;
+  height: 10rem;
 `;
 const NameLine = styled.div`
   display: flex;

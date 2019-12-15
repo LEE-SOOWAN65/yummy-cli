@@ -7,7 +7,7 @@ import Link from "next/link";
 export default function Topbutton(props) {
   return (
     <Wrapper>
-      <Link href="/BuildingList">
+      <Link href="/index">
         <a style={{ textDecoration: "none", flex: 2 }}>
           <KinnyLogo style={{ flex: 1 }} />
         </a>

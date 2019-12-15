@@ -67,24 +67,25 @@ export default function Topbutton(props) {
 const colorHandler = id => {
   switch (id) {
     case 0:
-      return `linear-gradient(to top, #eb8242 99%, #da2f2e 22%, #da2d2d 0%)`;
+      return `#ffe98d`;
     case 1:
-      return `linear-gradient(to top, #ffca67 100%, #ffca67 100%, #ffca67 100%)`;
+      return ` #ffca67`;
     case 2:
-      return `linear-gradient(to top, #ffca67 100%, #ffb655 80%, #ff3e31 0%)`;
+      return `linear-gradient(to top, #ffca67 100%, #ffb655 80%, #ff3e31 0%)
+      `;
     case 3:
-      return `linear-gradient(to top, #ff9c55 100%, #ff3e31 20%, #9a021f 0%)`;
+      return ` linear-gradient(to top, #ff9c55 100%, #ff3e31 20%, #9a021f 0%)`;
     case 4:
-      return `linear-gradient(to top, #ff9c55, #ff3e31 70%, #c6021f 0%)`;
+      return ` linear-gradient(to top, #ff9c55, #ff3e31 70%, #c6021f 0%)`;
     default:
   }
 };
 
 const IconWrapper = styled.div`
-  width: fit-content;
-  height: 3.1121rem;
+  width: 2.9rem;
+  height: 3rem;
 
-  border-radius: 0.3rem;
+  border-radius: 0.5rem;
   ${props => css`
     ${props.selected &&
       `

@@ -23,6 +23,9 @@ const Wrapper = styled.div`
   background-color: #e54b4b;
   display: flex;
   flex-direction: column;
+  position: fixed;
+  width: 100%;
+  max-width: 36rem;
 `;
 
 export default App;
