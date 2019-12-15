@@ -160,7 +160,6 @@ const Text = styled.p`
   font-size: 1.5rem;
   font-weight: 800;
   font-style: normal;
-
   text-align: center;
   align-items: center;
   color: #ffffff;
