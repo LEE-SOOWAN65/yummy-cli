@@ -5,6 +5,8 @@ import Nav from "../components/Organisms/ReviewNav";
 import ReviewGraph from "../components/Organisms/ReviewGraph";
 import RedBox from "../components/Organisms/RedBox";
 import Reviews from "../components/Templates/Reviews";
+import Icons from "../components/atoms/Icon/NoReviewIcon";
+
 import Link from "next/link";
 import { useQuery } from "../lib";
 
@@ -43,13 +45,24 @@ function App(props) {
         {data && data.reviews ? (
           <Reviews reviews={data.reviews} />
         ) : (
-          <p>아직 리뷰가 없어요 ㅠㅠ</p>
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "center",
+              alignItems: " center",
+              margin: "5.37rem auto 0 "
+            }}
+          >
+            <Icons />
+            <NoReviewText>작성된 리뷰가 없습니다</NoReviewText>
+          </div>
         )}
         <Link
           href={`/ReviewWrite?id=${router.query.id}&name=${router.query.name}&buildingName=${router.query.buildingName}`}
         >
           <a style={{ textDecoration: "none" }}>
-            <Nav position={{ position: "absolute", bottom: 0 }} />
+            <Nav />
           </a>
         </Link>
       </Wrapper>
@@ -59,15 +72,20 @@ function App(props) {
 
 const Wrapper = styled.div`
   width: 100%;
+  max-width: 36rem;
   background-color: #ffffff;
   display: flex;
   flex-direction: column;
 `;
-const TopWrapper = styled.div`
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
+
+const NoReviewText = styled.p`
+  width: 20.4rem;
+  height: 2.3rem;
+  object-fit: contain;
+  font-family: S-CoreDream-6Bold;
+  font-size: 2rem;
+  line-height: 0.55;
+  color: #c7c7c7;
 `;
 
 export default App;

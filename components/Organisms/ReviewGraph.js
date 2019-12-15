@@ -30,15 +30,16 @@ function App(props) {
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
-  padding-bottom: 2.69rem;
-  padding-top: 3.3rem;
   align-items: center;
-  background-color: white;
+  text-align: center;
+  padding-bottom: 2.69rem;
+  position: fixed;
+  top: 20rem;
 `;
 
 const BoxWrapper = styled.div`
-  width: 84%;
-  height: 12.4rem;
+  width: 33.8rem;
+  height: 15rem;
   object-fit: contain;
   border-radius: 1.6rem;
   box-shadow: 0 0.5rem 1rem 0 rgba(229, 75, 75, 0.3);

@@ -38,7 +38,10 @@ const Wrapper = styled.div`
   flex-direction: row;
   overflow: auto;
   width: 100%;
+  max-width:36rem;
   padding-top:2.88rem;
+  position:fixed;
+  top:6.5rem;
 `;
 
 const MenuName = styled.p`

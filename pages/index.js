@@ -81,6 +81,7 @@ const Name = styled.p`
   font-stretch: normal;
   font-style: normal;
   line-height: 1.21;
+  height: 4rem;
   letter-spacing: normal;
   text-align: right;
   color: #ffffff;
@@ -101,7 +102,7 @@ const Intro = styled.p`
   color: #ffffff;
   padding-right: 3.6rem;
   margin-top: 0;
-  margin-bottom: 14.7rem;
+  margin-bottom: 15.4rem;
 `;
 const BoxWrapper = styled.div`
   display: flex;
@@ -123,7 +124,7 @@ const Title = styled.p`
   line-height: 1.18;
   letter-spacing: normal;
   text-align: center;
-  font-family: S-CoreDream-6;
+  font-family: S-CoreDream-6Bold;
   color: #ff6565;
 `;
 const Context = styled.p`
@@ -137,7 +138,7 @@ const Context = styled.p`
   text-align: center;
   color: #707070;
   margin-top: 1rem;
-  font-family: S-CoreDream-6;
+  font-family: S-CoreDream-6Bold;
 `;
 
 const Button = styled.div`
@@ -154,7 +155,7 @@ const Button = styled.div`
 
 const Text = styled.p`
   display: flex;
-  font-family: S-CoreDream-6;
+  font-family: S-CoreDream-6Bold;
   width: 100%;
   height: 1.8rem;
   font-size: 1.5rem;
