@@ -3,7 +3,7 @@ import { useRouter } from "next/router";
 import styled from "styled-components";
 import { useMutation } from "../../lib";
 import Modal from "@material-ui/core/Modal";
-
+import Logo from "../atoms/Icon/ReviewLogo";
 //메뉴별 리뷰 페이지(아래 리뷰작성버튼)
 
 export default function Topbutton(props) {
@@ -58,13 +58,40 @@ export default function Topbutton(props) {
         onClose={handleClose}
       >
         <PopWrapper>
-          <h2 id="simple-modal-title">Text in a modal</h2>
-          <p id="simple-modal-description">
-            Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
-          </p>
-          <a onClick={() => router.back()} type="button" onClick={handleClose}>
-            close Modal
+          <a
+            onClick={() => router.back()}
+            type="button"
+            onClick={handleClose}
+            style={{
+              fontFamily: "S-CoreDream-6",
+              fontSize: "1.3rem",
+              color: "#aaaaaa",
+              margin: "1rem 1rem 4.5rem 25.5rem",
+              display: "flex",
+              textAlign: "center",
+              alignItems: "center"
+            }}
+          >
+            닫기
           </a>
+          <div
+            style={{
+              display: "flex",
+              textAlign: "center",
+              alignItems: "center",
+              flexDirection: "column"
+            }}
+          >
+            <Logo
+              style={{
+                width: "8.8rem",
+                height: "8.8rem",
+                marginBottom: "1rem"
+              }}
+            />
+            <hr style={{ width: "80%" }} />
+            <ModalText>리뷰가 등록되었습니다!</ModalText>
+          </div>
         </PopWrapper>
       </Modal>
     </Wrapper>
@@ -81,7 +108,7 @@ const Wrapper = styled.div`
   width: 100%;
   max-width: 36rem;
   position: fixed;
-  top: 9rem;
+  top: 7rem;
 `;
 
 const Text = styled.p`
@@ -90,7 +117,13 @@ const Text = styled.p`
   font-family: S-CoreDream-6;
   color: #ffffff;
 `;
-
+const ModalText = styled.p`
+  font-family: S-CoreDream-6;
+  font-size: 1.5rem;
+  line-height: 1.8;
+  text-align: center;
+  color: #707070;
+`;
 const PopWrapper = styled.div`
   width: 29.6rem;
   height: 29.5rem;

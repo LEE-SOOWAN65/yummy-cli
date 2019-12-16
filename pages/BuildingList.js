@@ -13,9 +13,10 @@ function App() {
   const [month, setMonth] = useState(new Date().getMonth() + 1);
   const [day, setDay] = useState(new Date().getDate());
   const [textIndex, setTextIndex] = useState(0);
-  // var week = new Array('일요일', '월요일', '화요일', '수요일', '목요일', '금요일', '토요일');
-  // const [today, settoday] = useState(new Date().getDay());
-  //   var todayLabel = week[today];
+
+  var week = new Array("일", "월", "화", "수", "목", "금", "토");
+  const [today, setToday] = useState(new Date().getDay());
+  var todayLabel = week[today];
 
   const getCurrentTimePeriod = () => {
     const nowTime = new Date();
@@ -34,6 +35,7 @@ function App() {
     const nowTime = new Date();
     setMonth(nowTime.getMonth() + 1);
     setDay(nowTime.getDate());
+    setToday(nowTime.getDay());
   };
   const [timePeriod, setTimePeriod] = useState(getCurrentTimePeriod());
 
@@ -44,8 +46,8 @@ function App() {
     setTextIndex(day % 13);
   }, [day]);
   useEffect(() => {
-    console.log(month, day);
-  }, [month, day]);
+    console.log(month, day, todayLabel);
+  }, [month, day, todayLabel]);
   return (
     <>
       <div
@@ -70,7 +72,8 @@ function App() {
             <MainTopDialog
               month={month}
               day={day}
-              // today={today}
+              today={today}
+              setToday={tp => setToday(tp)}
               timePeriod={timePeriod}
               textIndex={textIndex}
               setTimePeriod={tp => setTimePeriod(tp)}
@@ -78,7 +81,12 @@ function App() {
             />
           </TopWrapper>
           <div style={{ height: "20rem" }} />
-          <BuildingDialog month={month} day={day} timePeriod={timePeriod} />
+          <BuildingDialog
+            month={month}
+            day={day}
+            timePeriod={timePeriod}
+            today={today}
+          />
         </Wrapper>
       </div>
     </>

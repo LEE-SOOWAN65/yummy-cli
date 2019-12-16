@@ -6,8 +6,9 @@ import RightIcon from "../atoms/Icon/Botton/right";
 import TodayText from "../Molecules/Message";
 
 export default function TopDialog(props) {
-  const { timePeriod, month, day, textIndex } = props;
-
+  const { timePeriod, month, day, textIndex, today, setToday } = props;
+  var week = new Array("일", "월", "화", "수", "목", "금", "토");
+  var todayLabel = week[today];
   return (
     <Wrapper>
       <Icon>
@@ -28,6 +29,7 @@ export default function TopDialog(props) {
           <LeftIcon
             onClick={() => {
               props.setDay(day - 1);
+              props.setToday((today - 1) % 7);
             }}
           />
 
@@ -39,12 +41,13 @@ export default function TopDialog(props) {
               padding: "10px"
             }}
           >
-            {month}월{day}일
+            {month}월{day}일 {todayLabel}
           </div>
 
           <RightIcon
             onClick={() => {
               props.setDay(day + 1);
+              props.setToday((today + 1) % 7);
             }}
           />
         </ButtonWrapper>

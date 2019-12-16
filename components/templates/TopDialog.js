@@ -6,8 +6,11 @@ import RightIcon from "../atoms/Icon/Botton/right";
 import Arrow from "../atoms/Icon/Botton/LeftArrow";
 import { useRouter } from "next/router";
 export default function TopDialog(props) {
-  const { timePeriod, month, day } = props;
+  const { timePeriod, month, day, today, setToday } = props;
   const router = useRouter();
+  var week = new Array("일", "월", "화", "수", "목", "금", "토");
+  var todayLabel = week[today];
+
   return (
     <Wrapper>
       <div
@@ -36,6 +39,7 @@ export default function TopDialog(props) {
         <LeftIcon
           onClick={() => {
             props.setDay(day - 1);
+            props.setToday((today - 1) % 7);
           }}
         />
 
@@ -47,12 +51,13 @@ export default function TopDialog(props) {
             padding: "10px"
           }}
         >
-          {month}월{day}일
+          {month}월{day}일 {todayLabel}
         </div>
 
         <RightIcon
           onClick={() => {
             props.setDay(day + 1);
+            props.setToday((today + 1) % 7);
           }}
         />
       </ButtonWrapper>

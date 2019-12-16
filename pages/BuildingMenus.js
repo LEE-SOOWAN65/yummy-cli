@@ -21,9 +21,7 @@ function App(props) {
     process.env.API_HOST +
       `/cafeteria/${id}/2019/${month}/${day}/${TIME_TEXT[timePeriod]}/`
   );
-
   useEffect(() => {
-    console.log("Aaaaa");
     setApiUrl(
       process.env.API_HOST +
         `/cafeteria/${id}/2019/${month}/${day}/${TIME_TEXT[timePeriod]}/`
@@ -44,6 +42,8 @@ function App(props) {
           setDay={day => {
             setDay(day);
           }}
+          today={router.query.today}
+          setTimePeriod={tp => setToday(tp)}
         />
       </TopWrapper>
 

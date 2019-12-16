@@ -14,21 +14,22 @@ function BuildingNameTop(props) {
 
 const Wrapper = styled.div`
   display: flex
+  width:fit-content;
   flex-direction: row;
   align-items: center;
   position: fixed;
   top:16.9rem;
-  left: 0;
+  left: 50%;
   right: 0;
+  text-align: center;
 
 `;
 
-const BuildingName = styled.div`
-  ispaly: flex;
+const BuildingName = styled.p`
+  dispaly: flex;
   font-size: 1.8rem;
   font-family: S-CoreDream-6;
-  font-weight: bold;
-  text-align: center;
   color: #000000;
+  margin: 0;
 `;
 export default BuildingNameTop;

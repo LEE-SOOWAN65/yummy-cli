@@ -5,7 +5,7 @@ import { useQuery } from "../../lib/";
 import LoadingPage from "../../pages/LoadingPage";
 
 export default function BuildingDialog(props) {
-  const { month, day, timePeriod } = props;
+  const { month, day, timePeriod, today } = props;
 
   const mealHandler = useCallback(() => {
     let meal;
@@ -35,6 +35,7 @@ export default function BuildingDialog(props) {
               name={value.name}
               sikdans={value.sikdans}
               key={index}
+              today={today}
             />
           );
         })}

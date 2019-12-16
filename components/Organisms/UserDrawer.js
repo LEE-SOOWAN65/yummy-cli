@@ -3,21 +3,18 @@ import { makeStyles } from "@material-ui/core/styles";
 import Drawer from "@material-ui/core/Drawer";
 import Button from "@material-ui/core/Button";
 import List from "@material-ui/core/List";
-import Divider from "@material-ui/core/Divider";
-import ListItem from "@material-ui/core/ListItem";
-import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
-import Setting from "../atoms/Icon/Botton/DrawerSetting";
 import SpeakerIcon from "../atoms/Icon/Botton/Speaker";
 import QuestionIcon from "../atoms/Icon/Botton/Question";
 import HomeIcon from "../atoms/Icon/Botton/Home";
-import LoginIcon from "../atoms/Icon/Botton/Login";
+import PlusFriendIcon from "../atoms/Icon/Botton/PlusFriend";
 import DrawerButton from "../atoms/Icon/Botton/DrawerButton";
 import DrawerLogo from "../atoms/Icon/DrawerLogo";
 import styled from "styled-components";
 import FaceBook from "../atoms/Icon/Botton/FacebookloginIcon";
 import KakaoLogin from "../atoms/Icon/Botton/KakaoIogin";
 import Modal from "@material-ui/core/Modal";
+import ModalIcon from "../atoms/Icon/PopAlert";
 
 const useStyles = makeStyles({
   list: {
@@ -61,7 +58,6 @@ export default function TemporaryDrawer() {
     <div
       className={classes.list}
       role="presentation"
-      onClick={toggleDrawer(side, false)}
       onKeyDown={toggleDrawer(side, false)}
     >
       <ListWrapper>
@@ -72,7 +68,6 @@ export default function TemporaryDrawer() {
                 padding: "8.96rem 1.13rem 0 2.47rem"
               }}
             />
-
             <FaceBook
               onClick={() => {
                 handleOpen();
@@ -86,60 +81,195 @@ export default function TemporaryDrawer() {
               onClose={handleClose}
             >
               <PopWrapper>
-                <h2 id="simple-modal-title">Text in a modal</h2>
-                <p id="simple-modal-description">
-                  Duis mollis, est non commodo luctus, nisi erat porttitor
-                  ligula.
-                </p>
                 <a
                   onClick={() => router.back()}
                   type="button"
                   onClick={handleClose}
+                  style={{
+                    fontFamily: "S-CoreDream-6",
+                    fontSize: "1.3rem",
+                    color: "#aaaaaa",
+                    margin: "1rem 1rem 1rem 25.5rem",
+                    display: "flex",
+                    textAlign: "center",
+                    alignItems: "center"
+                  }}
                 >
-                  close Modal
+                  닫기
                 </a>
+                <div
+                  style={{
+                    display: "flex",
+                    textAlign: "center",
+                    alignItems: "center",
+                    flexDirection: "column"
+                  }}
+                >
+                  <ModalIcon
+                    style={{
+                      width: "8.8rem",
+                      height: "8.8rem",
+                      marginBottom: "1rem"
+                    }}
+                  />
+                  <text
+                    style={{
+                      fontFamily: "S-CoreDream-6",
+                      fontSize: "1.8rem",
+                      color: "#ff6565",
+                      marginBottom: "1.6rem"
+                    }}
+                  >
+                    알림
+                  </text>
+                  <hr style={{ width: "80%" }} />
+                  <MadalText>
+                    베타서비스 중에는 가입 / 로그인 없이 <br />
+                    서비스이용이 가능합니다
+                  </MadalText>
+                </div>
               </PopWrapper>
             </Modal>
             <KakaoLogin
+              onClick={() => {
+                handleOpen();
+              }}
               style={{
                 width: "15.31rem",
                 margin: "1.12rem 1.59rem 4.28rem 7rem"
               }}
-            />
+            />{" "}
+            <Modal
+              aria-labelledby="simple-modal-title"
+              aria-describedby="simple-modal-description"
+              open={open}
+              onClose={handleClose}
+            >
+              <PopWrapper>
+                <a
+                  onClick={() => router.back()}
+                  type="button"
+                  onClick={handleClose}
+                  style={{
+                    fontFamily: "S-CoreDream-6",
+                    fontSize: "1.3rem",
+                    color: "#aaaaaa",
+                    margin: "1rem 1rem 1rem 25.5rem",
+                    display: "flex",
+                    textAlign: "center",
+                    alignItems: "center"
+                  }}
+                >
+                  닫기
+                </a>
+                <div
+                  style={{
+                    display: "flex",
+                    textAlign: "center",
+                    alignItems: "center",
+                    flexDirection: "column"
+                  }}
+                >
+                  <ModalIcon
+                    style={{
+                      width: "8.8rem",
+                      height: "8.8rem",
+                      marginBottom: "1rem"
+                    }}
+                  />
+                  <text
+                    style={{
+                      fontFamily: "S-CoreDream-6",
+                      fontSize: "1.8rem",
+                      color: "#ff6565",
+                      marginBottom: "1.6rem"
+                    }}
+                  >
+                    알림
+                  </text>
+                  <hr style={{ width: "80%" }} />
+                  <MadalText>
+                    베타서비스 중에는 가입 / 로그인 없이 <br />
+                    서비스이용이 가능합니다
+                  </MadalText>
+                </div>
+              </PopWrapper>
+            </Modal>
             <hr style={{ width: "23rem", borderTop: "0.1rem solid #707070" }} />
+            <UserDetail>
+              <div style={{ display: "flex", flex: 1 }} />
+              <Detail>
+                <hr
+                  style={{
+                    display: "flex",
+                    flex: 1,
+                    width: "1rem",
+                    borderTop: "0.05rem solid #707070"
+                  }}
+                />
+                평가
+              </Detail>
+              <div style={{ display: "flex", flex: 1 }} />
+              <Detail>
+                <hr
+                  style={{
+                    display: "flex",
+                    flex: 1,
+                    width: "1rem",
+                    borderTop: "0.05rem solid #707070"
+                  }}
+                />
+                찜하기
+              </Detail>
+              <div style={{ display: "flex", flex: 1 }} />
+              <Detail>
+                <hr
+                  style={{
+                    display: "flex",
+                    flex: 1,
+                    width: "1rem",
+                    borderTop: "0.05rem solid #707070"
+                  }}
+                />
+                알림
+              </Detail>
+              <div style={{ display: "flex", flex: 1 }} />
+            </UserDetail>
           </Logo>
         </DrawerBox>
-        <Divider />
+
         <List>
-          {[
-            "공지사항",
-            "학교 변경하기",
-            "카카오톡 문의하기",
-            "바로가기 생성하기"
-          ].map((text, index) => (
-            <>
-              <ListItem button key={text}>
-                <ListItemIcon>
-                  {index % 4 === 0 && <SpeakerIcon />}
-                  {index % 4 === 1 && <Setting />}
-                  {index % 4 === 2 && <QuestionIcon />}
-                  {index % 4 === 3 && <HomeIcon />}
-                </ListItemIcon>
-                <DrawerItemText primary={text} />
-              </ListItem>
-            </>
-          ))}
-        </List>
-        <Divider />
-        <List>
-          {["홈 바로가기"].map((text, index) => (
-            <ListItem button key={text}>
-              <ListItemIcon>
-                <LoginIcon />
-              </ListItemIcon>
-              <DrawerItemText primary={text} />
-            </ListItem>
-          ))}
+          <div style={{ display: "flex", flexDirection: "column" }}>
+            {" "}
+            <a
+              href="https://pf.kakao.com/_KYpQT"
+              style={{ textDecoration: "none" }}
+            >
+              <Menu>
+                <SpeakerIcon style={{ marginRight: "2.3rem" }} /> 공지사항
+              </Menu>
+            </a>
+            <a
+              href="https://pf.kakao.com/_KYpQT"
+              style={{ textDecoration: "none" }}
+            >
+              {" "}
+              <Menu>
+                <QuestionIcon style={{ marginRight: "2.3rem" }} /> 카카오톡
+                문의하기
+              </Menu>
+            </a>
+            <a
+              href="https://pf.kakao.com/_KYpQT"
+              style={{ textDecoration: "none" }}
+            >
+              {" "}
+              <Menu>
+                <PlusFriendIcon style={{ marginRight: "2.3rem" }} /> 카카오톡
+                플러스친구
+              </Menu>
+            </a>
+          </div>
         </List>
       </ListWrapper>
     </div>
@@ -210,4 +340,47 @@ const PopWrapper = styled.div`
   position: absolute;
   top: 23.9rem;
   left: 3.9rem;
+`;
+const Detail = styled.p`
+  object-fit: contain;
+  font-family: S-CoreDream-6;
+  font-size: 1rem;
+  font-weight: bold;
+  line-height: 1.8;
+  text-align: center;
+  color: #707070;
+  display: flex;
+  flex-direction: column;
+  width: 3rem;
+  text-align: center;
+  align-items: center;
+`;
+const MadalText = styled.p`
+  height: 7.2rem;
+  object-fit: contain;
+  font-family: S-CoreDream-6;
+  font-size: 1.5rem;
+  line-height: 1.8;
+  text-align: center;
+  color: #707070;
+`;
+
+const UserDetail = styled.p`
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  text-align: justify;
+`;
+const Menu = styled.div`
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  align-items: center;
+  font-family: S-CoreDream-6;
+  font-size: 1.3rem;
+  line-height: 1.46;
+  text-align: left;
+  color: #f5f5f5;
+  height: 2.5rem;
+  margin: 2.5rem;
 `;

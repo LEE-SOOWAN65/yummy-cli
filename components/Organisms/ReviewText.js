@@ -59,7 +59,7 @@ export default function Topbutton(props) {
               border: "none",
               marginTop: "2.9rem",
               width: "95%",
-              height: "25rem",
+              height: "70%",
               objectFit: "contain",
               fontFamily: "S-CoreDream-4",
               fontSize: "1.3rem",
@@ -90,10 +90,10 @@ const Wrapper = styled.div`
   box-shadow: 0 0.5rem 2rem 0 rgba(229, 75, 75, 0.3);
   background-color: #ffffff;
   width: 33.8rem;
-  height: 63.2rem;
+  height: 47.8rem;
   border-radius: 2.1rem;
   position: fixed;
-  top: 15.5rem;
+  top: 14.3rem;
 `;
 
 const TextWrapper = styled.div`
