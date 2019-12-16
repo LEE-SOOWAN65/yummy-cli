@@ -3,11 +3,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import Drawer from "@material-ui/core/Drawer";
 import Button from "@material-ui/core/Button";
 import List from "@material-ui/core/List";
-import Divider from "@material-ui/core/Divider";
-import ListItem from "@material-ui/core/ListItem";
-import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
-import Setting from "../atoms/Icon/Botton/DrawerSetting";
 import SpeakerIcon from "../atoms/Icon/Botton/Speaker";
 import QuestionIcon from "../atoms/Icon/Botton/Question";
 import HomeIcon from "../atoms/Icon/Botton/Home";
@@ -243,41 +239,37 @@ export default function TemporaryDrawer() {
         </DrawerBox>
 
         <List>
-          {["공지사항", "학교 변경하기"].map((text, index) => (
-            <>
-              <ListItem button key={text}>
-                <ListItemIcon>
-                  {index % 2 === 0 && <SpeakerIcon />}
-                  {index % 2 === 1 && <Setting />}
-                </ListItemIcon>
-                <DrawerItemText primary={text} />
-              </ListItem>
-            </>
-          ))}
-        </List>
-        <hr
-          style={{
-            width: "23rem",
-            borderTop: "0.02rem solid #ffffff"
-          }}
-        />
-        <List>
-          {[
-            "카카오톡 문의하기",
-            "카카오톡 플러스친구",
-            "바로가기 생성하기"
-          ].map((text, index) => (
-            <>
-              <ListItem button key={text}>
-                <ListItemIcon>
-                  {index % 3 === 0 && <QuestionIcon />}
-                  {index % 3 === 1 && <PlusFriendIcon />}
-                  {index % 3 === 2 && <HomeIcon />}
-                </ListItemIcon>
-                <DrawerItemText primary={text} />
-              </ListItem>
-            </>
-          ))}
+          <div style={{ display: "flex", flexDirection: "column" }}>
+            {" "}
+            <a
+              href="https://pf.kakao.com/_KYpQT"
+              style={{ textDecoration: "none" }}
+            >
+              <Menu>
+                <SpeakerIcon style={{ marginRight: "2.3rem" }} /> 공지사항
+              </Menu>
+            </a>
+            <a
+              href="https://pf.kakao.com/_KYpQT"
+              style={{ textDecoration: "none" }}
+            >
+              {" "}
+              <Menu>
+                <QuestionIcon style={{ marginRight: "2.3rem" }} /> 카카오톡
+                문의하기
+              </Menu>
+            </a>
+            <a
+              href="https://pf.kakao.com/_KYpQT"
+              style={{ textDecoration: "none" }}
+            >
+              {" "}
+              <Menu>
+                <PlusFriendIcon style={{ marginRight: "2.3rem" }} /> 카카오톡
+                플러스친구
+              </Menu>
+            </a>
+          </div>
         </List>
       </ListWrapper>
     </div>
@@ -378,4 +370,17 @@ const UserDetail = styled.p`
   flex-direction: row;
   width: 100%;
   text-align: justify;
+`;
+const Menu = styled.div`
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  align-items: center;
+  font-family: S-CoreDream-6;
+  font-size: 1.3rem;
+  line-height: 1.46;
+  text-align: left;
+  color: #f5f5f5;
+  height: 2.5rem;
+  margin: 2.5rem;
 `;

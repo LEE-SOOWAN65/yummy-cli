@@ -13,16 +13,11 @@ function BuildingNameTop(props) {
 }
 
 const Wrapper = styled.div`
-  display: flex
-  width:fit-content;
+  display: flex;
   flex-direction: row;
+  margin: 0 auto;
   align-items: center;
-  position: fixed;
-  top:16.9rem;
-  left: 50%;
-  right: 0;
   text-align: center;
-
 `;
 
 const BuildingName = styled.p`

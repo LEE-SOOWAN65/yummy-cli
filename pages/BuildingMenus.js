@@ -50,7 +50,6 @@ function App(props) {
       {data && (
         <>
           <BuildingNameTop name={data.name} />
-          <div style={{ height: "20rem" }} />
           <MenuDialog name={data.name} sikdans={data.sikdans} />
         </>
       )}
@@ -66,11 +65,7 @@ const Wrapper = styled.div`
 `;
 
 const TopWrapper = styled.div`
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 21.1rem;
+  height: 16rem;
   background-color: #ffffff;
 `;
 
