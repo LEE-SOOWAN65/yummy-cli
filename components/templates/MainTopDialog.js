@@ -6,9 +6,16 @@ import RightIcon from "../atoms/Icon/Botton/right";
 import TodayText from "../Molecules/Message";
 
 export default function TopDialog(props) {
-  const { timePeriod, month, day, textIndex, today, setToday } = props;
-  var week = new Array("일", "월", "화", "수", "목", "금", "토");
-  var todayLabel = week[today];
+  const { timePeriod, month, day, textIndex } = props;
+
+  const [today, setToday] = useState(
+    new Date(new Date().setDate(day)).getDay()
+  );
+  const week = new Array("일", "월", "화", "수", "목", "금", "토");
+  const [available, setAvailable] = useState(true);
+  useEffect(() => {
+    setToday(new Date(new Date().setDate(day)).getDay());
+  }, [day]);
   return (
     <Wrapper>
       <Icon>
@@ -29,7 +36,6 @@ export default function TopDialog(props) {
           <LeftIcon
             onClick={() => {
               props.setDay(day - 1);
-              props.setToday((today - 1) % 7);
             }}
           />
 
@@ -41,13 +47,18 @@ export default function TopDialog(props) {
               padding: "10px"
             }}
           >
-            {month}월{day}일 {todayLabel}
+            {month}월{day}일 {week[today]}
           </div>
 
           <RightIcon
             onClick={() => {
-              props.setDay(day + 1);
-              props.setToday((today + 1) % 7);
+              if (available) {
+                props.setDay(day + 1);
+              } else setAvailable(true);
+
+              if (today === 6 && day > new Date().getDate()) {
+                setAvailable(false);
+              }
             }}
           />
         </ButtonWrapper>
@@ -77,7 +88,6 @@ const Wrapper = styled.div`
   flex-direction: column;
   align-items: center;
   overflow: auto;
-
   width: 100%;
 `;
 

@@ -6,11 +6,17 @@ import RightIcon from "../atoms/Icon/Botton/right";
 import Arrow from "../atoms/Icon/Botton/LeftArrow";
 import { useRouter } from "next/router";
 export default function TopDialog(props) {
-  const { timePeriod, month, day, today, setToday } = props;
-  const router = useRouter();
-  var week = new Array("일", "월", "화", "수", "목", "금", "토");
-  var todayLabel = week[today];
+  const { timePeriod, month, day } = props;
+  const [today, setToday] = useState(
+    new Date(new Date().setDate(day)).getDay()
+  );
+  const [available, setAvailable] = useState(true);
 
+  const week = new Array("일", "월", "화", "수", "목", "금", "토");
+  const router = useRouter();
+  useEffect(() => {
+    setToday(new Date(new Date().setDate(day)).getDay());
+  }, [day]);
   return (
     <Wrapper>
       <div
@@ -39,7 +45,6 @@ export default function TopDialog(props) {
         <LeftIcon
           onClick={() => {
             props.setDay(day - 1);
-            props.setToday((today - 1) % 7);
           }}
         />
 
@@ -51,13 +56,18 @@ export default function TopDialog(props) {
             padding: "10px"
           }}
         >
-          {month}월{day}일 {todayLabel}
+          {month}월{day}일 {week[today]}
         </div>
 
         <RightIcon
           onClick={() => {
-            props.setDay(day + 1);
-            props.setToday((today + 1) % 7);
+            if (available) {
+              props.setDay(day + 1);
+            } else setAvailable(true);
+
+            if (today === 6 && day > new Date().getDate()) {
+              setAvailable(false);
+            }
           }}
         />
       </ButtonWrapper>

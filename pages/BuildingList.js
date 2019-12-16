@@ -4,9 +4,6 @@ import TopButton from "../components/Organisms/TopButton";
 import BuildingDialog from "../components/Templates/BuildingDialog";
 import styled from "styled-components";
 
-// import FacebookLogin from "react-facebook-login";
-// import HomeBottomNav from "../components/templates/HomeBottomNav";
-
 const TIME_PERIOD = [930, 1430, 2000];
 
 function App() {
@@ -15,7 +12,7 @@ function App() {
   const [textIndex, setTextIndex] = useState(0);
 
   var week = new Array("일", "월", "화", "수", "목", "금", "토");
-  const [today, setToday] = useState(new Date().getDay());
+  const today = useState(new Date().getDay());
   var todayLabel = week[today];
 
   const getCurrentTimePeriod = () => {
@@ -35,13 +32,9 @@ function App() {
     const nowTime = new Date();
     setMonth(nowTime.getMonth() + 1);
     setDay(nowTime.getDate());
-    setToday(nowTime.getDay());
   };
   const [timePeriod, setTimePeriod] = useState(getCurrentTimePeriod());
 
-  // useEffect(() => {
-  //   getMonthDay();
-  // }, []);
   useEffect(() => {
     setTextIndex(day % 13);
   }, [day]);
@@ -73,14 +66,13 @@ function App() {
               month={month}
               day={day}
               today={today}
-              setToday={tp => setToday(tp)}
               timePeriod={timePeriod}
               textIndex={textIndex}
               setTimePeriod={tp => setTimePeriod(tp)}
               setDay={day => setDay(day)}
             />
           </TopWrapper>
-          <div style={{ height: "20rem" }} />
+
           <BuildingDialog
             month={month}
             day={day}
@@ -92,14 +84,7 @@ function App() {
     </>
   );
 }
-// const Background = styled.header`
-//   text-align: center;
-// `;
 const TopWrapper = styled.div`
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
   height: 21.1rem;
   background-color: #ffffff;
 `;
