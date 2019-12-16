@@ -6,7 +6,7 @@ const SvgComponent = props => (
       transform="rotate(8 -127.037 14.883)"
       fill="#ff6565"
       fontSize={18}
-      fontFamily="DancingScript-Regular_Bold,Dancing Script"
+      fontFamily="Beta"
     >
       <tspan x={0} y={0}>
         {"B"}

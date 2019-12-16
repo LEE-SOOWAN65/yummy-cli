@@ -39,7 +39,14 @@ export default function TopDialog(props) {
           }}
         />
 
-        <div style={{ fontSize: "13px", color: "#707070", padding: "10px" }}>
+        <div
+          style={{
+            fontSize: "13px",
+            fontFamily: "S-CoreDream-6",
+            color: "#707070",
+            padding: "10px"
+          }}
+        >
           {month}월{day}일
         </div>
 

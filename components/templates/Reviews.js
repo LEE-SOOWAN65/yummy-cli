@@ -34,7 +34,7 @@ const NameLine = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
-  margin: 0 0 0 3rem;
+  margin: 0 3rem 0;
 `;
 
 const UserName = styled.p`

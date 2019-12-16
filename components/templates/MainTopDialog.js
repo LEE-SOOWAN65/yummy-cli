@@ -31,7 +31,14 @@ export default function TopDialog(props) {
             }}
           />
 
-          <div style={{ fontSize: "13px", color: "#707070", padding: "10px" }}>
+          <div
+            style={{
+              fontSize: "13px",
+              fontFamily: "S-CoreDream-6",
+              color: "#707070",
+              padding: "10px"
+            }}
+          >
             {month}월{day}일
           </div>
 
@@ -52,7 +59,8 @@ export default function TopDialog(props) {
           backgroundSize: "100%",
           display: "flex",
           flexDirection: "row",
-          paddingLeft: "1rem"
+          paddingLeft: "1rem",
+          textAlign: "cneter"
         }}
       >
         <Text style={{ marginTop: "0.1rem" }}>{TodayText[textIndex]}</Text>
@@ -70,8 +78,9 @@ const Wrapper = styled.div`
   width: 100%;
 `;
 
-const Text = styled.div`
+const Text = styled.p`
   font-size: 13px;
+  fontfamily: S-CoreDream-6;
   color: #ffffff;
   padding-left: 4rem;
   padding-top: 1.7rem;

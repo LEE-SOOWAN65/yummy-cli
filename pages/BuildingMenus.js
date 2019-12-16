@@ -34,19 +34,23 @@ function App(props) {
 
   return (
     <Wrapper>
-      <TopButton />
-      <TopDialog
-        month={month}
-        day={day}
-        timePeriod={timePeriod}
-        setTimePeriod={setTimePeriod}
-        setDay={day => {
-          setDay(day);
-        }}
-      />
+      <TopWrapper>
+        <TopButton />
+        <TopDialog
+          month={month}
+          day={day}
+          timePeriod={timePeriod}
+          setTimePeriod={setTimePeriod}
+          setDay={day => {
+            setDay(day);
+          }}
+        />
+      </TopWrapper>
+
       {data && (
         <>
           <BuildingNameTop name={data.name} />
+          <div style={{ height: "20rem" }} />
           <MenuDialog name={data.name} sikdans={data.sikdans} />
         </>
       )}
@@ -59,6 +63,15 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   height: 100%;
+`;
+
+const TopWrapper = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 21.1rem;
+  background-color: #ffffff;
 `;
 
 export default App;

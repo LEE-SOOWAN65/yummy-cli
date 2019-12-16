@@ -160,10 +160,6 @@ const DrawerItemText = styled(ListItemText)`
   object-fit: contain;
   font-family: S-CoreDream-6;
   font-size: 1.3rem;
-  font-weight: bold;
-  font-stretch: normal;
-  font-style: normal;
   line-height: 1.46;
-  letter-spacing: normal;
   color: #f5f5f5;
 `;

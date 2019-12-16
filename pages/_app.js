@@ -9,7 +9,7 @@ const GlobalStyle = createGlobalStyle`
 @font-face { font-family: 'S-CoreDream-4'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-4Regular.woff') format('woff'); font-weight: normal; font-style: normal; }
 @font-face { font-family: 'S-CoreDream-6'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-6Bold.woff') format('woff'); font-weight: normal; font-style: normal; }
 @font-face { font-family: 'S-CoreDream-5'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-5Medium.woff') format('woff'); font-weight: normal; font-style: normal; }
-
+@font-face { font-family: 'Beta'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/OTEnjoystoriesBA.woff') format('woff'); font-weight: normal; font-style: normal; }
 @font-face { font-family: 'S-CoreDream-7ExtraBold'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-7ExtraBold.woff') format('woff'); font-weight: normal; font-style: normal; }
 @import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
 @media (max-width: 262px) {
@@ -77,7 +77,7 @@ class PickkApp extends App {
       <>
         <GlobalStyle />
         <Head>
-          <title>YammyYammy</title>
+          <title>끼니끼니</title>
         </Head>
         <BestWrapper>
           <Grey />

@@ -41,11 +41,7 @@ export default function Topbutton(props) {
                 objectFit: "contain",
                 fontFamily: "S-CoreDream-4",
                 fontSize: "1.3rem",
-                fontWeight: "normal",
-                fontStretch: "normal",
-                fontStyle: "normal",
                 lineHeight: "1.23",
-                letterSpacing: "normal",
                 textAlign: "left",
                 color: "#707070"
               }}

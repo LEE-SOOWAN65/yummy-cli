@@ -16,7 +16,8 @@ import DrawerButton from "../atoms/Icon/Botton/DrawerButton";
 import DrawerLogo from "../atoms/Icon/DrawerLogo";
 import styled from "styled-components";
 import FaceBook from "../atoms/Icon/Botton/FacebookloginIcon";
-import Link from "next/link";
+import KakaoLogin from "../atoms/Icon/Botton/KakaoIogin";
+import Modal from "@material-ui/core/Modal";
 
 const useStyles = makeStyles({
   list: {
@@ -35,6 +36,15 @@ export default function TemporaryDrawer() {
   const [state, setState] = React.useState({
     right: false
   });
+
+  const [open, setOpen] = React.useState(false);
+  const handleOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
 
   const toggleDrawer = (side, open) => event => {
     if (
@@ -63,8 +73,34 @@ export default function TemporaryDrawer() {
               }}
             />
 
-            <FaceBook style={{ width: "15.31rem", margin: "0rem" }} />
             <FaceBook
+              onClick={() => {
+                handleOpen();
+              }}
+              style={{ width: "15.31rem", margin: "0rem" }}
+            />
+            <Modal
+              aria-labelledby="simple-modal-title"
+              aria-describedby="simple-modal-description"
+              open={open}
+              onClose={handleClose}
+            >
+              <PopWrapper>
+                <h2 id="simple-modal-title">Text in a modal</h2>
+                <p id="simple-modal-description">
+                  Duis mollis, est non commodo luctus, nisi erat porttitor
+                  ligula.
+                </p>
+                <a
+                  onClick={() => router.back()}
+                  type="button"
+                  onClick={handleClose}
+                >
+                  close Modal
+                </a>
+              </PopWrapper>
+            </Modal>
+            <KakaoLogin
               style={{
                 width: "15.31rem",
                 margin: "1.12rem 1.59rem 4.28rem 7rem"
@@ -143,10 +179,6 @@ const DrawerBox = styled.div`
   display: flex;
   flex-direction: row;
 `;
-const LogoWrapper = styled.div`
-  display: flex;
-  flex-direction: row;
-`;
 const ListWrapper = styled.div`
   width: 100%;
   height:100%
@@ -165,9 +197,17 @@ const DrawerItemText = styled(ListItemText)`
   font-family: S-CoreDream-6;
   font-size: 1.3rem;
   font-weight: bold;
-  font-stretch: normal;
-  font-style: normal;
   line-height: 1.46;
-  letter-spacing: normal;
   color: #f5f5f5;
+`;
+const PopWrapper = styled.div`
+  width: 29.6rem;
+  height: 29.5rem;
+  object-fit: contain;
+  border-radius: 2.2rem;
+  box-shadow: 0 0.5rem 1rem 0 rgba(229, 75, 75, 0.3);
+  background-color: #ffffff;
+  position: absolute;
+  top: 23.9rem;
+  left: 3.9rem;
 `;

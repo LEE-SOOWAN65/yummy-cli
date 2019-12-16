@@ -138,7 +138,7 @@ const SmallBar3 = styled.div`
 `;
 const SmallBar2 = styled.div`
   width: 0.75rem;
-  height: ${props => props.pt2_ratio} %;
+  height: ${props => props.pt2_ratio}%;
   object-fit: contain;
   border-radius: 1.3rem;
   background-color: #aaaaaa;
@@ -161,14 +161,14 @@ const Text = styled.div`
   font-size: 0.8rem;
   text-align: left;
   color: #000000;
+  font-family: S-CoreDream-5;
 `;
 const Number = styled.p`
   font-size: 8px;
   font-weight: normal;
-  font-stretch: normal;
+  font-family: S-CoreDream-5;
   font-style: normal;
   line-height: 1.13;
-  letter-spacing: normal;
   text-align: center;
   color: #000000;
 `;

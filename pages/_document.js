@@ -34,6 +34,12 @@ export default class MyDocument extends Document {
     return (
       <html lang="ko">
         <Head>
+          <link
+            rel="icon"
+            type="image/png"
+            sizes="16x16"
+            href="/PageLogo.png"
+          ></link>
           <meta
             name="viewport"
             content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1"

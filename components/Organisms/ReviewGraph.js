@@ -50,9 +50,10 @@ const BoxWrapper = styled.div`
   text-align: center;
 `;
 
-const AverageText = styled.div`
+const AverageText = styled.p`
   font-size: 2.2rem;
   text-align: left;
+  font-family: S-CoreDream-5;
   color: #000000;
 `;
 

@@ -31,11 +31,7 @@ const UserName = styled.p`
   object-fit: contain;
   font-family: S-CoreDream-6;
   font-size: 1.1rem;
-  font-weight: bold;
-  font-stretch: normal;
-  font-style: normal;
   line-height: 1;
-  letter-spacing: normal;
   text-align: left;
   color: #000000;
 `;
@@ -46,11 +42,7 @@ const Time = styled.p`
   object-fit: contain;
   font-family: S-CoreDream-4;
   font-size: 0.9rem;
-  font-weight: normal;
-  font-stretch: normal;
   font-style: normal;
-  line-height: 2.11;
-  letter-spacing: normal;
   text-align: left;
   color: #000000;
 `;
@@ -60,11 +52,7 @@ const Comment = styled.p`
   object-fit: contain;
   font-family: S-CoreDream-4;
   font-size: 1.1rem;
-  font-weight: normal;
-  font-stretch: normal;
-  font-style: normal;
   line-height: 1.55;
-  letter-spacing: normal;
   text-align: left;
   color: #000000;
 `;

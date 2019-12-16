@@ -21,7 +21,7 @@ function FirstPage() {
         }}
       >
         <Arrary>
-          <Logo style={{ marginTop: "9.9rem", marginLeft: " 22rem" }} />
+          <Logo style={{ marginTop: "5.1rem", marginLeft: " 22rem" }} />
           <Beta style={{ paddingLeft: "31rem" }} />
           <Name>끼니끼니</Name>
           <Intro>
@@ -51,7 +51,7 @@ function FirstPage() {
         <Link href="/BuildingList">
           <a style={{ textDecoration: "none" }}>
             <Button>
-              <Text>학교 선택하고 학식 바로 확인!</Text>
+              <Text>이화여자대학교 오늘의 학식은?</Text>
             </Button>
           </a>
         </Link>
@@ -76,33 +76,23 @@ const Arrary = styled.div`
 `;
 const Name = styled.p`
   font-size: 4.8rem;
-  font-weight: normal;
   font-family: HSSummer;
-  font-stretch: normal;
-  font-style: normal;
   line-height: 1.21;
-  height: 4rem;
-  letter-spacing: normal;
   text-align: right;
   color: #ffffff;
   margin: 0;
+  height: 4.8rem;
   padding-right: 3.6rem;
-  margin-bottom: 1.2rem;
 `;
 const Intro = styled.p`
   height: 5.1rem;
   object-fit: contain;
   font-size: 1.8rem;
-  font-weight: bold;
-  font-stretch: normal;
-  font-style: normal;
   line-height: 1.67;
-  letter-spacing: normal;
+  font-family: S-CoreDream-6;
   text-align: right;
   color: #ffffff;
   padding-right: 3.6rem;
-  margin-top: 0;
-  margin-bottom: 15.4rem;
 `;
 const BoxWrapper = styled.div`
   display: flex;
@@ -124,7 +114,7 @@ const Title = styled.p`
   line-height: 1.18;
   letter-spacing: normal;
   text-align: center;
-  font-family: S-CoreDream-6Bold;
+  font-family: S-CoreDream-6;
   color: #ff6565;
 `;
 const Context = styled.p`
@@ -138,12 +128,11 @@ const Context = styled.p`
   text-align: center;
   color: #707070;
   margin-top: 1rem;
-  font-family: S-CoreDream-6Bold;
+  font-family: S-CoreDream-6;
 `;
 
 const Button = styled.div`
   display: flex;
-  align-items: center;
   width: 27.5rem;
   object-fit: contain;
   opacity: 1;
@@ -155,16 +144,14 @@ const Button = styled.div`
 
 const Text = styled.p`
   display: flex;
-  font-family: S-CoreDream-6Bold;
-  width: 100%;
+  font-family: S-CoreDream-6;
   height: 1.8rem;
   font-size: 1.5rem;
   font-weight: 800;
-  font-style: normal;
   text-align: center;
   align-items: center;
   color: #ffffff;
-  margin: 1.4rem 1rem;
+  margin: 1.4rem auto;
 `;
 
 export default FirstPage;

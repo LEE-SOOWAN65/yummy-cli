@@ -14,6 +14,7 @@ function App(props) {
 const Textnow = styled.p`
   font-size: 1.4rem;
   text-align: left;
+  font-family: S-CoreDream-7;
   color: ${props =>
     css`
       ${props.selected ? "#ffffff" : "#b9b9b9"}

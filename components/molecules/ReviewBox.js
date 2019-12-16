@@ -121,11 +121,9 @@ const MenuName = styled.p`
   height: 2.2rem;
   object-fit: contain;
   font-size: 1.9rem;
-  font-weight: bold;
-  font-stretch: normal;
-  font-style: normal;
+
+  font-family: S-CoreDream-6;
   line-height: 1.21;
-  letter-spacing: normal;
   text-align: left;
   color: #000000;
   margin: 0;
@@ -135,11 +133,8 @@ const BuildingName = styled.p`
   height: 1.7rem;
   object-fit: contain;
   font-size: 1.4rem;
-  font-weight: normal;
-  font-stretch: normal;
-  font-style: normal;
+  font-family: S-CoreDream-4;
   line-height: 1.29;
-  letter-spacing: normal;
   text-align: left;
   color: #000000;
 `;
@@ -152,6 +147,7 @@ const Smile = styled.button`
 `;
 const Smilename = styled.div`
   font-size: 0.9rem;
+  font-family: S-CoreDream-5;
   text-align: center;
   color: #000000;
 `;

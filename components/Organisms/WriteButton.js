@@ -84,24 +84,21 @@ const Wrapper = styled.div`
   top: 9rem;
 `;
 
-const Text = styled.div`
+const Text = styled.p`
   font-size: 1.5rem;
-  font-style: normal;
-  letter-spacing: normal;
   text-align: left;
+  font-family: S-CoreDream-6;
   color: #ffffff;
 `;
 
 const PopWrapper = styled.div`
-width: 29.6rem;
+  width: 29.6rem;
   height: 29.5rem;
   object-fit: contain;
   border-radius: 2.2rem;
   box-shadow: 0 0.5rem 1rem 0 rgba(229, 75, 75, 0.3);
   background-color: #ffffff;
-  position:absolute;
-  top:23.9rem;
-  left:3.9rem;
-
-}
+  position: absolute;
+  top: 23.9rem;
+  left: 3.9rem;
 `;

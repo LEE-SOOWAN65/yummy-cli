@@ -16,7 +16,6 @@ export default function BuildingDialog(props) {
 const Wrapper = styled.div`
   height: 61.1rem;
   object-fit: contain;
-  border-radius: 2.2rem;
   box-shadow: 0 0.5rem 1rem 0 rgba(229, 75, 75, 0.3);
   background-color: #e54b4b;
   display:flex;
@@ -48,14 +47,17 @@ const TextLoad = styled.p`
   width: 23.7rem;
   height: 5rem;
   object-fit: contain;
-  opacity: 0.15;
   border-radius: 5.9rem;
-  box-shadow: 0 1rem 1rem 0 rgba(88, 29, 29, 0.75);
-  background-color: #ffffff;
-  object-fit: contain;
+  box-shadow: 0 1rem 1rem 0 #581d1d;
+  background-color: #fa535a;
   font-family: S-CoreDream-6;
-  font-size: 17px;
+  font-size: 1.7rem;
   font-weight: bold;
   line-height: 1.18;
-  color: #000000;
+  text-align: center;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto auto;
 `;

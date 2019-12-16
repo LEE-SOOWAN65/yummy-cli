@@ -13,6 +13,10 @@ function App() {
   const [month, setMonth] = useState(new Date().getMonth() + 1);
   const [day, setDay] = useState(new Date().getDate());
   const [textIndex, setTextIndex] = useState(0);
+  // var week = new Array('일요일', '월요일', '화요일', '수요일', '목요일', '금요일', '토요일');
+  // const [today, settoday] = useState(new Date().getDay());
+  //   var todayLabel = week[today];
+
   const getCurrentTimePeriod = () => {
     const nowTime = new Date();
     const hour = nowTime.getHours();
@@ -66,13 +70,15 @@ function App() {
             <MainTopDialog
               month={month}
               day={day}
+              // today={today}
               timePeriod={timePeriod}
               textIndex={textIndex}
               setTimePeriod={tp => setTimePeriod(tp)}
               setDay={day => setDay(day)}
             />
-            <BuildingDialog month={month} day={day} timePeriod={timePeriod} />
           </TopWrapper>
+          <div style={{ height: "20rem" }} />
+          <BuildingDialog month={month} day={day} timePeriod={timePeriod} />
         </Wrapper>
       </div>
     </>
@@ -86,6 +92,8 @@ const TopWrapper = styled.div`
   top: 0;
   left: 0;
   right: 0;
+  height: 21.1rem;
+  background-color: #ffffff;
 `;
 const Wrapper = styled.div`
   width: 100%;

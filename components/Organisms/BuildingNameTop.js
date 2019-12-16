@@ -15,15 +15,18 @@ function BuildingNameTop(props) {
 const Wrapper = styled.div`
   display: flex
   flex-direction: row;
-  margin:0 auto;
   align-items: center;
-  overflow: auto;
-  position: "fixed";
+  position: fixed;
+  top:16.9rem;
+  left: 0;
+  right: 0;
+
 `;
 
 const BuildingName = styled.div`
   ispaly: flex;
   font-size: 1.8rem;
+  font-family: S-CoreDream-6;
   font-weight: bold;
   text-align: center;
   color: #000000;

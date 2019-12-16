@@ -50,10 +50,8 @@ const MenuName = styled.p`
   text-align: center;
   color: #e54b4b;
   font-weight: 800;
-  font-stretch: normal;
-  font-style: normal;
   line-height: 1.22;
-  letter-spacing: normal;
+  font-family: S-CoreDream-6;
   padding: 0 2rem;
 `;
 
@@ -78,10 +76,8 @@ const Text = styled.p`
   height: 2.1rem;
   font-size: 1.8rem;
   font-weight: 800;
-  font-stretch: normal;
-  font-style: normal;
+  font-family: S-CoreDream-6;
   line-height: 1.22;
-  letter-spacing: normal;
   text-align: center;
   color: #f5f5f5;
 `;
