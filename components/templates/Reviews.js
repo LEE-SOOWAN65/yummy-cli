@@ -45,6 +45,7 @@ const UserName = styled.p`
   line-height: 1;
   text-align: left;
   color: #000000;
+  width: 23.6rem;
 `;
 
 const Time = styled.p`
@@ -54,7 +55,6 @@ const Time = styled.p`
   line-height: 2.11;
   text-align: right;
   color: #000000;
-  margin: 0;
 `;
 
 const Comment = styled.p`

@@ -7,6 +7,7 @@ import LeftIcon from "../atoms/Icon/Botton/left";
 import RightIcon from "../atoms/Icon/Botton/right";
 
 export default function TopDialog(props) {
+  const [available, setAvailable] = useState(true);
   return (
     <Wrapper>
       <Icon>
@@ -42,7 +43,13 @@ export default function TopDialog(props) {
 
           <RightIcon
             onClick={() => {
-              props.setDay(day + 1);
+              if (available) {
+                props.setDay(day + 1);
+              } else setAvailable(true);
+
+              if (today === 6 && day > new Date().getDate()) {
+                setAvailable(false);
+              }
             }}
           />
         </ButtonWrapper>

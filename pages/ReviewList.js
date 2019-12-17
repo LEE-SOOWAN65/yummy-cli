@@ -42,6 +42,7 @@ function App(props) {
             />
           </>
         )}
+
         {data && data.reviews ? (
           <Reviews reviews={data.reviews} />
         ) : (
@@ -51,11 +52,21 @@ function App(props) {
               flexDirection: "column",
               justifyContent: "center",
               alignItems: " center",
-              margin: "5.37rem auto 0 "
+              margin: "5.37rem auto 0 ",
+              backgroundColor: "white",
+              width: "100%",
+              height: "100%"
             }}
           >
-            <Icons />
-            <NoReviewText>작성된 리뷰가 없습니다</NoReviewText>
+            <div
+              style={{
+                width: "100%",
+                height: "60rem"
+              }}
+            />
+
+            {/* <Icons />
+            <NoReviewText>작성된 리뷰가 없습니다</NoReviewText> */}
           </div>
         )}
         <Link
@@ -80,14 +91,14 @@ const Wrapper = styled.div`
   text-align: center;
 `;
 
-const NoReviewText = styled.p`
-  width: 20.4rem;
-  height: 2.3rem;
-  object-fit: contain;
-  font-family: S-CoreDream-6Bold;
-  font-size: 2rem;
-  line-height: 0.55;
-  color: #c7c7c7;
-`;
+// const NoReviewText = styled.p`
+//   width: 20.4rem;
+//   height: 2.3rem;
+//   object-fit: contain;
+//   font-family: S-CoreDream-6Bold;
+//   font-size: 2rem;
+//   line-height: 0.55;
+//   color: #c7c7c7;
+// `;
 
 export default App;

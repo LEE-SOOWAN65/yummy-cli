@@ -5,7 +5,7 @@ import Link from "next/link";
 
 export default function BuildingDialog(props) {
   return (
-    <div style={{ paddingBottom: "3.7rem" }}>
+    <div style={{ paddingBottom: "2.4rem" }}>
       <MenuType>
         <MenuTypeText>{`식단${props.number}`}</MenuTypeText>
       </MenuType>
@@ -76,8 +76,7 @@ const MenuLine = styled.div`
   flex-direction: row;
   border: none;
   align-items: center;
-  padding-left: 2.06rem;
-  padding-bottom: 1rem;
+  padding: 1rem 2.06rem 1rem;
 `;
 
 const Text = styled.div`

@@ -72,7 +72,7 @@ export default function TemporaryDrawer() {
               onClick={() => {
                 handleOpen();
               }}
-              style={{ width: "15.31rem", margin: "0rem" }}
+              style={{ width: "65%", margin: "0rem" }}
             />
             <Modal
               aria-labelledby="simple-modal-title"
@@ -135,8 +135,8 @@ export default function TemporaryDrawer() {
                 handleOpen();
               }}
               style={{
-                width: "15.31rem",
-                margin: "1.12rem 1.59rem 4.28rem 7rem"
+                width: "65%",
+                margin: "1.12rem 0 4.28rem 7rem"
               }}
             />{" "}
             <Modal
@@ -199,38 +199,17 @@ export default function TemporaryDrawer() {
             <UserDetail>
               <div style={{ display: "flex", flex: 1 }} />
               <Detail>
-                <hr
-                  style={{
-                    display: "flex",
-                    flex: 1,
-                    width: "1rem",
-                    borderTop: "0.05rem solid #707070"
-                  }}
-                />
+                0<br />
                 평가
               </Detail>
               <div style={{ display: "flex", flex: 1 }} />
               <Detail>
-                <hr
-                  style={{
-                    display: "flex",
-                    flex: 1,
-                    width: "1rem",
-                    borderTop: "0.05rem solid #707070"
-                  }}
-                />
+                0<br />
                 찜하기
               </Detail>
               <div style={{ display: "flex", flex: 1 }} />
               <Detail>
-                <hr
-                  style={{
-                    display: "flex",
-                    flex: 1,
-                    width: "1rem",
-                    borderTop: "0.05rem solid #707070"
-                  }}
-                />
+                0<br />
                 알림
               </Detail>
               <div style={{ display: "flex", flex: 1 }} />
@@ -240,7 +219,6 @@ export default function TemporaryDrawer() {
 
         <List>
           <div style={{ display: "flex", flexDirection: "column" }}>
-            {" "}
             <a
               href="https://pf.kakao.com/_KYpQT"
               style={{ textDecoration: "none" }}
@@ -253,7 +231,6 @@ export default function TemporaryDrawer() {
               href="https://pf.kakao.com/_KYpQT"
               style={{ textDecoration: "none" }}
             >
-              {" "}
               <Menu>
                 <QuestionIcon style={{ marginRight: "2.3rem" }} /> 카카오톡
                 문의하기
@@ -263,7 +240,6 @@ export default function TemporaryDrawer() {
               href="https://pf.kakao.com/_KYpQT"
               style={{ textDecoration: "none" }}
             >
-              {" "}
               <Menu>
                 <PlusFriendIcon style={{ marginRight: "2.3rem" }} /> 카카오톡
                 플러스친구
@@ -322,14 +298,6 @@ const Logo = styled.div`
   width: 100%;
 `;
 
-const DrawerItemText = styled(ListItemText)`
-  object-fit: contain;
-  font-family: S-CoreDream-6;
-  font-size: 1.3rem;
-  font-weight: bold;
-  line-height: 1.46;
-  color: #f5f5f5;
-`;
 const PopWrapper = styled.div`
   width: 29.6rem;
   height: 29.5rem;
@@ -354,6 +322,8 @@ const Detail = styled.p`
   width: 3rem;
   text-align: center;
   align-items: center;
+  display: flex;
+  flex: 1;
 `;
 const MadalText = styled.p`
   height: 7.2rem;

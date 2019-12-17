@@ -66,8 +66,7 @@ const MenuList = styled.div`
   flex-direction: row;
   border: none;
   align-items: center;
-  padding-left: 2.06rem;
-  padding-bottom: 1rem;
+  margin: 0.5rem 2.06rem 1rem;
 `;
 const Text = styled.div`
   display: flex;
