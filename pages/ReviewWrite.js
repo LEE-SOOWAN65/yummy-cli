@@ -46,6 +46,7 @@ const TopWrapper = styled.div`
   background-color: #e54b4b;
   display: flex;
   position: fixed;
+  top:0
   width: 100%;
   max-width: 36rem;
 `;

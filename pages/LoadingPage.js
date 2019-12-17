@@ -14,14 +14,14 @@ export default function BuildingDialog(props) {
   );
 }
 const Wrapper = styled.div`
-  height: 61.1rem;
+  height: 60rem;
   object-fit: contain;
   box-shadow: 0 0.5rem 1rem 0 rgba(229, 75, 75, 0.3);
   background-color: #e54b4b;
-  display:flex;
-  align-items:center
-  text-align:center
-  flex-direction:column;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
 `;
 const Text = styled.p`
   object-fit: contain;

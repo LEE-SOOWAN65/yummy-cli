@@ -41,8 +41,8 @@ export default function TopDialog(props) {
 
           <div
             style={{
-              fontSize: "13px",
-              fontFamily: "S-CoreDream-6",
+              fontSize: "1.4rem",
+              fontFamily: "S-CoreDream-7",
               color: "#707070",
               padding: "10px"
             }}
@@ -112,4 +112,5 @@ const ButtonWrapper = styled.div`
   flex-direction: column;
   align-items: center;
   flex-direction: row;
+  margintop: 1rem;
 `;

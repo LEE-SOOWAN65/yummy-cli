@@ -72,7 +72,7 @@ function App() {
               setDay={day => setDay(day)}
             />
           </TopWrapper>
-          <div style={{ height: "21.1rem", width: "100%" }} />
+          <div style={{ height: "17rem", width: "100%" }} />
 
           <BuildingDialog
             month={month}
@@ -86,7 +86,7 @@ function App() {
   );
 }
 const TopWrapper = styled.div`
-  height: 21.1rem;
+  height: 17rem;
   background-color: #ffffff;
   position: fixed;
   top: 0;

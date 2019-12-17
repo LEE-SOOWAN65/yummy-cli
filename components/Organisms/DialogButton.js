@@ -18,7 +18,7 @@ export default function FacilButton(props) {
               .slice(0, Math.min(props.sikdans.length, 3))
               .map((value, index) => (
                 <MenuList key={index}>
-                  <StarIcon style={{ paddingRight: "0.6rem" }} />
+                  <StarIcon style={{ paddingRight: "0.4rem" }} />
                   <Text>
                     <Average>{value.avg_rating.toFixed(1)}</Average>
 
@@ -64,9 +64,10 @@ const BuildingName = styled.div`
 const MenuList = styled.div`
   display: flex;
   flex-direction: row;
+  height:2.06rem
   border: none;
   align-items: center;
-  margin: 0.5rem 2.06rem 1rem;
+  margin: 0.5rem 2.06rem 1rem 1rem;
 `;
 const Text = styled.div`
   display: flex;

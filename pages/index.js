@@ -1,10 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 import TopButton from "../components/Organisms/TopButton";
-
-import Logo from "../components/atoms/Icon/BigLogo";
+import Logo from "../components/atoms/Icon/indexPage";
 import Speaker from "../components/atoms/Icon/TitleSpeaker";
-import Beta from "../components/atoms/Icon/Beta";
 import Link from "next/link";
 function FirstPage() {
   return (
@@ -21,13 +19,7 @@ function FirstPage() {
         }}
       >
         <Arrary>
-          <Logo style={{ marginTop: "5.1rem", marginLeft: " 22rem" }} />
-          <Beta style={{ paddingLeft: "31rem" }} />
-          <Name>끼니끼니</Name>
-          <Intro>
-            매일매일 학식 메뉴부터 <br />
-            리뷰까지 한번에!
-          </Intro>
+          <Logo style={{ width: "50%", margin: "5.14rem 0 9rem 15.6rem" }} />
         </Arrary>
 
         <BoxWrapper>
@@ -35,7 +27,10 @@ function FirstPage() {
             style={{
               display: "flex",
               flexDirection: "row",
-              alignItems: "center"
+              alignItems: "center",
+              textAlign: "center",
+              height: "5rem",
+              marginTop: "1rem"
             }}
           >
             <Speaker style={{ paddingRight: "1.46rem" }} />
@@ -78,11 +73,10 @@ const Name = styled.p`
   font-size: 4.8rem;
   font-family: HSSummer;
   line-height: 1.21;
-  text-align: right;
   color: #ffffff;
   margin: 0;
   height: 4.8rem;
-  padding-right: 3.6rem;
+  margin-right: 3.6rem;
 `;
 const Intro = styled.p`
   height: 5.1rem;
@@ -92,43 +86,41 @@ const Intro = styled.p`
   font-family: S-CoreDream-6;
   text-align: right;
   color: #ffffff;
-  padding-right: 3.6rem;
+  margin: 0 3.6rem 2rem 0;
 `;
 const BoxWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 12.7rem;
+  height: 12rem;
   opacity: 0.8;
   box-shadow: 0 0.3rem 0.6rem 0 rgba(255, 101, 101, 0.44);
   border: solid 0.1rem #707070;
   background-color: #f5f5f5;
-  margin-bottom: 2.5rem;
+  margin-bottom: 2rem;
 `;
 const Title = styled.p`
+  display: flex;
   object-fit: contain;
   font-size: 1.7rem;
   font-weight: bold;
-  font-stretch: normal;
-  font-style: normal;
   line-height: 1.18;
-  letter-spacing: normal;
   text-align: center;
+  align-items: center;
   font-family: S-CoreDream-6;
   color: #ff6565;
+  margin: 0;
 `;
 const Context = styled.p`
   object-fit: contain;
   font-size: 1.4rem;
   font-weight: bold;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.71;
+  line-height: 1.6;
   letter-spacing: normal;
   text-align: center;
   color: #707070;
-  margin-top: 1rem;
   font-family: S-CoreDream-6;
+  margin: 0;
 `;
 
 const Button = styled.div`
@@ -139,7 +131,7 @@ const Button = styled.div`
   border-radius: 5.9rem;
   box-shadow: 0 1rem 1rem 0 rgba(88, 29, 29, 0.8);
   background-color: #e54b4b;
-  margin: 0 auto 3.5rem;
+  margin: 0 auto 2rem;
 `;
 
 const Text = styled.p`

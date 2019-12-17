@@ -65,7 +65,7 @@ const Wrapper = styled.div`
 `;
 
 const TopWrapper = styled.div`
-  height: 16rem;
+  height: 14rem;
   background-color: #ffffff;
 `;
 

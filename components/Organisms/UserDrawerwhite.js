@@ -136,7 +136,7 @@ export default function TemporaryDrawer() {
               }}
               style={{
                 width: "65%",
-                margin: "1.12rem 1.59rem 4.28rem 7rem"
+                margin: "1.12rem 0 4.28rem 7rem"
               }}
             />{" "}
             <Modal
@@ -319,9 +319,11 @@ const Detail = styled.p`
   color: #707070;
   display: flex;
   flex-direction: column;
-  width: 4rem;
+  width: 3rem;
   text-align: center;
   align-items: center;
+  display: flex;
+  flex: 1;
 `;
 const MadalText = styled.p`
   height: 7.2rem;

@@ -32,7 +32,7 @@ export default function TopDialog(props) {
 
           <div
             style={{
-              fontSize: "13px",
+              fontSize: "1.3rem",
               fontFamily: "S-CoreDream-6",
               color: "#707070",
               padding: "10px"

@@ -12,7 +12,7 @@ function App(props) {
 }
 
 const Textnow = styled.p`
-  font-size: 1.4rem;
+  font-size: 1.3rem;
   text-align: left;
   font-family: S-CoreDream-7;
   color: ${props =>
