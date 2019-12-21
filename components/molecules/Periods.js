@@ -30,7 +30,6 @@ const Wrapper = styled.div`
   align-items: center;
   flex-wrap: nowrap;
   overflow: auto;
-  position: "fixed";
 `;
 
 const TimeWrapper = styled.div`

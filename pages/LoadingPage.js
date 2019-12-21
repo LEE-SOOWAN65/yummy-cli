@@ -14,7 +14,9 @@ export default function BuildingDialog(props) {
   );
 }
 const Wrapper = styled.div`
-  height: 60rem;
+  height: 100%;
+  border-radius: 2.2rem;
+  margin: 2.6rem 0 0;
   object-fit: contain;
   box-shadow: 0 0.5rem 1rem 0 rgba(229, 75, 75, 0.3);
   background-color: #e54b4b;
@@ -27,18 +29,14 @@ const Text = styled.p`
   object-fit: contain;
   font-family: HSSummer;
   font-size: 3.5rem;
-  font-weight: normal;
-  font-stretch: normal;
-  font-style: normal;
   line-height: 1.2;
-  letter-spacing: normal;
   text-align: left;
   color: #ffffff;
   margin-bottom: 0;
 `;
 
 const LogoWrapper = styled.div`
-  margin: auto auto;
+  margin: 25% auto 13.2rem;
   display: flex;
   flex-direction: column;
 `;
@@ -59,5 +57,5 @@ const TextLoad = styled.p`
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: auto auto;
+  margin: 0 auto;
 `;

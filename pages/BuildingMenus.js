@@ -38,12 +38,12 @@ function App(props) {
           month={month}
           day={day}
           timePeriod={timePeriod}
-          setTimePeriod={setTimePeriod}
+          setTimePeriod={tp => setToday(tp)}
+          setTimePeriod={tp => setTimePeriod(tp)}
           setDay={day => {
             setDay(day);
           }}
           today={router.query.today}
-          setTimePeriod={tp => setToday(tp)}
         />
       </TopWrapper>
 

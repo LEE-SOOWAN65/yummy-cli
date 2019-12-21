@@ -69,25 +69,6 @@ const Arrary = styled.div`
   text-align:right;
   maring-right:3.6rem 
 `;
-const Name = styled.p`
-  font-size: 4.8rem;
-  font-family: HSSummer;
-  line-height: 1.21;
-  color: #ffffff;
-  margin: 0;
-  height: 4.8rem;
-  margin-right: 3.6rem;
-`;
-const Intro = styled.p`
-  height: 5.1rem;
-  object-fit: contain;
-  font-size: 1.8rem;
-  line-height: 1.67;
-  font-family: S-CoreDream-6;
-  text-align: right;
-  color: #ffffff;
-  margin: 0 3.6rem 2rem 0;
-`;
 const BoxWrapper = styled.div`
   display: flex;
   flex-direction: column;

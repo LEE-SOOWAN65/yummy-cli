@@ -66,15 +66,15 @@ export default function TopDialog(props) {
 
       <div
         style={{
-          width: "83%",
-          height: "4.98rem",
+          width: "30.7rem",
+          height: "4.81rem",
           position: "relative",
           backgroundImage: "url(/bubble.png)",
           backgroundSize: "100%",
           display: "flex",
           flexDirection: "row",
           paddingLeft: "1rem",
-          textAlign: "cneter"
+          textAlign: "center"
         }}
       >
         <Text style={{ marginTop: "0.1rem" }}>{TodayText[textIndex]}</Text>
@@ -89,6 +89,7 @@ const Wrapper = styled.div`
   align-items: center;
   overflow: auto;
   width: 100%;
+  max-width: 36rem;
 `;
 
 const Text = styled.p`
