@@ -4,6 +4,8 @@ import TopButton from "../components/Organisms/TopButton";
 import Logo from "../components/atoms/Icon/indexPage";
 import Speaker from "../components/atoms/Icon/TitleSpeaker";
 import Link from "next/link";
+import FacebookLogin from "react-facebook-login";
+
 function FirstPage() {
   return (
     <Wrapper>

@@ -50,10 +50,10 @@ export default function TopDialog(props) {
 
         <div
           style={{
-            fontSize: "13px",
-            fontFamily: "S-CoreDream-6",
+            fontSize: "1.4rem",
+            fontFamily: "S-CoreDream-7",
             color: "#707070",
-            padding: "10px"
+            padding: "1rem"
           }}
         >
           {month}월{day}일 {week[today]}

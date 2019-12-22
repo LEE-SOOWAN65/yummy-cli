@@ -44,7 +44,7 @@ export default function TopDialog(props) {
               fontSize: "1.4rem",
               fontFamily: "S-CoreDream-7",
               color: "#707070",
-              padding: "10px"
+              padding: "1rem"
             }}
           >
             {month}월{day}일 {week[today]}

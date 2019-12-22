@@ -107,8 +107,6 @@ const Wrapper = styled.div`
   align-items: center;
   width: 100%;
   max-width: 36rem;
-  position: fixed;
-  top: 7rem;
 `;
 
 const Text = styled.p`

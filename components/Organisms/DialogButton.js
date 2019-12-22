@@ -52,7 +52,7 @@ const BuildingWrapper = styled.button`
 const BuildingName = styled.div`
   height: 2.4rem;
   padding-top: 1.6rem;
-  padding-left: 1.9rem;
+  padding-left: 1rem;
   object-fit: contain;
   font-size: 1.4rem;
   font-family: S-CoreDream-6;

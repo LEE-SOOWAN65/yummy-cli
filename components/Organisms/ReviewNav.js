@@ -14,8 +14,8 @@ export default function bottom(props) {
 }
 
 const Box = styled.div`
-  width: 97%;
   flex-direction: row;
+  width: 36rem;
   border: none;
   height: 4.53rem;
   align-items: center;
@@ -23,7 +23,7 @@ const Box = styled.div`
   margin: 0 auto;
   box-shadow: 0 -0.2rem 0.5rem 0 rgba(229, 75, 75, 0.2);
   background-color: #ffffff;
-  border-radius: 2rem 2rem 0 0;
+  border-radius: 1.5rem;
   display: flex;
   position: fixed;
   bottom: 0;

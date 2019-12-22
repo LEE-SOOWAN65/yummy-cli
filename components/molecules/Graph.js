@@ -162,6 +162,7 @@ const Text = styled.div`
   text-align: left;
   color: #000000;
   font-family: S-CoreDream-5;
+  margin-top: 0.71rem;
 `;
 const Number = styled.p`
   font-size: 8px;

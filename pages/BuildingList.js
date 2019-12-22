@@ -51,14 +51,14 @@ function App() {
           height: "100%"
         }}
       >
-        {/* <FacebookLogin
-        appId="1425008167650893"
-        autoLoad={true}
-        fields="name,email,picture"
-        callback={response => {
-          console.log(response);
-        }}
-      /> */}
+        <FacebookLogin
+          appId="1425008167650893"
+          autoLoad={true}
+          fields="name,email,picture"
+          callback={response => {
+            console.log(response);
+          }}
+        />
         <Wrapper>
           <TopWrapper>
             <TopButton />
@@ -72,7 +72,7 @@ function App() {
               setDay={day => setDay(day)}
             />
           </TopWrapper>
-          <div style={{ height: "17rem", width: "100%" }} />
+          <div style={{ height: "19rem", width: "100%" }} />
 
           <BuildingDialog
             month={month}

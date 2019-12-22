@@ -55,7 +55,7 @@ const Time = styled.p`
   line-height: 2.11;
   text-align: right;
   color: #000000;
-  width: 4rem;
+  width: 10rem;
 `;
 
 const Comment = styled.p`
