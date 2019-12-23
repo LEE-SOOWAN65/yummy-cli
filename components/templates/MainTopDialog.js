@@ -16,6 +16,7 @@ export default function TopDialog(props) {
   useEffect(() => {
     setToday(new Date(new Date().setDate(day)).getDay());
   }, [day]);
+
   return (
     <Wrapper>
       <Icon>

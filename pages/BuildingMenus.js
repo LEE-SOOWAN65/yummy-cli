@@ -27,10 +27,9 @@ function App(props) {
       process.env.API_HOST +
         `/cafeteria/${id}/2019/${month}/${day}/${TIME_TEXT[timePeriod]}/`
     );
-  }, [day]);
+  }, [timePeriod, day]);
 
   const data = useQuery(apiUrl);
-
   return (
     <Wrapper>
       <TopButton />
@@ -49,6 +48,7 @@ function App(props) {
       {data && (
         <>
           <BuildingNameTop name={data.name} />
+
           <MenuDialog name={data.name} sikdans={data.sikdans} />
         </>
       )}

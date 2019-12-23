@@ -44,7 +44,7 @@ export default function TopDialog(props) {
       <ButtonWrapper>
         <LeftIcon
           onClick={() => {
-            props.setDay(day - 1);
+            props.setDay(parseInt(day) - 1);
           }}
         />
 
@@ -62,7 +62,7 @@ export default function TopDialog(props) {
         <RightIcon
           onClick={() => {
             if (available) {
-              props.setDay(day + 1);
+              props.setDay(parseInt(day) + 1);
             }
 
             if (today === 6 && day > new Date().getDate()) {

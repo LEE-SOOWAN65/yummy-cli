@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import RedBox from "../components/Organisms/ReviewRedBox";
 import ReviewText from "../components/Organisms/ReviewText";
-
+import TopButton from "../components/Organisms/TopButtonwhite";
+import WriteButton from "../components/Organisms/WriteButton";
 //메뉴별 리뷰 페이지(아래 리뷰작성버튼)
 
 export default function Topbutton(props) {
@@ -12,7 +12,10 @@ export default function Topbutton(props) {
 
   return (
     <Wrapper>
-      <RedBox />
+      <TopWrapper>
+        <TopButton />
+        <WriteButton rating={rating} comment={comment} nickname={nickname} />
+      </TopWrapper>
       <ReviewText
         rating={rating}
         setRating={setRating}
@@ -40,6 +43,7 @@ const TopWrapper = styled.div`
   height: 24rem;
   background-color: #e54b4b;
   display: flex;
+  flex-direction: column;
   position: fixed;
   width: 100%;
   max-width: 36rem;
