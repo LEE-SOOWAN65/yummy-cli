@@ -63,7 +63,7 @@ export default function TopDialog(props) {
           onClick={() => {
             if (available) {
               props.setDay(day + 1);
-            } else setAvailable(true);
+            }
 
             if (today === 6 && day > new Date().getDate()) {
               setAvailable(false);

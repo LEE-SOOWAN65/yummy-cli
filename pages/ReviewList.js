@@ -6,7 +6,6 @@ import ReviewGraph from "../components/Organisms/ReviewGraph";
 import RedBox from "../components/Organisms/RedBox";
 import Reviews from "../components/Templates/Reviews";
 import Icons from "../components/atoms/Icon/NoReviewIcon";
-
 import Link from "next/link";
 import { useQuery } from "../lib";
 
@@ -19,6 +18,9 @@ function App(props) {
 
   const data = useQuery(apiUrl);
 
+  if (data) {
+    console.log(data.reviews);
+  }
   return (
     <div
       className="App"
@@ -43,9 +45,10 @@ function App(props) {
           </>
         )}
 
-        {data && data.reviews ? (
+        {data && data.reviews.length !== 0 && (
           <Reviews reviews={data.reviews} />
-        ) : (
+        )}
+        {data && data.reviews.length === 0 && (
           <div
             style={{
               display: "flex",
@@ -65,8 +68,8 @@ function App(props) {
               }}
             />
 
-            {/* <Icons />
-            <NoReviewText>작성된 리뷰가 없습니다</NoReviewText> */}
+            <Icons />
+            <NoReviewText>작성된 리뷰가 없습니다</NoReviewText>
           </div>
         )}
         <Link
@@ -91,14 +94,14 @@ const Wrapper = styled.div`
   text-align: center;
 `;
 
-// const NoReviewText = styled.p`
-//   width: 20.4rem;
-//   height: 2.3rem;
-//   object-fit: contain;
-//   font-family: S-CoreDream-6Bold;
-//   font-size: 2rem;
-//   line-height: 0.55;
-//   color: #c7c7c7;
-// `;
+const NoReviewText = styled.p`
+  width: 20.4rem;
+  height: 2.3rem;
+  object-fit: contain;
+  font-family: S-CoreDream-6Bold;
+  font-size: 2rem;
+  line-height: 0.55;
+  color: #c7c7c7;
+`;
 
 export default App;

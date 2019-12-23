@@ -51,14 +51,6 @@ function App() {
           height: "100%"
         }}
       >
-        <FacebookLogin
-          appId="1425008167650893"
-          autoLoad={true}
-          fields="name,email,picture"
-          callback={response => {
-            console.log(response);
-          }}
-        />
         <Wrapper>
           <TopWrapper>
             <TopButton />
