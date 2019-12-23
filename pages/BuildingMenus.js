@@ -16,12 +16,11 @@ function App(props) {
   const router = useRouter();
   const { month, id } = router.query;
   const [timePeriod, setTimePeriod] = useState(router.query.timePeriod);
-  const [day, setDay] = useState(router.query.day);
+  const [day, setDay] = useState(parseInt(router.query.day));
   const [apiUrl, setApiUrl] = useState(
     process.env.API_HOST +
       `/cafeteria/${id}/2019/${month}/${day}/${TIME_TEXT[timePeriod]}/`
   );
-
   useEffect(() => {
     setApiUrl(
       process.env.API_HOST +
@@ -30,25 +29,27 @@ function App(props) {
   }, [timePeriod, day]);
 
   const data = useQuery(apiUrl);
+
   return (
     <Wrapper>
-      <TopButton />
-      <TopDialog
-        month={month}
-        day={day}
-        timePeriod={timePeriod}
-        setTimePeriod={TimePeriod => {
-          setTimePeriod(TimePeriod);
-        }}
-        setDay={day => {
-          setDay(day);
-        }}
-        today={router.query.today}
-      />
+      <TopWrapper>
+        <TopButton />
+        <TopDialog
+          month={month}
+          day={day}
+          timePeriod={timePeriod}
+          setTimePeriod={tp => setToday(tp)}
+          setTimePeriod={tp => setTimePeriod(tp)}
+          setDay={day => {
+            setDay(day);
+          }}
+          today={router.query.today}
+        />
+      </TopWrapper>
+
       {data && (
         <>
           <BuildingNameTop name={data.name} />
-
           <MenuDialog name={data.name} sikdans={data.sikdans} />
         </>
       )}
@@ -61,6 +62,11 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   height: 100%;
+`;
+
+const TopWrapper = styled.div`
+  height: 14rem;
+  background-color: #ffffff;
 `;
 
 export default App;

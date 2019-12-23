@@ -30,7 +30,7 @@ const IconWrapper = styled.div`
   align-items: center;
   text-align: center;
   overflow: auto;
-  width: 80%;
+  width: 85%;
 `;
 
 const Wrapper = styled.div`
@@ -46,7 +46,7 @@ const Wrapper = styled.div`
 
 const MenuName = styled.p`
   height: 2.1rem;
-  font-size: 1.8rem;
+  font-size: 1.7rem;
   text-align: center;
   color: #e54b4b;
   font-weight: 800;

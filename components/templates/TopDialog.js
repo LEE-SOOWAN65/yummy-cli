@@ -56,7 +56,7 @@ export default function TopDialog(props) {
             padding: "1rem"
           }}
         >
-          {month}월{day}일 {week[today]}
+          {month}월{day}일{week[today]}
         </div>
 
         <RightIcon

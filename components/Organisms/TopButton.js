@@ -8,7 +8,7 @@ export default function Topbutton(props) {
   return (
     <Wrapper>
       <Link href="/index">
-        <a style={{ textDecoration: "none", flex: 2 }}>
+        <a style={{ textDecoration: "none", flex: "1.5" }}>
           <KinnyLogo style={{ flex: "1.5", marginTop: "2rem" }} />
         </a>
       </Link>

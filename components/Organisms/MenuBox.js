@@ -44,23 +44,25 @@ const Wrapper = styled.div`
   align-items: center;
 `;
 const MenuType = styled.div`
-  width: 6.63rem;
   display: flex;
-  height: 2.12rem;
-  border-radius: 1.8rem;
-  background-color: #ff6565;
+  width: 6rem;
+  height: 2.5rem;
+  object-fit: contain;
+  border-radius: 1.7rem;
+  background-color: #e54b4b;
+  text-align: center;
   align-items: center;
-  justify-content: center;
-  margin-bottom: 1rem;
+  margin-bottom: 0.7rem;
 `;
 
-const MenuTypeText = styled.div`
-  font-size: 1.4rem;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.14;
-  letter-spacing: normal;
+const MenuTypeText = styled.p`
+  font-family: S-CoreDream-5;
+  font-size: 1.3rem;
+  font-weight: 500;
+  line-height: 1.23;
+  text-align: center;
   color: #ffffff;
+  margin: auto auto;
 `;
 
 const MenuList = styled.div`

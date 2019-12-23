@@ -54,7 +54,7 @@ const BuildingName = styled.div`
   padding-top: 1.6rem;
   padding-left: 1rem;
   object-fit: contain;
-  font-size: 1.4rem;
+  font-size: 1.5rem;
   font-family: S-CoreDream-6;
   line-height: 1.29;
   text-align: left;
