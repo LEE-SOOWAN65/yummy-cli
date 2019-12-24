@@ -68,6 +68,12 @@ export default function TemporaryDrawer() {
                 padding: "8.96rem 1.13rem 0 2.47rem"
               }}
             />
+            <FaceBook
+              onClick={() => {
+                handleOpen();
+              }}
+              style={{ width: "65%", margin: "0rem" }}
+            />
             <Modal
               aria-labelledby="simple-modal-title"
               aria-describedby="simple-modal-description"

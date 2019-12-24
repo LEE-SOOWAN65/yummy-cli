@@ -37,19 +37,19 @@ export default function TopDialog(props) {
           <LeftIcon
             onClick={() => {
               props.setDay(day - 1);
+              setAvailable(true);
             }}
           />
 
-          <div
+          <p
             style={{
               fontSize: "1.4rem",
               fontFamily: "S-CoreDream-7",
-              color: "#707070",
-              padding: "1rem"
+              color: "#707070"
             }}
           >
-            {month}월{day}일 {week[today]}
-          </div>
+            {`${month}월 ${day}일 ${week[today]}`}
+          </p>
 
           <RightIcon
             onClick={() => {
@@ -78,7 +78,7 @@ export default function TopDialog(props) {
           textAlign: "center"
         }}
       >
-        <Text style={{ marginTop: "0.1rem" }}>{TodayText[textIndex]}</Text>
+        <Text>{TodayText[textIndex]}</Text>
       </div>
     </Wrapper>
   );
@@ -94,11 +94,13 @@ const Wrapper = styled.div`
 `;
 
 const Text = styled.p`
-  font-size: 13px;
-  fontfamily: S-CoreDream-6;
+  font-family: S-CoreDream-6;
+  font-size: 1rem;
+  line-height: 1.2;
+  text-align: left;
   color: #ffffff;
-  padding-left: 4rem;
-  padding-top: 1.7rem;
+  margin-top: 2.2rem;
+  margin-left: 4.81rem;
 `;
 
 const Icon = styled.div`

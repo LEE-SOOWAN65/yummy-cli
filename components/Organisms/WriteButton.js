@@ -9,6 +9,10 @@ import Logo from "../atoms/Icon/ReviewLogo";
 export default function Topbutton(props) {
   const [open, setOpen] = React.useState(false);
   const router = useRouter();
+
+  const isValidReview =
+    props.rating !== null && props.comment !== null && props.nickname !== null;
+
   const handleSubmit = () => {
     var tmp = {
       nickname: props.nickname,
@@ -24,12 +28,15 @@ export default function Topbutton(props) {
 
     console.log("success" + props.rating + "/" + props.comment);
   };
+
   const handleOpen = () => {
     setOpen(true);
   };
 
   const handleClose = () => {
-    router.back();
+    if (isValidReview) {
+      router.back();
+    }
     setOpen(false);
   };
 
@@ -59,7 +66,6 @@ export default function Topbutton(props) {
       >
         <PopWrapper>
           <a
-            onClick={() => router.back()}
             type="button"
             onClick={handleClose}
             style={{
@@ -84,11 +90,17 @@ export default function Topbutton(props) {
           >
             <Logo
               style={{
-                margin: "0 0 3rem 0"
+                width: "8.8rem",
+                height: "8.8rem",
+                marginBottom: "1rem"
               }}
             />
             <hr style={{ width: "80%" }} />
-            <ModalText>리뷰가 등록되었습니다!</ModalText>
+            <ModalText>
+              {isValidReview
+                ? "리뷰가 등록되었습니다!"
+                : "평점/닉네임/리뷰 모두 작성해주세요!"}
+            </ModalText>
           </div>
         </PopWrapper>
       </Modal>

@@ -48,16 +48,15 @@ export default function TopDialog(props) {
           }}
         />
 
-        <div
+        <p
           style={{
             fontSize: "1.4rem",
             fontFamily: "S-CoreDream-7",
-            color: "#707070",
-            padding: "1rem"
+            color: "#707070"
           }}
         >
-          {month}월{day}일{week[today]}
-        </div>
+          {`${month}월 ${day}일 ${week[today]}`}
+        </p>
 
         <RightIcon
           onClick={() => {

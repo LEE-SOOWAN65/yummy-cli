@@ -7,6 +7,7 @@ import TopButton from "../components/Organisms/TopButton";
 import TopDialog from "../components/Templates/TopDialog";
 import BuildingNameTop from "../components/Organisms/BuildingNameTop";
 import MenuDialog from "../components/Templates/MenuDialog";
+import Icons from "../components/atoms/Icon/NoReviewIcon";
 
 //건물별 조식, 중식, 저녁 메뉴 리스트
 
@@ -50,8 +51,35 @@ function App(props) {
       {data && (
         <>
           <BuildingNameTop name={data.name} />
-          <MenuDialog name={data.name} sikdans={data.sikdans} />
         </>
+      )}
+
+      {data && data.sikdans.length !== 0 && (
+        <MenuDialog name={data.name} sikdans={data.sikdans} />
+      )}
+
+      {data && data.sikdans.length === 0 && (
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+            alignItems: " center",
+            margin: "5.37rem auto 0 ",
+            backgroundColor: "white",
+            width: "100%",
+            marginTop: "10rem"
+          }}
+        >
+          <div
+            style={{
+              width: "100%"
+            }}
+          />
+
+          <Icons />
+          <NoReviewText>식단이 없습니다</NoReviewText>
+        </div>
       )}
     </Wrapper>
   );
@@ -67,6 +95,14 @@ const Wrapper = styled.div`
 const TopWrapper = styled.div`
   height: 14rem;
   background-color: #ffffff;
+`;
+const NoReviewText = styled.p`
+  object-fit: contain;
+  font-family: S-CoreDream-6;
+  font-size: 2rem;
+  line-height: 0.55;
+  color: #c7c7c7;
+  margin-top: 2.8rem;
 `;
 
 export default App;

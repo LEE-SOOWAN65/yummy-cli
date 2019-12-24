@@ -64,7 +64,8 @@ function App(props) {
           >
             <div
               style={{
-                width: "100%"
+                width: "100%",
+                height: "10rem"
               }}
             />
 
@@ -95,19 +96,12 @@ const Wrapper = styled.div`
 `;
 
 const NoReviewText = styled.p`
-  height: 2.3rem;
   object-fit: contain;
   font-family: S-CoreDream-6;
   font-size: 2rem;
-  display: flex;
-  align-items: center;
-  text-align: center;
-
   line-height: 0.55;
-  letter-spacing: normal;
-  text-align: left;
-  margin-top: 2.88rem;
   color: #c7c7c7;
+  margin-top: 2.8rem;
 `;
 
 export default App;

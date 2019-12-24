@@ -27,12 +27,12 @@ const GlobalStyle = createGlobalStyle`
     font-size: 9px;
   }
 }
-@media (min-width: 338px) and (max-width: 375px) {
+@media (min-width: 338px) and (max-width: 374px) {
   html {
     font-size: 10px;
   }
 }
-@media (min-width: 376px) and (max-width: 412px) {
+@media (min-width: 375px) and (max-width: 412px) {
   html {
     font-size: 11px;
   }
