@@ -84,9 +84,7 @@ export default function Topbutton(props) {
           >
             <Logo
               style={{
-                width: "8.8rem",
-                height: "8.8rem",
-                marginBottom: "1rem"
+                margin: "0 0 3rem 0"
               }}
             />
             <hr style={{ width: "80%" }} />

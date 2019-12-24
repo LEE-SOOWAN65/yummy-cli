@@ -36,6 +36,7 @@ function App(props) {
         {data && (
           <>
             <ReviewGraph
+              avg_rating={data.avg_rating}
               pt5_cnt={data.pt5_cnt}
               pt4_cnt={data.pt4_cnt}
               pt3_cnt={data.pt3_cnt}

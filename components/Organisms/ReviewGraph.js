@@ -10,9 +10,7 @@ function App(props) {
       <BoxWrapper>
         <Average>
           <StarIcon style={{ paddingRight: "0.98rem" }} />
-          <AverageText>
-            {parseFloat(router.query.avg_rating).toFixed(1)}
-          </AverageText>
+          <AverageText>{parseFloat(props.avg_rating).toFixed(1)}</AverageText>
         </Average>
 
         <Graph
