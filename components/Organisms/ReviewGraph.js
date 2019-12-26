@@ -12,7 +12,6 @@ function App(props) {
           <StarIcon style={{ paddingRight: "0.98rem" }} />
           <AverageText>{parseFloat(props.avg_rating).toFixed(1)}</AverageText>
         </Average>
-
         <Graph
           pt5_cnt={props.pt5_cnt}
           pt4_cnt={props.pt4_cnt}
@@ -32,7 +31,7 @@ const Wrapper = styled.div`
   text-align: center;
   padding-bottom: 2.69rem;
   position: fixed;
-  top: 20rem;
+  top: 16rem;
 `;
 
 const BoxWrapper = styled.div`

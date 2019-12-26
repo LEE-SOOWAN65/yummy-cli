@@ -38,9 +38,7 @@ function App() {
   useEffect(() => {
     setTextIndex(day % 13);
   }, [day]);
-  useEffect(() => {
-    console.log(month, day, todayLabel);
-  }, [month, day, todayLabel]);
+
   return (
     <>
       <div
@@ -64,7 +62,7 @@ function App() {
               setDay={day => setDay(day)}
             />
           </TopWrapper>
-          <div style={{ height: "19rem", width: "100%" }} />
+          <div style={{ height: "18.5rem", width: "100%" }} />
 
           <BuildingDialog
             month={month}
@@ -78,7 +76,7 @@ function App() {
   );
 }
 const TopWrapper = styled.div`
-  height: 17rem;
+  height: 19rem;
   background-color: #ffffff;
   position: fixed;
   top: 0;

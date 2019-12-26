@@ -1,18 +1,24 @@
 import React from "react";
 import styled from "styled-components";
 import { stringifyPassedTime } from "../Molecules/TimePass";
+import Icon from "../Molecules/ratingHandler";
 
 export default function Reviews(props) {
   return (
     <>
-      <div style={{ height: "37.4rem" }} />
+      <div style={{ height: "33.5rem" }} />
       {props.reviews.map((value, index) => (
         <ReviewBox key={index}>
-          <NameLine>
-            <UserName>{value.nickname}</UserName>
-            <Time>{stringifyPassedTime(value.timestamp)}</Time>
-          </NameLine>
-          <Comment>{value.comment}</Comment>
+          <IconContainer>
+            <Icon rate={value.rating} />
+          </IconContainer>
+          <Content>
+            <NameLine>
+              <UserName>{value.nickname}</UserName>
+              <Time>{stringifyPassedTime(value.timestamp)}</Time>
+            </NameLine>
+            <Comment>{value.comment}</Comment>
+          </Content>
         </ReviewBox>
       ))}
       <div style={{ height: "5rem" }} />
@@ -20,32 +26,31 @@ export default function Reviews(props) {
   );
 }
 const ReviewBox = styled.div`
-  width: 32.77rem;
+  width: 90%
   object-fit: contain;
   border-radius: 1.2rem;
   background-color: #f5f5f5;
   overflow: hidden;
   display: flex;
   margin-bottom: 1.6rem;
-  flex-direction: column;
+  flex-direction: row;
+  
 `;
 
 const NameLine = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
-  margin: 0 3rem 0;
 `;
 
 const UserName = styled.p`
   object-fit: contain;
   font-family: S-CoreDream-6;
   font-size: 1.1rem;
-  font-weight: bold;
   line-height: 1;
   text-align: left;
   color: #000000;
-  width: 23.6rem;
+  width: 85%;
 `;
 
 const Time = styled.p`
@@ -55,16 +60,31 @@ const Time = styled.p`
   line-height: 2.11;
   text-align: right;
   color: #000000;
-  width: 10rem;
 `;
 
 const Comment = styled.p`
-  width: 17.9rem;
   object-fit: contain;
   font-family: S-CoreDream-4;
   font-size: 1.1rem;
   line-height: 1.55;
   text-align: left;
   color: #000000;
-  margin: 0 0 1rem 3rem;
+  margin-top: 0;
+`;
+
+const IconContainer = styled.div`
+  width: 13%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ebeded;
+`;
+
+const Content = styled.div`
+  display: flex;
+  width: 87%;
+  padding: 0 1.5rem;
+  border-radius: 1.2rem 1.2rem 0 0;
+  background-color: #f5f5f5;
+  flex-direction: column;
 `;

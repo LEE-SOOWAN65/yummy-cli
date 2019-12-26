@@ -4,6 +4,7 @@ import styled from "styled-components";
 import { useMutation } from "../../lib";
 import Modal from "@material-ui/core/Modal";
 import Logo from "../atoms/Icon/ReviewLogo";
+import NoReviewLogo from "../atoms/Icon/NoReviewIcon";
 //메뉴별 리뷰 페이지(아래 리뷰작성버튼)
 
 export default function Topbutton(props) {
@@ -11,7 +12,7 @@ export default function Topbutton(props) {
   const router = useRouter();
 
   const isValidReview =
-    props.rating !== null && props.comment !== null && props.nickname !== null;
+    props.rating !== null && props.comment !== "" && props.nickname !== "";
 
   const handleSubmit = () => {
     var tmp = {
@@ -44,7 +45,7 @@ export default function Topbutton(props) {
     <Wrapper>
       <a
         onClick={() => router.back()}
-        style={{ textDecoration: "none", flex: 2 }}
+        style={{ textDecoration: "none", flex: 1.5 }}
       >
         <Text>취소</Text>
       </a>
@@ -63,6 +64,12 @@ export default function Topbutton(props) {
         aria-describedby="simple-modal-description"
         open={open}
         onClose={handleClose}
+        style={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          height: "100%"
+        }}
       >
         <PopWrapper>
           <a
@@ -90,16 +97,13 @@ export default function Topbutton(props) {
           >
             <Logo
               style={{
-                width: "8.8rem",
-                height: "8.8rem",
-                marginBottom: "1rem"
+                margin: "0 auto 12.5%"
               }}
             />
+
             <hr style={{ width: "80%" }} />
             <ModalText>
-              {isValidReview
-                ? "리뷰가 등록되었습니다!"
-                : "평점/닉네임/리뷰 모두 작성해주세요!"}
+              {isValidReview ? "리뷰가 등록되었습니다!" : "리뷰 작성해주세요!"}
             </ModalText>
           </div>
         </PopWrapper>
@@ -127,7 +131,7 @@ const Text = styled.p`
 `;
 const ModalText = styled.p`
   font-family: S-CoreDream-6;
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   line-height: 1.8;
   text-align: center;
   color: #707070;
@@ -139,7 +143,4 @@ const PopWrapper = styled.div`
   border-radius: 2.2rem;
   box-shadow: 0 0.5rem 1rem 0 rgba(229, 75, 75, 0.3);
   background-color: #ffffff;
-  position: absolute;
-  top: 23.9rem;
-  left: 3.9rem;
 `;

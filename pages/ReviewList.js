@@ -35,6 +35,15 @@ function App(props) {
         <RedBox />
         {data && (
           <>
+            <div
+              style={{
+                height: "9rem",
+                width: "100%",
+                backgroundColor: "white",
+                position: "fixed",
+                top: "24rem"
+              }}
+            />
             <ReviewGraph
               avg_rating={data.avg_rating}
               pt5_cnt={data.pt5_cnt}
@@ -65,7 +74,7 @@ function App(props) {
             <div
               style={{
                 width: "100%",
-                height: "10rem"
+                height: "25rem"
               }}
             />
 

@@ -55,147 +55,54 @@ export default function TemporaryDrawer() {
   };
 
   const sideList = side => (
-    <div
-      className={classes.list}
-      role="presentation"
-      onKeyDown={toggleDrawer(side, false)}
-    >
+    <div className={classes.list} onKeyDown={toggleDrawer(side, false)}>
       <ListWrapper>
         <DrawerBox>
           <Logo>
-            <DrawerLogo
+            <div
               style={{
-                padding: "8.96rem 1.13rem 0 2.47rem"
+                display: "flex",
+                justifyContent: "space-around",
+                width: "80%",
+                alignItems: "center",
+                margin: "29% auto 0"
+              }}
+            >
+              <DrawerLogo style={{ width: "13%" }} />
+              <FaceBook
+                onClick={() => {
+                  handleOpen();
+                }}
+                style={{ width: "65%" }}
+              />
+            </div>
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "space-around",
+                width: "80%",
+                alignItems: "center",
+                margin: "5% auto 14.5%"
+              }}
+            >
+              <div style={{ width: "13%" }} />
+              <KakaoLogin
+                onClick={() => {
+                  handleOpen();
+                }}
+                style={{
+                  width: "65%"
+                }}
+              />
+            </div>
+            <div
+              style={{
+                width: "80%",
+                height: 1,
+                backgroundColor: "#707070",
+                margin: "0 auto"
               }}
             />
-            <FaceBook
-              onClick={() => {
-                handleOpen();
-              }}
-              style={{ width: "65%", margin: "0rem" }}
-            />
-            <Modal
-              aria-labelledby="simple-modal-title"
-              aria-describedby="simple-modal-description"
-              open={open}
-              onClose={handleClose}
-            >
-              <PopWrapper>
-                <a
-                  onClick={() => router.back()}
-                  type="button"
-                  onClick={handleClose}
-                  style={{
-                    fontFamily: "S-CoreDream-6",
-                    fontSize: "1.3rem",
-                    color: "#aaaaaa",
-                    margin: "1rem 1rem 1rem 25.5rem",
-                    display: "flex",
-                    textAlign: "center",
-                    alignItems: "center"
-                  }}
-                >
-                  닫기
-                </a>
-                <div
-                  style={{
-                    display: "flex",
-                    textAlign: "center",
-                    alignItems: "center",
-                    flexDirection: "column"
-                  }}
-                >
-                  <ModalIcon
-                    style={{
-                      width: "8.8rem",
-                      height: "8.8rem",
-                      marginBottom: "1rem"
-                    }}
-                  />
-                  <text
-                    style={{
-                      fontFamily: "S-CoreDream-6",
-                      fontSize: "1.8rem",
-                      color: "#ff6565",
-                      marginBottom: "1.6rem"
-                    }}
-                  >
-                    알림
-                  </text>
-                  <hr style={{ width: "80%" }} />
-                  <MadalText>
-                    베타서비스 중에는 가입 / 로그인 없이 <br />
-                    서비스이용이 가능합니다
-                  </MadalText>
-                </div>
-              </PopWrapper>
-            </Modal>
-            <KakaoLogin
-              onClick={() => {
-                handleOpen();
-              }}
-              style={{
-                width: "65%",
-                margin: "1.12rem 0 4.28rem 7rem"
-              }}
-            />{" "}
-            <Modal
-              aria-labelledby="simple-modal-title"
-              aria-describedby="simple-modal-description"
-              open={open}
-              onClose={handleClose}
-            >
-              <PopWrapper>
-                <a
-                  onClick={() => router.back()}
-                  type="button"
-                  onClick={handleClose}
-                  style={{
-                    fontFamily: "S-CoreDream-6",
-                    fontSize: "1.3rem",
-                    color: "#aaaaaa",
-                    margin: "1rem 1rem 1rem 25.5rem",
-                    display: "flex",
-                    textAlign: "center",
-                    alignItems: "center"
-                  }}
-                >
-                  닫기
-                </a>
-                <div
-                  style={{
-                    display: "flex",
-                    textAlign: "center",
-                    alignItems: "center",
-                    flexDirection: "column"
-                  }}
-                >
-                  <ModalIcon
-                    style={{
-                      width: "8.8rem",
-                      height: "8.8rem",
-                      marginBottom: "1rem"
-                    }}
-                  />
-                  <text
-                    style={{
-                      fontFamily: "S-CoreDream-6",
-                      fontSize: "1.8rem",
-                      color: "#ff6565",
-                      marginBottom: "1.6rem"
-                    }}
-                  >
-                    알림
-                  </text>
-                  <hr style={{ width: "80%" }} />
-                  <MadalText>
-                    베타서비스 중에는 가입 / 로그인 없이 <br />
-                    서비스이용이 가능합니다
-                  </MadalText>
-                </div>
-              </PopWrapper>
-            </Modal>
-            <hr style={{ width: "23rem", borderTop: "0.1rem solid #707070" }} />
             <UserDetail>
               <div style={{ display: "flex", flex: 1 }} />
               <Detail>
@@ -273,17 +180,79 @@ export default function TemporaryDrawer() {
       >
         {sideList("right")}
       </Drawer>
+      <Modal
+        aria-labelledby="simple-modal-title"
+        aria-describedby="simple-modal-description"
+        open={open}
+        onClose={handleClose}
+        style={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          height: "100%"
+        }}
+      >
+        <PopWrapper>
+          <a
+            onClick={() => router.back()}
+            type="button"
+            onClick={handleClose}
+            style={{
+              fontFamily: "S-CoreDream-6",
+              fontSize: "1.3rem",
+              color: "#aaaaaa",
+              margin: "1rem 1rem 1rem 25.5rem",
+              display: "flex",
+              textAlign: "center",
+              alignItems: "center"
+            }}
+          >
+            닫기
+          </a>
+          <div
+            style={{
+              display: "flex",
+              textAlign: "center",
+              alignItems: "center",
+              flexDirection: "column"
+            }}
+          >
+            <ModalIcon
+              style={{
+                width: "8.8rem",
+                height: "8.8rem",
+                marginBottom: "1rem"
+              }}
+            />
+            <text
+              style={{
+                fontFamily: "S-CoreDream-6",
+                fontSize: "1.8rem",
+                color: "#ff6565",
+                marginBottom: "1.6rem"
+              }}
+            >
+              알림
+            </text>
+            <hr style={{ width: "80%" }} />
+            <MadalText>
+              베타서비스 중에는 가입 / 로그인 없이 <br />
+              서비스이용이 가능합니다
+            </MadalText>
+          </div>
+        </PopWrapper>
+      </Modal>
     </div>
   );
 }
 
 const DrawerBox = styled.div`
-  width: 25rem;
-  height: 30.2rem;
+  width: 100%;
+  height: 36.8%;
   object-fit: contain;
   background-color: #efefef;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
 `;
 const ListWrapper = styled.div`
   width: 100%;
@@ -296,6 +265,7 @@ const Logo = styled.div`
   position: flex;
   flex-direction: row;
   width: 100%;
+  height: 65%;
 `;
 
 const PopWrapper = styled.div`
@@ -305,9 +275,7 @@ const PopWrapper = styled.div`
   border-radius: 2.2rem;
   box-shadow: 0 0.5rem 1rem 0 rgba(229, 75, 75, 0.3);
   background-color: #ffffff;
-  position: absolute;
-  top: 23.9rem;
-  left: 3.9rem;
+  margin: auto;
 `;
 const Detail = styled.p`
   object-fit: contain;

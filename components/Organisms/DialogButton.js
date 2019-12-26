@@ -16,16 +16,18 @@ export default function FacilButton(props) {
             <BuildingName>{props.name}</BuildingName>
             {props.sikdans
               .slice(0, Math.min(props.sikdans.length, 3))
-              .map((value, index) => (
-                <MenuList key={index}>
-                  <StarIcon style={{ paddingRight: "0.4rem" }} />
-                  <Text>
-                    <Average>{value.avg_rating.toFixed(1)}</Average>
+              .map((value, index) => {
+                return (
+                  <MenuList key={index}>
+                    <StarIcon style={{ paddingRight: "0.4rem" }} />
+                    <Text>
+                      <Average>{value.avg_rating.toFixed(1)}</Average>
 
-                    <MenuName>{value.name}</MenuName>
-                  </Text>
-                </MenuList>
-              ))}
+                      <MenuName>{value.name}</MenuName>
+                    </Text>
+                  </MenuList>
+                );
+              })}
             <MoreText>더보기 ></MoreText>
           </BuildingWrapper>
         </a>

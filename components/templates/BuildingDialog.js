@@ -26,18 +26,20 @@ export default function BuildingDialog(props) {
     return (
       <Wrapper>
         {data.map((value, index) => {
-          return (
-            <DialogButton
-              id={value.id}
-              month={month}
-              day={day}
-              timePeriod={timePeriod}
-              name={value.name}
-              sikdans={value.sikdans}
-              key={index}
-              today={today}
-            />
-          );
+          if (value.sikdans.length !== 0) {
+            return (
+              <DialogButton
+                id={value.id}
+                month={month}
+                day={day}
+                timePeriod={timePeriod}
+                name={value.name}
+                sikdans={value.sikdans}
+                key={index}
+                today={today}
+              />
+            );
+          }
         })}
       </Wrapper>
     );

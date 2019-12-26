@@ -21,7 +21,7 @@ function FirstPage() {
         }}
       >
         <Arrary>
-          <Logo style={{ width: "50%", margin: "5.14rem 0 9rem 15.6rem" }} />
+          <Logo style={{ width: "50%", margin: "5.14rem 0 6rem 15.6rem" }} />
         </Arrary>
 
         <BoxWrapper>

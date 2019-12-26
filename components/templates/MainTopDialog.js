@@ -13,8 +13,13 @@ export default function TopDialog(props) {
   );
   const week = new Array("일", "월", "화", "수", "목", "금", "토");
   const [available, setAvailable] = useState(true);
+  const [mainTopDialogdate, setMainTopDialogDate] = useState(
+    new Date(new Date().setDate(day))
+  );
+
   useEffect(() => {
     setToday(new Date(new Date().setDate(day)).getDay());
+    setMainTopDialogDate(new Date(new Date().setDate(day)));
   }, [day]);
 
   return (
@@ -39,6 +44,7 @@ export default function TopDialog(props) {
               props.setDay(day - 1);
               setAvailable(true);
             }}
+            style={{ marginRight: "1.8rem" }}
           />
 
           <p
@@ -48,7 +54,8 @@ export default function TopDialog(props) {
               color: "#707070"
             }}
           >
-            {`${month}월 ${day}일 ${week[today]}`}
+            {`${mainTopDialogdate.getMonth() +
+              1}월 ${mainTopDialogdate.getDate()}일 ${week[today]}`}
           </p>
 
           <RightIcon
@@ -61,6 +68,7 @@ export default function TopDialog(props) {
                 setAvailable(false);
               }
             }}
+            style={{ marginLeft: "1.8rem" }}
           />
         </ButtonWrapper>
       </div>

@@ -82,8 +82,8 @@ const colorHandler = id => {
 };
 
 const IconWrapper = styled.div`
-  width: 2.9rem;
-  height: 3rem;
+  width: 2.8rem;
+  height: 2.8rem;
 
   border-radius: 0.5rem;
   ${props => css`

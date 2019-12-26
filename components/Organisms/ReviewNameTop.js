@@ -9,7 +9,10 @@ function BuildingNameTop() {
 
   return (
     <Wrapper>
-      <a onClick={() => router.back()} style={{ textDecoration: "none" }}>
+      <a
+        onClick={() => router.back()}
+        style={{ height: "2rem", textDecoration: "none" }}
+      >
         <Arrow style={{ paddingLeft: "1.8rem" }} />
       </a>
       <IconWrapper>
@@ -41,7 +44,7 @@ const Wrapper = styled.div`
   max-width:36rem;
   padding-top:2.88rem;
   position:fixed;
-  top:6.5rem;
+  top:4rem;
 `;
 
 const MenuName = styled.p`
