@@ -15,6 +15,7 @@ export default function Reviews(props) {
           <Content>
             <NameLine>
               <UserName>{value.nickname}</UserName>
+              <div style={{ display: "flex", flex: 2 }} />
               <Time>{stringifyPassedTime(value.timestamp)}</Time>
             </NameLine>
             <Comment>{value.comment}</Comment>
@@ -50,7 +51,8 @@ const UserName = styled.p`
   line-height: 1;
   text-align: left;
   color: #000000;
-  width: 85%;
+  display: flex;
+  flex: 2;
 `;
 
 const Time = styled.p`
@@ -60,6 +62,8 @@ const Time = styled.p`
   line-height: 2.11;
   text-align: right;
   color: #000000;
+  display: flex;
+  flex: 1;
 `;
 
 const Comment = styled.p`

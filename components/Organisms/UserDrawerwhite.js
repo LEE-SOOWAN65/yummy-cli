@@ -152,6 +152,14 @@ export default function TemporaryDrawer() {
                 플러스친구
               </Menu>
             </a>
+            <a
+              href="http://pf.kakao.com/_KYpQT/43757437"
+              style={{ textDecoration: "none" }}
+            >
+              <Menu>
+                <HomeIcon style={{ marginRight: "2.3rem" }} /> 홈 바로 가기 생성
+              </Menu>
+            </a>
           </div>
         </List>
       </ListWrapper>
@@ -234,7 +242,7 @@ export default function TemporaryDrawer() {
             >
               알림
             </text>
-            <hr style={{ width: "30%" }} />
+            <hr style={{ width: "80%" }} />
             <MadalText>
               베타서비스 중에는 가입 / 로그인 없이 <br />
               서비스이용이 가능합니다

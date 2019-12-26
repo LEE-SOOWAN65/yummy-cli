@@ -65,7 +65,8 @@ export default function Topbutton(props) {
               fontSize: "1.3rem",
               lineHeight: "1.23",
               textAlign: "left",
-              color: "#707070"
+              color: "#707070",
+              padding: "0"
             }}
           />
 
@@ -93,7 +94,7 @@ const Wrapper = styled.div`
   height: 47.8rem;
   border-radius: 2.1rem;
   position: fixed;
-  top: 14.3rem;
+  top: 12.5rem;
 `;
 
 const TextWrapper = styled.div`
@@ -111,4 +112,5 @@ const DetailWrapper = styled.p`
   line-height: 1.18;
   text-align: left;
   color: #707070;
+  margin: 0;
 `;

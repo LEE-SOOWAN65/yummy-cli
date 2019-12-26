@@ -19,14 +19,14 @@ export default props => {
     case 1:
       return (
         <Wrapper>
-          <Smile1 fill="#e54b4b" />
+          <Smile5 fill="#e54b4b" />
           <Label>{text1}</Label>
         </Wrapper>
       );
     case 2:
       return (
         <Wrapper>
-          <Smile2 fill="#e54b4b" />
+          <Smile4 fill="#e54b4b" />
           <Label>{text2}</Label>
         </Wrapper>
       );
@@ -40,14 +40,14 @@ export default props => {
     case 4:
       return (
         <Wrapper>
-          <Smile4 fill="#e54b4b" />
+          <Smile2 fill="#e54b4b" />
           <Label>{text4}</Label>
         </Wrapper>
       );
     case 5:
       return (
         <Wrapper>
-          <Smile5 fill="#e54b4b" />
+          <Smile1 fill="#e54b4b" />
           <Label>{text5}</Label>
         </Wrapper>
       );

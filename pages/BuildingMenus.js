@@ -46,16 +46,15 @@ function App(props) {
           }}
           today={router.query.today}
         />
+
+        {data && <BuildingNameTop name={data.name} />}
       </TopWrapper>
-
-      {data && (
-        <>
-          <BuildingNameTop name={data.name} />
-        </>
-      )}
-
       {data && data.sikdans.length !== 0 && (
-        <MenuDialog name={data.name} sikdans={data.sikdans} />
+        <>
+          <div style={{ height: "15rem", width: "100%" }} />
+
+          <MenuDialog name={data.name} sikdans={data.sikdans} />
+        </>
       )}
 
       {data && data.sikdans.length === 0 && (
@@ -93,8 +92,14 @@ const Wrapper = styled.div`
 `;
 
 const TopWrapper = styled.div`
-  height: 14rem;
+  height: 17rem;
   background-color: #ffffff;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  max-width: 36rem;
+  text-align: center;
+  align-self: center;
 `;
 const NoReviewText = styled.p`
   object-fit: contain;

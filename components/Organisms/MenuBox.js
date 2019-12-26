@@ -18,17 +18,18 @@ export default function BuildingDialog(props) {
                 <Average>
                   {value.avg_rating < 0 ? "-" : value.avg_rating.toFixed(1)}
                 </Average>
-                <Link
-                  href={
-                    value.avg_rating < 0
-                      ? ""
-                      : `/ReviewList?id=${value.id}&name=${value.name}&buildingName=${props.name}`
-                  }
-                >
-                  <a style={{ textDecoration: "none" }}>
-                    <MenuName>{value.name}</MenuName>
-                  </a>
-                </Link>
+
+                {value.avg_rating < 0 ? (
+                  <MenuName>{value.name}</MenuName>
+                ) : (
+                  <Link
+                    href={`/ReviewList?id=${value.id}&name=${value.name}&buildingName=${props.name}`}
+                  >
+                    <a style={{ textDecoration: "none" }}>
+                      <MenuName>{value.name}</MenuName>
+                    </a>
+                  </Link>
+                )}
               </Text>
             </MenuLine>
           ))}
@@ -91,11 +92,8 @@ const Average = styled.div`
   height: 1.7rem;
   object-fit: contain;
   font-size: 1.4rem;
-  font-weight: normal;
-  font-stretch: normal;
-  font-style: normal;
   line-height: 1.5;
-  letter-spacing: normal;
+  font-family: S-CoreDream-4;
   text-align: left;
   color: #000000;
 `;
@@ -105,4 +103,5 @@ const MenuName = styled.div`
   text-align: left;
   color: #000000;
   border-radius: 1.8rem;
+  font-family: S-CoreDream-5;
 `;

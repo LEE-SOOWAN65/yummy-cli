@@ -81,6 +81,7 @@ const TopWrapper = styled.div`
   position: fixed;
   top: 0;
   width: 100%;
+  max-width: 36rem;
   margin: 0 auto;
 `;
 const Wrapper = styled.div`

@@ -115,7 +115,6 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: row;
   overflow: auto;
-  padding-top: 2.55rem;
   padding-left: 2.41rem;
   padding-right: 2.19;
   align-items: center;

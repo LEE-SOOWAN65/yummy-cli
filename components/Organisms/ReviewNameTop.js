@@ -34,6 +34,7 @@ const IconWrapper = styled.div`
   text-align: center;
   overflow: auto;
   width: 85%;
+  paddingtop: 1rem;
 `;
 
 const Wrapper = styled.div`
@@ -42,7 +43,7 @@ const Wrapper = styled.div`
   overflow: auto;
   width: 100%;
   max-width:36rem;
-  padding-top:2.88rem;
+  margin-top:2.88rem;
   position:fixed;
   top:4rem;
 `;
@@ -72,6 +73,7 @@ const BuildingWrapper = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
+  text-align: center;
   overflow: auto;
 `;
 
